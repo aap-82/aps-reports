@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Strata Report — 21 Ormond Street, Ashfield (SP 391, Lot 21)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --aps-black:#000;--aps-text:#1a1a1a;--aps-h2:#333;--aps-mute:#666;
+  --aps-line:#ccc;--aps-line-light:#e6e6e6;--aps-alt:#f2f2f2;
+  --aps-maroon:#800000;--aps-maroon-soft:#f5ebeb;--aps-amber:#b88600;
+  --aps-paper:#fff;--aps-paper-edge:#ededed;
+  --ff-display:"Manrope",system-ui,sans-serif;
+  --ff-body:"Manrope",system-ui,sans-serif;
+  --ff-mono:"DM Mono",ui-monospace,monospace;
+  --shadow-page:0 1px 2px rgba(0,0,0,.04),0 8px 28px rgba(0,0,0,.08);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--ff-body);font-size:10pt;line-height:1.5;color:var(--aps-text);background:#efe9e6;background-image:radial-gradient(circle at 20% 10%,rgba(128,0,0,.04),transparent 40%),radial-gradient(circle at 80% 90%,rgba(128,0,0,.05),transparent 50%);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+.page-stack{padding:32px 0 64px}
+.page{background:var(--aps-paper);width:min(900px,calc(100vw - 32px));margin:0 auto 28px;padding:48px 56px 40px;box-shadow:var(--shadow-page);position:relative;break-inside:avoid}
+.page+.page{margin-top:0}
+.page::before{content:"";position:absolute;inset:0;border:1px solid var(--aps-paper-edge);pointer-events:none}
+.page-header,.page-footer{font-family:var(--ff-mono);font-size:8pt;color:var(--aps-mute);letter-spacing:.02em}
+.page-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:24px;gap:10px}
+.page-header strong{color:var(--aps-black);font-weight:700;letter-spacing:.04em;text-transform:uppercase}
+.page-header .brand-logo{height:24px;width:auto;flex:0 0 auto;display:inline-block;vertical-align:middle}
+.page-header .brand-text{display:inline-flex;align-items:center;gap:8px}
+.page-footer{display:flex;justify-content:flex-end;gap:14px;margin-top:32px;padding-top:12px;border-top:1px solid var(--aps-line-light)}
+.page-footer span::before{content:"•";margin-right:12px;color:var(--aps-line)}
+.page-footer span:first-child::before{content:"";margin:0}
+h1,h2,h3,h4{font-family:var(--ff-display);color:var(--aps-black);letter-spacing:-0.01em}
+.title{font-size:28pt;line-height:1.05;font-weight:800;margin:0 0 6px;letter-spacing:-0.02em}
+h1.section-h1{font-size:14pt;font-weight:700;color:var(--aps-black);margin:6px 0 18px;padding-bottom:6px;border-bottom:4px solid var(--aps-maroon);display:flex;align-items:baseline;gap:16px;flex-wrap:wrap}
+h1.section-h1 .ref{font-family:var(--ff-mono);font-size:9pt;font-weight:500;color:var(--aps-mute);letter-spacing:.08em;text-transform:uppercase}
+h2{font-size:12pt;font-weight:700;color:var(--aps-h2);margin:22px 0 8px;line-height:1.25}
+h2.level-h{margin-top:28px;padding-top:14px;border-top:1px solid var(--aps-line);font-size:13pt;color:var(--aps-black);display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px}
+h2.level-h .level-stats{font-family:var(--ff-mono);font-size:8.5pt;font-weight:500;color:var(--aps-mute);letter-spacing:.04em}
+h3{font-size:10.5pt;font-weight:700;color:var(--aps-black);margin:16px 0 6px}
+p{margin:0 0 8px;line-height:1.5}
+ul,ol{margin:0 0 10px;padding-left:22px}
+ul li,ol li{margin-bottom:4px;line-height:1.5}
+strong{color:var(--aps-black);font-weight:700}
+em{font-style:italic}
+table{width:100%;border-collapse:collapse;margin:8px 0 16px;font-size:9.5pt}
+th,td{text-align:left;vertical-align:top;padding:8px 12px;border:1px solid var(--aps-line);line-height:1.35}
+thead th{background:var(--aps-black);color:#fff;font-weight:700;font-family:var(--ff-body);letter-spacing:.01em;border-color:var(--aps-black)}
+tbody tr:nth-child(even) td{background:var(--aps-alt)}
+table.compact th,table.compact td{padding:6px 10px}
+table .num{text-align:right;font-variant-numeric:tabular-nums;font-feature-settings:"tnum"}
+table .total td{font-weight:700;border-top:2px solid var(--aps-black);background:#fff !important}
+table.implications th,table.implications td{padding:8px 10px;font-size:9pt}
+table.implications th:first-child,table.implications td:first-child{width:36px;text-align:center;font-family:var(--ff-mono)}
+table.implications td.status{font-family:var(--ff-mono);font-size:8pt;letter-spacing:.06em;color:var(--aps-amber);font-weight:600;white-space:nowrap}
+.note-box,.caution-box{display:grid;grid-template-columns:auto 1fr;gap:10px 14px;align-items:start;padding:12px 16px;margin:12px 0;font-size:9.5pt;line-height:1.5}
+.note-box{background:var(--aps-alt);border-left:3px solid var(--aps-h2)}
+.note-box::before{content:"NOTE";font-family:var(--ff-mono);font-size:8pt;letter-spacing:.12em;font-weight:500;color:var(--aps-h2);padding-top:2px}
+.caution-box{background:var(--aps-maroon-soft);border-left:3px solid var(--aps-maroon)}
+.caution-box::before{content:"\26A0  IMPORTANT";font-family:var(--ff-mono);font-size:8pt;letter-spacing:.08em;font-weight:700;color:var(--aps-maroon);padding-top:2px;white-space:nowrap}
+.source{font-family:var(--ff-mono);font-size:8pt;color:var(--aps-mute);margin-top:6px;line-height:1.4;letter-spacing:.01em}
+.source::before{content:"Source: ";color:var(--aps-h2);font-weight:500}
+.meta-grid{display:grid;grid-template-columns:max-content 1fr;border-top:1px solid var(--aps-line)}
+.meta-grid > dt,.meta-grid > dd{padding:8px 14px;border-bottom:1px solid var(--aps-line);font-size:10pt;line-height:1.5}
+.meta-grid > dt{font-family:var(--ff-display);font-weight:600;font-size:9pt;letter-spacing:.04em;text-transform:uppercase;color:var(--aps-mute);background:var(--aps-alt);border-right:1px solid var(--aps-line)}
+.meta-grid > dd{color:var(--aps-text)}
+.meta-grid a[href^="mailto:"]{color:var(--aps-text);text-decoration:none;transition:color 0.2s ease}
+.meta-grid a[href^="mailto:"]:hover{color:#600000;text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}
+.cover .title-block{margin-top:32px;margin-bottom:32px}
+.cover .title-block .eyebrow{font-family:var(--ff-mono);font-size:9pt;letter-spacing:.14em;text-transform:uppercase;color:var(--aps-maroon);margin-bottom:14px;display:block}
+.cover .property-line{font-family:var(--ff-display);font-size:14pt;font-weight:600;color:var(--aps-h2);margin:0 0 6px}
+.cover .date-line{font-family:var(--ff-mono);font-size:9.5pt;color:var(--aps-mute);margin-bottom:0}
+.aps-nav{position:sticky;top:0;background:rgba(239,233,230,.92);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);z-index:5;padding:10px 32px;border-bottom:1px solid var(--aps-paper-edge);font-family:var(--ff-mono);font-size:8.5pt;letter-spacing:.04em}
+.aps-nav-inner{max-width:900px;margin:0 auto;display:flex;flex-wrap:wrap;gap:6px 18px;align-items:center}
+.aps-nav a{color:var(--aps-mute);text-decoration:none;border-bottom:1px solid transparent;padding-bottom:1px;transition:color 0.15s,border-color 0.15s}
+.aps-nav a:hover{color:var(--aps-maroon);border-bottom-color:var(--aps-maroon)}
+.aps-nav-home{color:var(--aps-black);font-weight:600}
+
+@media (max-width:760px){
+  .page{padding:24px 22px 24px;width:calc(100vw - 16px)}
+  h1.section-h1{font-size:13pt}
+  h2{font-size:11.5pt}
+  table{font-size:9pt}
+  th,td{padding:6px 8px}
+  .meta-grid{grid-template-columns:1fr}
+  .meta-grid > dt{border-right:none;border-bottom:none;padding-bottom:2px}
+  .meta-grid > dd{padding-top:0}
+  .aps-nav{padding:10px 16px;font-size:8pt}
+  .aps-nav-inner{gap:4px 12px}
+  .page-header{flex-wrap:wrap;font-size:7.5pt}
+  .page-footer{flex-wrap:wrap;font-size:7.5pt}
+}
+
+@media print{
+  body{background:#fff}
+  .page-stack{padding:0}
+  .page{box-shadow:none;page-break-after:always;margin:0;width:auto;padding:24mm 22mm}
+  .page::before{display:none}
+  .aps-nav{display:none}
+}
+</style>
+</head>
+<body>
+
+<nav class="aps-nav" aria-label="Section navigation">
+  <div class="aps-nav-inner">
+    <a class="aps-nav-home" href="./index.html">← Sample Reports</a>
+    <a href="#cover">Cover</a>
+    <a href="#overview">Property</a>
+    <a href="#financials">Financials</a>
+    <a href="#defects">Defects</a>
+    <a href="#capital-works">Capital Works</a>
+    <a href="#compliance">Compliance</a>
+    <a href="#management">Management</a>
+    <a href="#legal">Legal</a>
+    <a href="#implications">Implications</a>
+    <a href="#documents">Documents</a>
+  </div>
+</nav>
+
+<div class="page-stack">
+
+<!-- ============ COVER ============ -->
+<section class="page cover" id="cover">
+  <header class="page-header">
+    <span class="brand-text"><img class="brand-logo" src="./aps-logo.svg" alt=""><span><strong>Access Property Services</strong> · 21 Ormond Street · Strata Report</span></span>
+    <span>13 April 2026</span>
+  </header>
+
+  <div class="title-block">
+    <span class="eyebrow">Access Property Services · Strata Report</span>
+    <h1 class="title">Strata Report</h1>
+    <p class="property-line">Unit 21, 21 Ormond Street, Ashfield NSW 2131 — SP 391 (Lot 21)</p>
+    <p class="date-line">Date of report · 13 April 2026</p>
+  </div>
+
+  <dl class="meta-grid">
+    <dt>Client</dt><dd>Jade Smith</dd>
+    <dt>Client email</dt><dd><a href="mailto:jade.smith@email.com">jade.smith@email.com</a></dd>
+    <dt>Property</dt><dd>Unit 21, 21 Ormond Street, Ashfield NSW 2131</dd>
+    <dt>Strata Plan</dt><dd>SP 391</dd>
+    <dt>Lot</dt><dd>Lot 21 (associated garage: Lot 30)</dd>
+    <dt>Prepared by</dt><dd>Dominic Ogburn, Access Property Services</dd>
+    <dt>Contact</dt><dd><a href="mailto:dominic@accesspropertyservices.com.au">dominic@accesspropertyservices.com.au</a></dd>
+    <dt>ABN</dt><dd>53 129 936 607</dd>
+  </dl>
+
+  <h2 style="margin-top:32px">Legislative Currency Check</h2>
+  <div class="note-box">
+    <div><strong>Verified:</strong> 13 April 2026 &nbsp;·&nbsp; <strong>Status:</strong> Current — no amendments detected since last verification on 21 March 2026. From 1 April 2026, SSMA 2015 amendments require capital works fund plans to be updated to the new prescribed standard form at their next review.</div>
+  </div>
+
+  <footer class="page-footer">
+    <span>Access Property Services</span>
+    <span>21 Ormond Street, Ashfield · SP 391 Lot 21</span>
+    <span>Page 1</span>
+  </footer>
+</section>
+
+<!-- ============ PROPERTY OVERVIEW ============ -->
+<section class="page" id="overview">
+  <header class="page-header">
+    <span class="brand-text"><img class="brand-logo" src="./aps-logo.svg" alt=""><span><strong>Access Property Services</strong> · 21 Ormond Street · Property Overview</span></span>
+    <span>13 April 2026</span>
+  </header>
+
+  <h1 class="section-h1">1. Property Overview <span class="ref">SP 391 · Lot 21 · Building & Title</span></h1>
+
+  <h2>Lot Structure</h2>
+  <p>SP 391 comprises 24 residential lots plus 11 garage lots (Lots 25–35), totalling 35 lots on the strata plan. Aggregate unit entitlement: 124,150. Unit entitlements range from 3,650 (Lots 6 and 7, smallest) to 6,150 (Lots 1 and 4, largest).</p>
+  <p><strong>Lot 21 unit entitlement: 5,000</strong> — verified from the owner ledger header (Conti Strata, 10 April 2026), the 2025 AGM special levy schedule, the strata roll, and quarterly levy calculations. The correct entitlement percentage is <strong>4.03%</strong> (5,000/124,150). Associated lot: Lot 30 (garage).</p>
+  <div class="note-box">
+    <div>Unit entitlement verified from three independent sources: owner ledger header, strata roll, and 2025 AGM special levy schedule — all record Lot 21 at UE 5,000 / AE 124,150. Quarterly levies charged ($510.00 admin + $519.40 CWF = $1,029.40) are consistent with UE 5,000. No s184 certificate for Lot 21 was found in the document library; s184 certificates exist for other lots (3, 5, 12, 14, 16, 24). A certificate of title or s184 certificate for Lot 21 can be obtained from Conti Strata or NSW Land Registry Services for definitive confirmation.</div>
+  </div>
+  <p class="source">Owner Ledger (10/04/2026); Strata Roll (10/04/2026); 391 - AGM Minutes (2025) — Special Levy Schedule; 391 - Strata Plan.pdf (Sheet 1).</p>
+
+  <h2>Lot 21 Ownership &amp; Tenancy</h2>
+  <table class="compact">
+    <tbody>
+      <tr><th>Owner</th><td>Matthew Thomas Dawe</td></tr>
+      <tr><th>Date of purchase</th><td>28 September 2016</td></tr>
+      <tr><th>Address for service</th><td>C/- Raine &amp; Horne Ashfield, 232 Liverpool Road, Ashfield NSW 2131</td></tr>
+      <tr><th>Mortgage</th><td>None registered on strata roll</td></tr>
+      <tr><th>Current tenant</th><td>Yu Ning Teng &amp; Yu Xin Teng &amp; Fan Seng Ye</td></tr>
+      <tr><th>Lease term</th><td>12 months (entered 26 June 2025)</td></tr>
+      <tr><th>Managing agent</th><td>Raine &amp; Horne Ashfield, 232 Liverpool Road, Ashfield NSW 2131</td></tr>
+    </tbody>
+  </table>
+  <p>The property is investor-owned and tenanted. The owner's address for service is via the managing agent, not the property itself.</p>
+  <p class="source">Strata Roll (10/04/2026).</p>
+
+  <h2>Building Description</h2>
+  <table class="compact">
+    <tbody>
+      <tr><th>Residential storeys</th><td>3</td></tr>
+      <tr><th>Total storeys</th><td>4 (including ground-level carpark)</td></tr>
+      <tr><th>BCA classification</th><td>Class 2 and 7a</td></tr>
+      <tr><th>Year of construction</th><td>1963</td></tr>
+      <tr><th>Construction type</th><td>Brick, fibre cement eaves, tiled and metal roofing, timber-framed windows, heritage facade features</td></tr>
+      <tr><th>Description</th><td>Residential flat building comprising 24 apartments over 3 levels with lower level garages and a separate single-level garage building.</td></tr>
+    </tbody>
+  </table>
+  <p class="source">391 - AFSS Signed.pdf; Cladding Inspection Report (Project Guides, January 2019); Insurance Valuation (Blueprint Property, August 2025).</p>
+
+  <h2>Car Parking</h2>
+  <p>No basement carpark levels. The cladding inspection confirms "Number of storeys below the ground: 0." Car parking is at grade level with 13 car spaces. A separate single-level garage building exists on site (Lots 25–35).</p>
+  <p class="source">Cladding Inspection Report (Project Guides, January 2019); Insurance Valuation (August 2025).</p>
+
+  <footer class="page-footer">
+    <span>Access Property Services</span>
+    <span>21 Ormond Street, Ashfield · SP 391 Lot 21</span>
+    <span>Page 2</span>
+  </footer>
+</section>
+
+<!-- ============ FINANCIAL POSITION ============ -->
+<section class="page" id="financials">
+  <header class="page-header">
+    <span class="brand-text"><img class="brand-logo" src="./aps-logo.svg" alt=""><span><strong>Access Property Services</strong> · 21 Ormond Street · Financial Position</span></span>
+    <span>13 April 2026</span>
+  </header>
+
+  <h1 class="section-h1">2. Financial Position <span class="ref">As at 10 April 2026 · Conti Strata</span></h1>
+
+  <h2>Administrative Fund</h2>
+  <p><strong>Balance: −$15,939.95</strong> as at 10 April 2026 (balance sheet, Conti Strata).</p>
+
+  <h3>Fund composition</h3>
+  <table class="compact">
+    <thead><tr><th>Item</th><th class="num">Amount</th></tr></thead>
+    <tbody>
+      <tr><td>Owners Equity (carried forward from prior year)</td><td class="num">$11,998.55</td></tr>
+      <tr><td>Operating deficit (1 July 2025 to 10 April 2026)</td><td class="num">−$27,938.50</td></tr>
+      <tr class="total"><td>Closing balance</td><td class="num">−$15,939.95</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Balance sheet detail</h3>
+  <table class="compact">
+    <thead><tr><th>Item</th><th class="num">Amount</th></tr></thead>
+    <tbody>
+      <tr><td>Cash at Bank (Admin)</td><td class="num">−$17,559.78</td></tr>
+      <tr><td>Receivable Levies (Admin)</td><td class="num">$2,063.53</td></tr>
+      <tr><td>Less Prepaid Levies (Admin)</td><td class="num">$443.70</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Admin revenue (YTD): $39,101.59</h3>
+  <table class="compact">
+    <thead><tr><th>Revenue item</th><th class="num">Amount</th></tr></thead>
+    <tbody>
+      <tr><td>Levies Due</td><td class="num">$37,989.90</td></tr>
+      <tr><td>Recovery Additional Services</td><td class="num">$750.00</td></tr>
+      <tr><td>Strata Inspection Fees</td><td class="num">$180.00</td></tr>
+      <tr><td>Status Certificate Fees</td><td class="num">$119.90</td></tr>
+      <tr><td>Interest on Arrears</td><td class="num">$61.79</td></tr>
+      <tr class="total"><td>Total revenue</td><td class="num">$39,101.59</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Admin expenses (YTD): $67,040.09</h3>
+  <table class="compact">
+    <thead><tr><th>Expense item</th><th class="num">Amount</th></tr></thead>
+    <tbody>
+      <tr><td>Insurance Premiums</td><td class="num">$33,377.82</td></tr>
+      <tr><td>Agent Additional Services</td><td class="num">$8,409.15</td></tr>
+      <tr><td>Agent Management Fees</td><td class="num">$5,199.24</td></tr>
+      <tr><td>Water</td><td class="num">$4,205.39</td></tr>
+      <tr><td>Garden Maintenance</td><td class="num">$3,910.69</td></tr>
+      <tr><td>Cleaning</td><td class="num">$3,140.50</td></tr>
+      <tr><td>Agent Disbursements</td><td class="num">$1,648.50</td></tr>
+      <tr><td>General Repairs</td><td class="num">$1,621.00</td></tr>
+      <tr><td>Fire Protection</td><td class="num">$1,437.05</td></tr>
+      <tr><td>Agent Reporting &amp; Archives</td><td class="num">$1,268.06</td></tr>
+      <tr><td>Legal &amp; By-law Fees</td><td class="num">$750.00</td></tr>
+      <tr><td>Audit Services</td><td class="num">$594.00</td></tr>
+      <tr><td>Trade/Govt Compliance</td><td class="num">$383.48</td></tr>
+      <tr><td>Electricity</td><td class="num">$300.31</td></tr>
+      <tr><td>Insurance Valuation</td><td class="num">$275.00</td></tr>
+      <tr><td>Accounting/Tax</td><td class="num">$187.00</td></tr>
+      <tr><td>Strata Inspection Fees Paid</td><td class="num">$180.00</td></tr>
+      <tr><td>Status Certificate Fees Paid</td><td class="num">$119.90</td></tr>
+      <tr><td>Debt Collection Fees</td><td class="num">$33.00</td></tr>
+      <tr class="total"><td>Total expenses</td><td class="num">$67,040.09</td></tr>
+    </tbody>
+  </table>
+
+  <div class="note-box">
+    <div>The deficit is driven by the annual insurance premium of $33,377.82 paid as a lump sum early in the financial year. It is primarily a timing issue — remaining quarterly levies will substantially close the gap by 30 June 2026. However, budgeted expenses ($51,719) exceed budgeted income ($50,650) by $1,069, creating a small structural deficit. Prior year (audited, 30 June 2025): $11,998.55.</div>
+  </div>
+  <p class="source">Balance Sheet as at 10/04/2026 (Conti Strata); Income &amp; Expenditure Statement 01/07/2025–10/04/2026; 391 - AGM Agenda 2025 (Statement of Key Financial Information, p. 1).</p>
+
+  <footer class="page-footer">
+    <span>Access Property Services</span>
+    <span>21 Ormond Street, Ashfield · SP 391 Lot 21</span>
+    <span>Page 3</span>
+  </footer>
+</section>
+
+<!-- ============ FINANCIAL POSITION - CWF / Levies / Insurance ============ -->
+<section class="page" id="financials-cwf">
+  <header class="page-header">
+    <span class="brand-text"><img class="brand-logo" src="./aps-logo.svg" alt=""><span><strong>Access Property Services</strong> · 21 Ormond Street · Capital Works &amp; Insurance</span></span>
+    <span>13 April 2026</span>
+  </header>
+
+  <h2 style="margin-top:6px">Capital Works Fund</h2>
+  <p><strong>Balance: $252,720.80</strong> as at 10 April 2026 (balance sheet, Conti Strata).</p>
+
+  <h3>Fund composition</h3>
+  <table class="compact">
+    <thead><tr><th>Item</th><th class="num">Amount</th></tr></thead>
+    <tbody>
+      <tr><td>Owners Equity (carried forward from prior year)</td><td class="num">$203,388.39</td></tr>
+      <tr><td>Operating surplus (1 July 2025 to 10 April 2026)</td><td class="num">+$49,332.41</td></tr>
+      <tr class="total"><td>Closing balance</td><td class="num">$252,720.80</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Balance sheet detail</h3>
+  <table class="compact">
+    <thead><tr><th>Item</th><th class="num">Amount</th></tr></thead>
+    <tbody>
+      <tr><td>Cash at Bank (Capital Works)</td><td class="num">$203,110.20</td></tr>
+      <tr><td>Investments (term deposit)</td><td class="num">$50,459.21</td></tr>
+      <tr><td>Receivable Levies (Capital Works)</td><td class="num">$2,101.55</td></tr>
+      <tr><td>Receivable Levies Special (Capital Works)</td><td class="num">$557.20</td></tr>
+      <tr><td>Less Prepaid Levies (Capital Works)</td><td class="num">$451.90</td></tr>
+      <tr><td>Less Prepaid Levies Special (Capital Works)</td><td class="num">$3,055.46</td></tr>
+    </tbody>
+  </table>
+
+  <h3>CWF revenue (YTD): $99,481.52</h3>
+  <table class="compact">
+    <thead><tr><th>Revenue item</th><th class="num">Amount</th></tr></thead>
+    <tbody>
+      <tr><td>Special Levies</td><td class="num">$58,336.95</td></tr>
+      <tr><td>Standard Levies</td><td class="num">$38,689.65</td></tr>
+      <tr><td>Investment Interest</td><td class="num">$2,356.62</td></tr>
+      <tr><td>Arrears Interest</td><td class="num">$98.30</td></tr>
+      <tr class="total"><td>Total revenue</td><td class="num">$99,481.52</td></tr>
+    </tbody>
+  </table>
+
+  <h3>CWF expenses (YTD): $50,149.11</h3>
+  <table class="compact">
+    <thead><tr><th>Expense item</th><th class="num">Amount</th></tr></thead>
+    <tbody>
+      <tr><td>General Replacement</td><td class="num">$30,704.31</td></tr>
+      <tr><td>Doors, Windows &amp; Gates</td><td class="num">$12,661.00</td></tr>
+      <tr><td>Gardens</td><td class="num">$2,700.50</td></tr>
+      <tr><td>Income Tax</td><td class="num">$1,305.80</td></tr>
+      <tr><td>Plumbing &amp; Drainage</td><td class="num">$1,287.00</td></tr>
+      <tr><td>Consultants</td><td class="num">$1,100.00</td></tr>
+      <tr><td>Fire Protection</td><td class="num">$390.50</td></tr>
+      <tr class="total"><td>Total expenses</td><td class="num">$50,149.11</td></tr>
+    </tbody>
+  </table>
+
+  <div class="note-box">
+    <div>The $30,704.31 General Replacement figure likely includes the Altec deposit (~$25,000 as noted in committee minutes). The $12,661 Doors/Windows/Gates figure aligns with the Patrick &amp; Sons window repairs ($12,380.50). Prior year (audited, 30 June 2025): $203,388.39. Term deposit: $50,459.21 at 4.10% p.a. (3-month term, maturing 11 May 2026). <strong>Net assets (combined funds): $236,780.85</strong> as at 10 April 2026.</div>
+  </div>
+  <p class="source">Balance Sheet as at 10/04/2026; CWF Income &amp; Expenditure Statement 01/07/2025–10/04/2026; 391 - AGM Agenda 2025 (pp. 2–3); term deposit confirmation (TDR0099_22.pdf).</p>
+
+  <h2>Special Levies</h2>
+  <p>Yes. One current special levy of <strong>$100,000.00</strong> for Window &amp; Door Repairs &amp; External Painting. Approved at the 2025 AGM (5 August 2025) under s81(4) SSMA 2015. Due and payable to the Capital Works Fund in 12 monthly instalments, as per unit entitlement.</p>
+  <table class="compact">
+    <thead><tr><th>Detail</th><th>Figure</th></tr></thead>
+    <tbody>
+      <tr><td>Total amount (all lots)</td><td>$100,000.00</td></tr>
+      <tr><td>Rate per UE per month</td><td>$0.07 ($100,000 ÷ 124,150 ÷ 12)</td></tr>
+      <tr><td>Monthly total (all lots)</td><td>$8,333.33</td></tr>
+      <tr><td>First instalment</td><td>30 September 2025</td></tr>
+      <tr><td>Last instalment</td><td>31 August 2026</td></tr>
+      <tr><td>Lot 21 monthly instalment</td><td>$335.65 (owner ledger) / $335.62 (AGM schedule)</td></tr>
+      <tr><td>Lot 21 total</td><td>$4,027.80 ($335.65 × 12)</td></tr>
+      <tr><td>Purpose</td><td>Window &amp; door repairs and external painting</td></tr>
+    </tbody>
+  </table>
+  <p>The $100,000 special levy funds part of the overall painting/door project. The Altec Building contract value is <strong>$158,345</strong> (Quote #6130v9, signed 6 February 2026). The balance is drawn from existing CWF reserves and the investment account. The AGM minutes note: "the intention [is] of using funds from the investment account to finance the project."</p>
+  <p><strong>Lot 21 payment status (as at 10 April 2026):</strong> 9 of 12 instalments paid (including partial payment of instalment 17 at $7.46 of $335.65). Current — no arrears. 3 full instalments remain (June–August 2026). No future special levies sighted.</p>
+  <p class="source">391 - AGM Minutes (2025) — Motion 14d, Special Levy Schedule; Owner Ledger (Lot 21); SCM Minutes September 2025 – March 2026.</p>
+
+  <footer class="page-footer">
+    <span>Access Property Services</span>
+    <span>21 Ormond Street, Ashfield · SP 391 Lot 21</span>
+    <span>Page 4</span>
+  </footer>
+</section>
+
+<!-- ============ FINANCIAL POSITION - Arrears / Insurance ============ -->
+<section class="page" id="financials-arrears">
+  <header class="page-header">
+    <span class="brand-text"><img class="brand-logo" src="./aps-logo.svg" alt=""><span><strong>Access Property Services</strong> · 21 Ormond Street · Arrears &amp; Insurance</span></span>
+    <span>13 April 2026</span>
+  </header>
+
+  <h2 style="margin-top:6px">Levy Arrears</h2>
+  <p>Total arrears for the whole strata plan: <strong>$4,722.28</strong> as at 10 April 2026.</p>
+  <p><strong>Lot 21: No arrears.</strong> The owner ledger shows "Levy arrears &amp; owner invoices due $0.00" and "Interest on levy arrears $0.00."</p>
+
+  <h3>Balance sheet breakdown (10 April 2026)</h3>
+  <table class="compact">
+    <thead><tr><th>Receivable type</th><th class="num">Amount</th></tr></thead>
+    <tbody>
+      <tr><td>Receivable Levies (Admin)</td><td class="num">$2,063.53</td></tr>
+      <tr><td>Receivable Levies (Capital Works)</td><td class="num">$2,101.55</td></tr>
+      <tr><td>Receivable Levies Special (Capital Works)</td><td class="num">$557.20</td></tr>
+      <tr class="total"><td>Total receivable</td><td class="num">$4,722.28</td></tr>
+    </tbody>
+  </table>
+  <p>Note: the increase in receivables from the March figure ($3,013.81) reflects the April quarterly levy cycle having just been raised. Timing effect, not a deterioration in collection.</p>
+
+  <h3>Prior year (30 June 2025, audited)</h3>
+  <table class="compact">
+    <thead><tr><th>Fund</th><th class="num">Arrears</th><th>Lots behind</th></tr></thead>
+    <tbody>
+      <tr><td>Admin</td><td class="num">$3,945.16</td><td>Lots 3, 4, 11, 12, 14, 15, 24</td></tr>
+      <tr><td>Capital Works</td><td class="num">$2,979.22</td><td>Same 7 lots</td></tr>
+      <tr class="total"><td>Total</td><td class="num">$6,924.38</td><td></td></tr>
+    </tbody>
+  </table>
+  <p>Arrears have improved from $6,924 to $3,014 — likely attributable to the debt recovery action authorised at the 2025 AGM. The resolution authorised engagement of debt collection agencies, legal proceedings, writs of levy, garnishee orders, and bankruptcy proceedings for levy recovery.</p>
+  <p>Special levy arrears were separately noted at $1,500 from the first instalment (September 2025) per the October 2025 SCM minutes. The March 2026 balance sheet shows $2,118.21 in special levy receivables outstanding.</p>
+  <p class="source">Balance Sheet 10/04/2026; Owner Ledger (10/04/2026); 391 - AGM Agenda 2025 (Levy Positions pp. 7–10); SCM Minutes October 2025.</p>
+
+  <h2>Insurance</h2>
+  <table class="compact">
+    <tbody>
+      <tr><th>Insurer</th><td>CHU Underwriting Agencies Pty Ltd</td></tr>
+      <tr><th>Policy No.</th><td>HU0006165015</td></tr>
+      <tr><th>Type</th><td>Residential Strata</td></tr>
+      <tr><th>Broker</th><td>BAC Insurance Brokers Pty Ltd, PO Box 84, Darlinghurst NSW 1300</td></tr>
+      <tr><th>Premium</th><td>$32,180.62 (paid 26/02/2026)</td></tr>
+      <tr><th>Policy period</th><td>11 March 2026 to 11 March 2027</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Cover summary</h3>
+  <table class="compact">
+    <thead><tr><th>Cover</th><th class="num">Sum Insured</th></tr></thead>
+    <tbody>
+      <tr><td>Building</td><td class="num">$10,475,000.00</td></tr>
+      <tr><td>Contents</td><td class="num">$104,750.00</td></tr>
+      <tr><td>Loss of Rent &amp; Temporary Accommodation</td><td class="num">$1,571,250.00</td></tr>
+      <tr><td>Lot Owners Fixtures &amp; Improvements (per lot)</td><td class="num">$250,000.00</td></tr>
+      <tr><td>Catastrophe</td><td class="num">$1,571,250.00</td></tr>
+      <tr><td>Machinery Breakdown</td><td class="num">$100,000.00</td></tr>
+      <tr><td>Legal Liability</td><td class="num">$20,000,000.00</td></tr>
+      <tr><td>Voluntary Workers</td><td class="num">$300,000 / $3,000</td></tr>
+      <tr><td>Fidelity Guarantee</td><td class="num">$250,000.00</td></tr>
+      <tr><td>Office Bearers Liability</td><td class="num">$5,000,000.00</td></tr>
+      <tr><td>Flood cover</td><td class="num">Included</td></tr>
+      <tr><td>Paint Cover for Units</td><td class="num">Included</td></tr>
+      <tr><td>Floating Floorboard Cover</td><td class="num">Included</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Excess schedule</h3>
+  <table class="compact">
+    <thead><tr><th>Claim type</th><th class="num">Excess</th></tr></thead>
+    <tbody>
+      <tr><td>All claims (standard)</td><td class="num">$2,000</td></tr>
+      <tr><td>All water damage claims</td><td class="num">$10,000</td></tr>
+      <tr><td>Water damage / burst pipe</td><td class="num">$10,000</td></tr>
+      <tr><td>Flood</td><td class="num">$10,000</td></tr>
+      <tr><td>Machinery breakdown</td><td class="num">$1,000</td></tr>
+      <tr><td>Legal defence</td><td class="num">$1,000</td></tr>
+    </tbody>
+  </table>
+  <p>Insurance commission retained as agreed: $3,998.92.</p>
+  <div class="caution-box">
+    <div>The premium ($32,180.62) has nearly doubled from approximately $18,000 in prior years, driven by the water damage claims history (Units 14/15 balcony waterproofing failure, foyer ceiling damage). The $10,000 water damage excess is notably high compared to the $2,000 standard excess, reflecting the building's claims history.</div>
+  </div>
+  <p class="source">Strata Roll (10/04/2026) — Insurance schedule.</p>
+
+  <footer class="page-footer">
+    <span>Access Property Services</span>
+    <span>21 Ormond Street, Ashfield · SP 391 Lot 21</span>
+    <span>Page 5</span>
+  </footer>
+</section>
+
+<!-- ============ DEFECTS ============ -->
+<section class="page" id="defects">
+  <header class="page-header">
+    <span class="brand-text"><img class="brand-logo" src="./aps-logo.svg" alt=""><span><strong>Access Property Services</strong> · 21 Ormond Street · Building Condition</span></span>
+    <span>13 April 2026</span>
+  </header>
+
+  <h1 class="section-h1">3. Building Condition &amp; Defects <span class="ref">Document Library Review</span></h1>
+
+  <h2>Known Defects</h2>
+  <p>Multiple defects identified across the document library, listed from most recent to oldest.</p>
+
+  <h2 class="level-h">2026 <span class="level-stats">5 items</span></h2>
+  <ol>
+    <li><strong>Unit 21 to Unit 13 bathroom ceiling leak (active, March–April 2026).</strong> Water leak from Unit 21's bathroom into Unit 13's ceiling below. First logged 11 March 2026 with 10 diary entries through to 10 April 2026 (most recent entry), indicating the issue remains under active investigation by Conti Strata. <strong>This defect directly affects the subject lot.</strong> The cause has not been confirmed — possible sources include failed waterproofing membrane beneath the bathroom floor, leaking plumbing connections, or deteriorated shower recess seals.
+      <p class="source">Diary Notes 10/03/2026–10/04/2026 (Conti Strata) — "U21&gt;U13 - Bathroom Ceiling Leak".</p>
+    </li>
+    <li><strong>Front external pipe sealant (March 2026)</strong> — maintenance item logged in diary notes.</li>
+    <li><strong>LHS building entry door (March 2026)</strong> — reported 19 March 2026, 5 diary entries through to 26 March 2026.</li>
+    <li><strong>Foyer ceiling and balconies (Units 14 &amp; 15)</strong> — waterproofing failure and water ingress. Megasealed engaged: $22,400 ($11,200 per balcony) for removal of existing tiles, waterproofing, and retiling (approved March 2026). Altec Report 7679 identified the failure as the cause. Committee rejected Altec's full remediation quote ($103,000) which included non-compliance items. Has contributed to insurance premium increase from ~$18,000 to $32,000.
+      <p class="source">SCM Minutes 10 March 2026; 24 February 2026; 10 February 2026.</p>
+    </li>
+    <li><strong>Unit 24 windows</strong> — rattling window and rotten timber frame (identified January 2026). Patrick &amp; Sons to assess; Altec to address rotten timber in painting prep works.
+      <p class="source">SCM Minutes 13 January 2026.</p>
+    </li>
+  </ol>
+
+  <h2 class="level-h">2025 <span class="level-stats">3 items</span></h2>
+  <ol>
+    <li><strong>Unit 7 — high moisture and mould (source unconfirmed).</strong> Altec investigation report AB-7489 (31 July 2025). Water damage to common area wall outside Unit 7 appears below slab level — possible groundwater or rising damp. Pressure, flood, and spray testing of Unit 7 shower recess all negative. Mould source unconfirmed; further investigation by mould hygienist recommended.</li>
+    <li><strong>Windows and doors — scheme-wide major deterioration.</strong> $158,345 in remedial works (Altec Building, Quote #6130v9, approved at EGM 9 October 2025). Patrick &amp; Son engaged for window repairs ($12,380.50), approximately 50% complete as of November 2025. <strong>Unit 21 specifically listed as having outstanding window repairs</strong> (along with Units 2, 10, 14, 17, 23, 24).</li>
+    <li><strong>Magnesite flooring removal — Unit 3.</strong> Altec Building (Quote AB-7256): $3,740.00 inc GST. Work completed.</li>
+  </ol>
+  <p class="source">AGM Minutes 2025; EGM Minutes October 2025; SCM Minutes September–November 2025.</p>
+
+  <h2 class="level-h">2022–2024 <span class="level-stats">4 items</span></h2>
+  <ol>
+    <li><strong>Water ingress — Unit 4.</strong> Leak from shared laundry of Unit 15 into Unit 4.</li>
+    <li><strong>Balcony drainage — Units 14 &amp; 15.</strong> Balcony slab edge drain issue (precursor to the 2026 waterproofing failure).</li>
+    <li><strong>Fire door deficiencies — multiple units (May 2022).</strong> National Fire Group inspection identified deficiencies across 10+ units. <strong>Units 21 and 22 — no access provided, inspection deferred.</strong> Re-inspection notice issued.</li>
+    <li><strong>Water ingress — Unit 19 garage.</strong> HOBC Constructions quote ($4,378) accepted March 2022 for gutter replacement and wall sealing.</li>
+  </ol>
+  <p class="source">Correspondence; SCM Minutes 2022; NFE Service Report; Fire Repairs documentation.</p>
+
+  <h2 class="level-h">2018–2021 <span class="level-stats">2 items</span></h2>
+  <ol>
+    <li><strong>Gradual deterioration — insurance claim (2018).</strong></li>
+    <li><strong>Roof defects</strong> — Blu Roofing Co $9,878 (approved October 2020).</li>
+  </ol>
+  <p class="source">SCM Minutes October 2020; Insurance claim correspondence.</p>
+
+  <h2>Pest Inspection</h2>
+  <p>No formal timber pest inspection report found. Evidence of an active pest treatment programme exists:</p>
+  <table class="compact">
+    <thead><tr><th>Date</th><th>Provider</th><th>Scope</th><th class="num">Cost</th></tr></thead>
+    <tbody>
+      <tr><td>16 August 2024</td><td>Sara's Pest Control</td><td>Common area — general pests and cockroaches</td><td class="num">—</td></tr>
+      <tr><td>2022–2023</td><td>Sara's Pest Control</td><td>Treatment notices (details not specified)</td><td class="num">—</td></tr>
+      <tr><td>5 April 2018</td><td>Sara's Pest Control</td><td>Cockroaches, spiders, silverfish, common black ants</td><td class="num">$605.00</td></tr>
+    </tbody>
+  </table>
+  <p>This is pest treatment (preventative), not a formal timber pest inspection (assessing termite activity, timber borers, wood decay).</p>
+  <p class="source">391 - Pest treatment.pdf; correspondence.</p>
+
+  <footer class="page-footer">
+    <span>Access Property Services</span>
+    <span>21 Ormond Street, Ashfield · SP 391 Lot 21</span>
+    <span>Page 6</span>
+  </footer>
+</section>
+
+<!-- ============ CAPITAL WORKS PLANNING ============ -->
+<section class="page" id="capital-works">
+  <header class="page-header">
+    <span class="brand-text"><img class="brand-logo" src="./aps-logo.svg" alt=""><span><strong>Access Property Services</strong> · 21 Ormond Street · Capital Works Planning</span></span>
+    <span>13 April 2026</span>
+  </header>
+
+  <h1 class="section-h1">4. Capital Works &amp; Maintenance Planning <span class="ref">Solutions in Engineering · 2022 Plan</span></h1>
+
+  <h2>10-Year Capital Works Fund Plan</h2>
+  <p>A Capital Works Fund Plan Update exists, prepared by Solutions in Engineering (Level 5, 115 Pitt Street, Sydney 2000).</p>
+  <table class="compact">
+    <tbody>
+      <tr><th>Inspector</th><td>Darren Hall</td></tr>
+      <tr><th>Inspection date</th><td>16 August 2022</td></tr>
+      <tr><th>Report date</th><td>23 August 2022</td></tr>
+      <tr><th>Reference</th><td>2330661</td></tr>
+      <tr><th>Period covered</th><td>15 years (1 July 2023 to 30 June 2038)</td></tr>
+      <tr><th>Starting fund balance</th><td>$152,651</td></tr>
+      <tr><th>Recommended Year 1 CWF levy</th><td>$61,379.76 p.a. ($0.49 per UE)</td></tr>
+      <tr><th>Contingency allowance</th><td>12%</td></tr>
+      <tr><th>Assumed inflation rate</th><td>3.00% p.a.</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Key forecast items</h3>
+  <table class="compact">
+    <thead><tr><th>Item</th><th class="num">Forecast Cost</th><th>Year</th></tr></thead>
+    <tbody>
+      <tr><td>Switchboard replacement</td><td class="num">$50,000</td><td>Year 1 (2024)</td></tr>
+      <tr><td>Heritage balcony balustrade replacement</td><td class="num">$107,120</td><td>Year 2 (2025)</td></tr>
+      <tr><td>External repainting programme</td><td class="num">~$95,000</td><td>Year 4 (2027)</td></tr>
+      <tr><td>Heritage timber window replacement</td><td class="num">$30,000–$45,000</td><td>Per cycle (Yrs 3,5,7,9,11,13,15)</td></tr>
+      <tr><td>Waterproofing replacement</td><td class="num">$124,643</td><td>Year 15 (2038)</td></tr>
+      <tr><td>Fire indicator panel replacement</td><td class="num">$16,541</td><td>Year 10 (2033)</td></tr>
+      <tr><td>Tiled roof repair</td><td class="num">$5,938–$7,522</td><td>Years 7, 15</td></tr>
+      <tr><td>Metal roof replacement</td><td class="num">$27,935</td><td>Year 15 (2038)</td></tr>
+    </tbody>
+  </table>
+  <div class="note-box">
+    <div><strong>Funding projection:</strong> If adopted at recommended levels, fund maintains positive balances through to 2038 with a closing balance of $159,600.38. If levies remained at the then-current level ($30,689.88/year), the fund would enter deficit by Year 4 (2027) and reach −$468,548.78 by Year 15.</div>
+  </div>
+  <div class="caution-box">
+    <div><strong>Plan status:</strong> Plan due for an update. Under s80(1) SSMA 2015, the plan must be reviewed at least every 5 years — next review due by August 2027. The 2025 AGM defeated a motion to engage a new consultant for an updated plan. From 1 April 2026, SSMA amendments require the plan to be updated to the new prescribed standard form at its next review.</div>
+  </div>
+
+  <h3>CWF levy shortfall against plan</h3>
+  <table class="compact">
+    <thead><tr><th>Year</th><th class="num">Resolved</th><th class="num">Recommended</th><th class="num">Shortfall</th></tr></thead>
+    <tbody>
+      <tr><td>2023–2024</td><td class="num">$30,200</td><td class="num">$61,400</td><td class="num">$31,200 (51%)</td></tr>
+      <tr><td>2024–2025</td><td class="num">$38,250</td><td class="num">$63,200</td><td class="num">$24,950 (39%)</td></tr>
+      <tr><td>2025–2026</td><td class="num">$51,585</td><td class="num">$65,100</td><td class="num">$13,515 (21%)</td></tr>
+    </tbody>
+  </table>
+  <p>The gap is narrowing but remains material.</p>
+  <p class="source">Capital Works Fund Plan Update (Solutions in Engineering, August 2022); AGM Minutes 2023, 2024, 2025.</p>
+
+  <h2>Current &amp; Future Capital Works</h2>
+  <h3>Active (approved, 2025–2026)</h3>
+  <ol>
+    <li><strong>External door replacement and painting works</strong> — Altec Building Pty Ltd (Quote #6130v9). Contract value: $158,345.00 inc GST. Signed 6 February 2026. HBCF certificate obtained (No. HBCF26011518-1). Status: awaiting Ausgrid tiger tails removal before commencement. Funded by: $100,000 special levy + CWF reserves.</li>
+    <li><strong>Patrick &amp; Son Window Repairs</strong> — $12,380.50. Approximately 50% complete as of November 2025. Outstanding units include <strong>Unit 21</strong>.</li>
+    <li><strong>Foyer Ceiling and Balcony Waterproofing (Units 14 &amp; 15)</strong> — Megasealed, $22,400 (approved March 2026).</li>
+  </ol>
+
+  <h3>Deferred</h3>
+  <ol>
+    <li>Electrical meterboard upgrade — deferred until after painting and balcony works.</li>
+    <li>Balustrade replacement — deferred until after painting and balcony works.</li>
+    <li>Solar installation (SOAR Grant) — Stage 1 accepted. Committee decided not to proceed (March 2026).</li>
+  </ol>
+
+  <h3>CWF Plan forecast (next 5 years)</h3>
+  <table class="compact">
+    <thead><tr><th>Year</th><th>Period</th><th class="num">Anticipated Expenses</th></tr></thead>
+    <tbody>
+      <tr><td>3</td><td>2025–2026</td><td class="num">$56,516</td></tr>
+      <tr><td>4</td><td>2026–2027</td><td class="num">$107,079</td></tr>
+      <tr><td>5</td><td>2027–2028</td><td class="num">$66,632</td></tr>
+      <tr><td>6</td><td>2028–2029</td><td class="num">$27,670</td></tr>
+      <tr><td>7</td><td>2029–2030</td><td class="num">$59,107</td></tr>
+    </tbody>
+  </table>
+  <p>Year 4 (2027) is the highest expenditure year, driven by external repainting ($38,060 scaffolding hire) and heritage window replacement. The EGM-approved painting works ($158,345) address items forecast in the CWF plan for Years 2–4. The special levy was struck outside the plan's funding model.</p>
+  <p class="source">EGM Minutes October 2025; SCM Minutes September 2025 – March 2026; Capital Works Fund Plan Update (August 2022); Altec contract; Patrick &amp; Sons quote.</p>
+
+  <footer class="page-footer">
+    <span>Access Property Services</span>
+    <span>21 Ormond Street, Ashfield · SP 391 Lot 21</span>
+    <span>Page 7</span>
+  </footer>
+</section>
+
+<!-- ============ COMPLIANCE & SAFETY ============ -->
+<section class="page" id="compliance">
+  <header class="page-header">
+    <span class="brand-text"><img class="brand-logo" src="./aps-logo.svg" alt=""><span><strong>Access Property Services</strong> · 21 Ormond Street · Compliance &amp; Safety</span></span>
+    <span>13 April 2026</span>
+  </header>
+
+  <h1 class="section-h1">5. Compliance &amp; Safety <span class="ref">Fire · Cladding · Asbestos · Window Safety</span></h1>
+
+  <h2>Fire Safety Services &amp; AFSS</h2>
+  <p>Extensive fire safety documentation spanning 2018–2025.</p>
+
+  <h3>Annual Fire Safety Statements</h3>
+  <table class="compact">
+    <thead><tr><th>Period</th><th>Practitioner</th><th>Accreditation</th><th>Contractor</th><th>Issued By</th></tr></thead>
+    <tbody>
+      <tr><td>2018</td><td>—</td><td>—</td><td>NFE Group</td><td>Conti Strata</td></tr>
+      <tr><td>2020</td><td>Heath Whaley</td><td>F045590A</td><td>NFE Group</td><td>Eddy Ottaviano (Conti Strata)</td></tr>
+      <tr><td>2022</td><td>Heath Whaley</td><td>F045590A</td><td>NFE Group</td><td>Christian Giuffre (Conti Strata)</td></tr>
+      <tr><td>2023</td><td>Daniel Halteh</td><td>F046075A</td><td>Phoenix Fire</td><td>Christian Giuffre (Conti Strata)</td></tr>
+      <tr><td>2025</td><td>—</td><td>—</td><td>—</td><td>AGM: AFSS process resolved</td></tr>
+    </tbody>
+  </table>
+  <p><strong>Fire safety measures certified:</strong> Automatic Fire Detection System (AS 1670.1:2004), Fire Doors (AS 1905.1:2005), Emergency Lighting (AS 2293.1:2005), Exit Signs (AS 2293.1:2005), Smoke Alarms (AS 3786:1993), Portable Fire Extinguishers (AS 2444:2005).</p>
+  <div class="caution-box">
+    <div><strong>Fire Safety Schedule: OUTSTANDING.</strong> All AFSS documents note: "Current fire safety schedule for the building is not attached. Please be advised that we currently await receipt of the Fire Safety Schedule for this building from council." Request to council dated 26 February 2020. As of the most recent AFSS (2023), the schedule had still not been received.</div>
+  </div>
+  <p>No 2024 signed AFSS sighted in the library, though the 2024 asset register and bi-annual inspection confirm annual servicing occurred.</p>
+  <p><strong>2026 AFSS process underway:</strong> diary notes from 10 March to 8 April 2026 show 9 entries under "SCHB - FIRE 2026", indicating the 2026 annual fire safety certification process is in progress.</p>
+  <p>Fire contractors: 2018–2022: National Fire &amp; Electrical (NFE Group); 2023–present: Phoenix Fire Protection and Maintenance Pty Ltd.</p>
+  <p class="source">391 - AFSS.pdf; 391 - AFSS(1).pdf; 391 - AFSS Signed.pdf; 391 - AFSS(2).pdf; Fire Safety Schedule (Requested from Council).pdf; 2025 Asset Register; AGM Minutes 2025.</p>
+
+  <h2>External Cladding</h2>
+  <p>Visual cladding inspection completed 19 January 2019 by Project Guides Pty Ltd (Vincent Graham, Reference 10127-c1).</p>
+  <p>Building classification: Class 2 and 7a. No composite cladding present — "No composite cladding serves the building." Combustible cladding coverage: 0%. All elevations confirmed as brick construction. <strong>Building does NOT require registration under the NSW combustible cladding register.</strong></p>
+  <p>Additional confirmation: SRAS CERT - 05688 (2 April 2025) confirms the scheme has addressed its obligations under the cladding registration requirements.</p>
+  <p class="source">Cladding Inspection Report (Project Guides, January 2019); SRAS CERT - 05688 (April 2025).</p>
+
+  <h2>Asbestos Register</h2>
+  <p>Asbestos survey completed 31 July 2020 by Solutions in Engineering (Marco Camps, Safety Inspector; Job Reference 2199410).</p>
+  <table class="compact">
+    <thead><tr><th>Area</th><th>Result</th></tr></thead>
+    <tbody>
+      <tr><td>Roofs</td><td>No ACM identified</td></tr>
+      <tr><td>Fascia and gutters</td><td>No ACM identified</td></tr>
+      <tr><td>Downpipes</td><td>No ACM identified</td></tr>
+      <tr><td>Common areas</td><td>No ACM identified</td></tr>
+      <tr><td>Eaves (fibre cement sheet)</td><td><strong>Presumed to contain asbestos</strong> — condition: FAIR; risk level: MODERATE</td></tr>
+    </tbody>
+  </table>
+  <p>No sample taken (not safely accessible). Control measure recommended: "Administrate, control or remove access."</p>
+  <p>The report recommended: (1) installation of warning labels and signage, (2) preparation of an Asbestos Register accessible to all occupants and workers, (3) preparation of an Asbestos Management Plan, and (4) annual re-assessment.</p>
+  <div class="caution-box">
+    <div><strong>Concerns:</strong> The survey is now approximately 6 years old (dated July 2020). Annual re-assessment recommended but no updated survey found. Building constructed 1963 — ACM may exist in materials not visible during common property inspection (internal linings, pipe insulation, adhesives, backing materials within individual lots). The eaves will be directly disturbed during the approved Altec painting works ($158,345 contract). The scope includes "repaint eaves lining" — any sanding, scraping, or disturbance of fibre cement eaves containing asbestos requires licensed asbestos removal or encapsulation under WHS Regulation 2017.</div>
+  </div>
+  <p class="source">Asbestos Survey Report (Solutions in Engineering, July 2020); Capital Works Fund Plan Update (August 2022); Altec Building contract scope.</p>
+
+  <h2>Window Safety Devices</h2>
+  <p>No standalone window safety device report. Compliance confirmed through AGM resolution.</p>
+  <p>The 2025 AGM minutes record: <em>"The Owners Corporation acknowledged Section 118 of the Strata Schemes Management Act 2015 and RESOLVED that the installation/certification of window safety devices had been carried out since the introduction of the legislation and therefore no further action is required at this stage."</em></p>
+  <p>A window lock upgrade programme is documented in correspondence (notices to residents, reminder notices).</p>
+  <p class="source">391 - AGM Minutes (2025); 391 - AGM Minutes (2024); correspondence (window lock upgrade notices).</p>
+
+  <footer class="page-footer">
+    <span>Access Property Services</span>
+    <span>21 Ormond Street, Ashfield · SP 391 Lot 21</span>
+    <span>Page 8</span>
+  </footer>
+</section>
+
+<!-- ============ STRATA MANAGEMENT ============ -->
+<section class="page" id="management">
+  <header class="page-header">
+    <span class="brand-text"><img class="brand-logo" src="./aps-logo.svg" alt=""><span><strong>Access Property Services</strong> · 21 Ormond Street · Management &amp; Legal</span></span>
+    <span>13 April 2026</span>
+  </header>
+
+  <h1 class="section-h1">6. Strata Management <span class="ref">Manager · Committee · Building Manager</span></h1>
+
+  <h2>Strata Manager</h2>
+  <p>Conti Strata (Conti &amp; Co Pty Ltd, ABN 38 667 939 064, Licence No. 1219584)</p>
+  <table class="compact">
+    <tbody>
+      <tr><th>Senior Strata Manager</th><td>Christian Giuffre</td></tr>
+      <tr><th>Phone</th><td>(02) 9716 8686</td></tr>
+      <tr><th>Email</th><td>christian.g@contistrata.com.au / info@contistrata.com.au</td></tr>
+      <tr><th>Office</th><td>397 Lyons Road, Five Dock NSW 2046</td></tr>
+      <tr><th>Director</th><td>Joe Conti (joe.c@contistrata.com.au)</td></tr>
+      <tr><th>Postal</th><td>PO Box 443, Concord NSW 2137</td></tr>
+      <tr><th>Agreement commencement</th><td>8 August 2023</td></tr>
+      <tr><th>Minimum term</th><td>3 years</td></tr>
+      <tr><th>Annual management fee</th><td>$9,005.00 inc GST (5% p.a. increase)</td></tr>
+    </tbody>
+  </table>
+  <p class="source">Strata Management Agreement; AGM Minutes 2025.</p>
+
+  <h2>Strata Committee</h2>
+  <table class="compact">
+    <thead><tr><th>Role</th><th>Name</th><th>Address</th></tr></thead>
+    <tbody>
+      <tr><td>Chairperson, Treasurer</td><td>Effie Nikolaros</td><td>32 Wellesley St, Summer Hill NSW 2130</td></tr>
+      <tr><td>Secretary</td><td>David Love</td><td>7/21 Ormond St, Ashfield NSW 2131</td></tr>
+      <tr><td>Member</td><td>Vanessa Surian</td><td>19/21 Ormond St, Ashfield NSW 2131</td></tr>
+      <tr><td>Member</td><td>Andrew Hau</td><td>12/21 Ormond St, Ashfield NSW 2131</td></tr>
+      <tr><td>Member</td><td>Benjamin Dawson</td><td>16/21 Ormond St, Ashfield NSW 2131</td></tr>
+      <tr><td>Member</td><td>VACANT POSITION</td><td>—</td></tr>
+    </tbody>
+  </table>
+  <p>The Chairperson/Treasurer is a non-resident owner (Summer Hill address). Four of the five appointed members are resident owners. One committee position is vacant. All correspondence is directed to all strata committee members.</p>
+  <p class="source">Strata Roll (10/04/2026).</p>
+
+  <h2>Building Manager</h2>
+  <p>No building manager appointed. No building manager agreement, appointment resolution, or reference to an on-site building manager in any document. Consistent with a 24-lot, 3-storey 1963 walk-up without lifts or complex mechanical systems. The strata committee and Conti Strata coordinate contractors directly.</p>
+  <p class="source">AGM Minutes 2018–2025; SCM Minutes 2017–2026; Strata Management Agreement; Strata Roll.</p>
+
+  <h1 class="section-h1" id="legal" style="margin-top:32px">7. Legal &amp; Planning <span class="ref">Litigation · DAs · CDCs</span></h1>
+
+  <h2>Litigation</h2>
+  <p>No litigation identified. No references to current or pending litigation, NCAT proceedings, mediation, or court orders across the full document library. No solicitor correspondence or legal fee invoices found.</p>
+  <p>Legal-adjacent matters noted: standard debt recovery authorisation at each AGM; historical insurance claims (2018) for gradual deterioration; fire reinspection cost recovery letters to individual lot owners. These are administrative, not litigation.</p>
+  <p class="source">AGM Minutes 2018–2025; SCM Minutes 2017–2026; correspondence; invoices.</p>
+
+  <h2>Development Applications / CDC</h2>
+  <p>No DAs or CDCs identified for the subject property. The library contains only internal by-law renovation approvals:</p>
+  <table class="compact">
+    <thead><tr><th>Date</th><th>Lot</th><th>Works</th><th>Approval Type</th></tr></thead>
+    <tbody>
+      <tr><td>2025</td><td>Lot 12</td><td>Major renovation — bathroom, laundry, waterproofing, wall alterations</td><td>Special By-Law 7</td></tr>
+      <tr><td>2024</td><td>Unit 3</td><td>Minor renovation (flooring)</td><td>Special By-Law 1</td></tr>
+      <tr><td>2024</td><td>Unit 16</td><td>Minor renovation (kitchen, flooring)</td><td>SCM approval</td></tr>
+      <tr><td>2022</td><td>Unit 7</td><td>Minor renovation</td><td>SCM approval</td></tr>
+    </tbody>
+  </table>
+  <p>These are internal strata approvals under by-laws, not Development Applications or Complying Development Certificates. Routine maintenance and like-for-like repairs are Exempt Development under NSW planning law.</p>
+  <p><strong>Neighbouring DAs of note:</strong> the owners corporation made a formal submission against a planning proposal at 114 Parramatta Road. A high-rise development proposal near the property is also referenced in correspondence.</p>
+  <p class="source">AGM Minutes 2025; SCM Minutes 2020–2024; 391-by-laws.pdf; correspondence.</p>
+
+  <footer class="page-footer">
+    <span>Access Property Services</span>
+    <span>21 Ormond Street, Ashfield · SP 391 Lot 21</span>
+    <span>Page 9</span>
+  </footer>
+</section>
+
+<!-- ============ IMPLICATIONS REGISTER ============ -->
+<section class="page" id="implications">
+  <header class="page-header">
+    <span class="brand-text"><img class="brand-logo" src="./aps-logo.svg" alt=""><span><strong>Access Property Services</strong> · 21 Ormond Street · Implications Register</span></span>
+    <span>13 April 2026</span>
+  </header>
+
+  <h1 class="section-h1">Implications Register <span class="ref">10 items · pending physical inspection</span></h1>
+  <p>Findings with potential implications for property condition, safety, value, or future costs. Theories to be confirmed or denied following physical inspection.</p>
+
+  <table class="implications">
+    <thead>
+      <tr><th>#</th><th>Area</th><th>Finding Summary</th><th>Implication Theory</th><th>Status</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>Unit 21 Leak</td>
+        <td>Active water leak from Unit 21 bathroom into Unit 13 ceiling. 10 diary entries Mar–Apr 2026. Cause unconfirmed.</td>
+        <td><strong>Critical — directly affects subject lot.</strong> Failed membrane = full bathroom strip, re-waterproofing, retiling ($8k–$15k at lot owner's expense). $10,000 water damage excess applies. Physical inspection required.</td>
+        <td class="status">PENDING</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Waterproofing</td>
+        <td>Units 14/15 balcony waterproofing failure. Megasealed $22,400. Same 1963 membrane as Unit 21.</td>
+        <td>Membrane deterioration may extend to Unit 21. Balcony slab edge, drainage, and underside should be checked for moisture signs. Physical inspection required.</td>
+        <td class="status">PENDING</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>Windows</td>
+        <td>Unit 21 listed as having outstanding Patrick &amp; Sons window repairs. Building-wide timber deterioration.</td>
+        <td>Deteriorated timber windows = source of water ingress. Unit 21 on top floor increases weather exposure. Physical inspection required.</td>
+        <td class="status">PENDING</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>Waterproofing</td>
+        <td>5 separate water events across building (U4, U19, U7, U14/15, U21 to U13). Pattern consistent with systemic waterproofing failure.</td>
+        <td>CWF forecasts waterproofing at $124,643 in 2038 but defect pattern suggests this must be brought forward. Further special levies likely.</td>
+        <td class="status">PENDING</td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td>Asbestos</td>
+        <td>Eaves fibre cement sheet presumed ACM (FAIR, MODERATE risk). Survey 6 years old. Altec works include "repaint eaves lining."</td>
+        <td>Eaves will be disturbed during $158,345 painting contract. WHS Regulation 2017 requires licensed removal/encapsulation. Scope/cost may increase.</td>
+        <td class="status">PENDING</td>
+      </tr>
+      <tr>
+        <td>6</td>
+        <td>Fire Safety</td>
+        <td>Fire Safety Schedule outstanding since Feb 2020. No 2024 signed AFSS sighted. AS 1851-2012 now mandatory from 13 Feb 2026.</td>
+        <td>Without current schedule, AFSS inspections cannot be verified as covering all required measures. Significant compliance gap.</td>
+        <td class="status">PENDING</td>
+      </tr>
+      <tr>
+        <td>7</td>
+        <td>Fire Doors</td>
+        <td>Units 21 &amp; 22 — no access provided during May 2022 fire door inspection. Re-inspection notice issued.</td>
+        <td>Unit 21's fire doors never formally inspected. 10+ other units showed deficiencies. Likely similar issues. Physical inspection required.</td>
+        <td class="status">PENDING</td>
+      </tr>
+      <tr>
+        <td>8</td>
+        <td>Admin Fund</td>
+        <td>Admin fund deficit −$15,939.95. Budget structural deficit $1,069/yr. Insurance nearly doubled to $32,180. Water excess $10,000.</td>
+        <td>Timing issue (insurance lump sum) but structural deficit means no reserve build-up. Levy increase or special levy for admin likely if costs rise further.</td>
+        <td class="status">PENDING</td>
+      </tr>
+      <tr>
+        <td>9</td>
+        <td>CWF Planning</td>
+        <td>CWF levies 21–51% below plan recommendations over 3 years. Motion to update plan defeated. Plan due for review Aug 2027.</td>
+        <td>CWF balance ($252,720) looks healthy but $107,079 forecast in Year 4 and $158,345 Altec contract drawing on reserves. Further special levy within 2–3 years plausible.</td>
+        <td class="status">PENDING</td>
+      </tr>
+      <tr>
+        <td>10</td>
+        <td>Unit Entitlement</td>
+        <td>UE verified as 5,000 from 3 sources. No s184 certificate for Lot 21 found in the document library.</td>
+        <td>UE confirmed from owner ledger, strata roll, and AGM schedule. Request s184 from Conti Strata or NSW LRS for definitive confirmation. No financial impact.</td>
+        <td class="status">PENDING</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <footer class="page-footer">
+    <span>Access Property Services</span>
+    <span>21 Ormond Street, Ashfield · SP 391 Lot 21</span>
+    <span>Page 10</span>
+  </footer>
+</section>
+
+<!-- ============ DOCUMENTS REVIEWED ============ -->
+<section class="page" id="documents">
+  <header class="page-header">
+    <span class="brand-text"><img class="brand-logo" src="./aps-logo.svg" alt=""><span><strong>Access Property Services</strong> · 21 Ormond Street · Documents &amp; Disclaimer</span></span>
+    <span>13 April 2026</span>
+  </header>
+
+  <h1 class="section-h1">Documents Reviewed <span class="ref">~1,550 files · 10 ZIP archives</span></h1>
+  <p>This report draws on the full document library and updated financial documents dated 10 April 2026.</p>
+
+  <h2>Financial &amp; Management Documents</h2>
+  <ul>
+    <li>Balance Sheet as at 10 April 2026 (Conti Strata)</li>
+    <li>Income &amp; Expenditure Statement, 1 July 2025 to 10 April 2026 (Conti Strata)</li>
+    <li>Owner Ledger — Lot 21, levies and receipts, 10 April 2026 (Conti Strata)</li>
+    <li>Diary Notes, 10 March 2026 to 10 April 2026 (Conti Strata)</li>
+    <li>Strata Roll, 10 April 2026 — including insurance schedule, strata committee, and individual lot detail (Conti Strata)</li>
+    <li>Strata Management Agreement</li>
+    <li>By-laws, consolidated</li>
+    <li>Insurance Certificate of Currency — CHU, 11 March 2026 to 11 March 2027</li>
+    <li>Insurance Certificate of Currency — prior year, CHU</li>
+    <li>Capital Works Fund Plan Update — Solutions in Engineering, August 2022</li>
+  </ul>
+
+  <h2>Meeting Minutes &amp; Resolutions</h2>
+  <ul>
+    <li>AGM Minutes 2018–2025 (complete set)</li>
+    <li>EGM Minutes, 9 October 2025 — Altec contract approval</li>
+    <li>SCM Minutes, September 2025 – March 2026 (formal monthly meetings)</li>
+    <li>SCM Voting Paper meetings, 2017–2024 (16 meetings)</li>
+    <li>Financial statements, audited, FY 2024–2025</li>
+    <li>Special Levy Schedule (attached to 2025 AGM minutes)</li>
+  </ul>
+
+  <h2>Contracts, Quotes &amp; Investigation Reports</h2>
+  <ul>
+    <li>Altec Building contract and quotes</li>
+    <li>Patrick &amp; Sons window repair quote</li>
+    <li>Megasealed waterproofing quote</li>
+    <li>Altec investigation reports (AB-7489 Unit 7; Report 7679 foyer ceiling)</li>
+  </ul>
+
+  <h2>Compliance &amp; Safety Reports</h2>
+  <ul>
+    <li>Asbestos Survey — Solutions in Engineering, July 2020</li>
+    <li>Cladding Inspection — Project Guides, January 2019</li>
+    <li>Fire Safety documentation (AFSS 2018–2023, Asset Registers 2023–2025)</li>
+    <li>Insurance Valuation — Blueprint Property, August 2025</li>
+  </ul>
+
+  <h2>Other</h2>
+  <ul>
+    <li>Sustainability Audit report</li>
+    <li>SOAR Solar Grant correspondence</li>
+    <li>Correspondence files across all categories</li>
+  </ul>
+
+  <div class="note-box" style="margin-top:24px">
+    <div>This report contains factual information only as found in the reviewed documents. Legislative references are provided for context and were verified current as at 13 April 2026. No opinions, recommendations, or property assessments are provided. Financial figures include as-at dates and have been cross-verified between the balance sheet, income &amp; expenditure statements, owner ledger, AGM financial statements, and special levy schedule. Financial data updated to 10 April 2026.</div>
+  </div>
+
+  <footer class="page-footer">
+    <span>Access Property Services Pty Ltd</span>
+    <span>ABN 53 129 936 607</span>
+    <span>accesspropertyservices.com.au</span>
+    <span>Page 11</span>
+  </footer>
+</section>
+
+</div>
+
+</body>
+</html>
