@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sample Reports — Access Property Services</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --aps-ink: #0D0D0D;
+    --aps-text: #1F1F1F;
+    --aps-mute: #6B6B6B;
+    --aps-faint: #A8A8A4;
+    --aps-line: #E5E3DD;
+    --aps-line-soft: #EFEDE7;
+    --aps-paper: #FFFFFF;
+    --aps-bg: #F4F2EC;
+    --aps-bg-warm: #ECE9E1;
+    --aps-accent: #800000;
+    --aps-accent-ink: #FFFFFF;
+    --ff-display: 'Archivo', system-ui, sans-serif;
+    --ff-body: 'DM Sans', system-ui, sans-serif;
+    --ff-mono: 'DM Mono', ui-monospace, monospace;
+    --shadow-card: 0 1px 2px rgba(0,0,0,0.04), 0 8px 24px rgba(0,0,0,0.06);
+    --shadow-card-hover: 0 2px 4px rgba(0,0,0,0.06), 0 16px 40px rgba(0,0,0,0.10);
+  }
+  *, *::before, *::after { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: var(--ff-body);
+    font-size: 16px;
+    line-height: 1.55;
+    color: var(--aps-text);
+    background: var(--aps-bg);
+    background-image:
+      radial-gradient(circle at 12% 8%, rgba(128,0,0,0.06), transparent 45%),
+      radial-gradient(circle at 88% 92%, rgba(0,0,0,0.03), transparent 50%);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    min-height: 100vh;
+  }
+
+  /* --- Top bar --- */
+  .topbar {
+    border-bottom: 1px solid var(--aps-line);
+    background: rgba(244,242,236,0.85);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  .topbar-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 18px 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+  }
+  .brand {
+    font-family: var(--ff-display);
+    font-weight: 800;
+    font-size: 18px;
+    letter-spacing: -0.01em;
+    color: var(--aps-ink);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .brand-logo {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    flex: 0 0 auto;
+    object-fit: contain;
+    border-radius: 3px;
+  }
+  .brand-sub {
+    font-family: var(--ff-mono);
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--aps-mute);
+    padding-left: 10px;
+    margin-left: 4px;
+    border-left: 1px solid var(--aps-line);
+  }
+  .topbar-meta {
+    font-family: var(--ff-mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--aps-mute);
+  }
+
+  /* --- Hero --- */
+  .hero {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 80px 32px 56px;
+  }
+  .eyebrow {
+    font-family: var(--ff-mono);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--aps-mute);
+    margin: 0 0 28px;
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .eyebrow::before {
+    content: "";
+    display: inline-block;
+    width: 32px;
+    height: 1px;
+    background: var(--aps-ink);
+  }
+  .hero h1 {
+    font-family: var(--ff-display);
+    font-weight: 700;
+    font-size: clamp(40px, 6vw, 68px);
+    line-height: 1.02;
+    letter-spacing: -0.025em;
+    color: var(--aps-ink);
+    margin: 0 0 24px;
+    max-width: 14ch;
+  }
+  .hero h1 em {
+    font-style: normal;
+    font-weight: 500;
+    color: var(--aps-mute);
+  }
+  .hero-lede {
+    font-size: 18px;
+    line-height: 1.55;
+    color: var(--aps-text);
+    max-width: 56ch;
+    margin: 0;
+  }
+
+  /* --- Section divider --- */
+  .section-rule {
+    max-width: 1200px;
+    margin: 24px auto 0;
+    padding: 0 32px;
+  }
+  .section-rule-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding-top: 24px;
+    border-top: 1px solid var(--aps-ink);
+  }
+  .section-rule-label {
+    font-family: var(--ff-mono);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--aps-ink);
+  }
+  .section-rule-count {
+    font-family: var(--ff-mono);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--aps-mute);
+  }
+
+  /* --- Reports grid --- */
+  .reports {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 32px 80px;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 28px;
+  }
+  .report-card {
+    grid-column: span 4;
+    background: var(--aps-paper);
+    border: 1px solid var(--aps-line);
+    box-shadow: var(--shadow-card);
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  .report-card.is-featured {
+    grid-column: span 8;
+    flex-direction: row;
+  }
+  .report-card[href]:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-card-hover);
+    border-color: var(--aps-ink);
+  }
+  .report-card.is-coming {
+    background: var(--aps-bg-warm);
+    border-style: dashed;
+    box-shadow: none;
+  }
+
+  .report-thumb {
+    flex: 0 0 auto;
+    height: 220px;
+    background: var(--aps-bg-warm);
+    background-image:
+      linear-gradient(180deg, rgba(255,255,255,0.6), transparent 60%),
+      repeating-linear-gradient(180deg, transparent 0 6px, rgba(13,13,13,0.05) 6px 7px);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-bottom: 1px solid var(--aps-line);
+  }
+  .report-card.is-featured .report-thumb {
+    flex: 0 0 44%;
+    height: auto;
+    border-bottom: none;
+    border-right: 1px solid var(--aps-line);
+  }
+  .thumb-paper {
+    width: 64%;
+    aspect-ratio: 1 / 1.35;
+    background: var(--aps-paper);
+    border: 1px solid var(--aps-line);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+    padding: 14% 12% 10%;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    position: relative;
+    transform: rotate(-1.2deg);
+  }
+  .thumb-paper-bar {
+    height: 3px;
+    background: var(--aps-accent);
+    width: 38%;
+    margin-bottom: 4px;
+  }
+  .thumb-paper-line {
+    height: 4px;
+    background: var(--aps-line);
+    border-radius: 1px;
+  }
+  .thumb-paper-line.short { width: 60%; }
+  .thumb-paper-line.med { width: 82%; }
+  .thumb-paper-line.dark { background: var(--aps-faint); }
+  .thumb-paper-block {
+    margin-top: 10px;
+    height: 22%;
+    background: var(--aps-line-soft);
+    border-left: 2px solid var(--aps-ink);
+  }
+  .thumb-paper-foot {
+    margin-top: auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+  }
+  .thumb-paper-foot span {
+    display: block;
+    height: 3px;
+    background: var(--aps-line);
+    flex: 1;
+  }
+
+  .report-body {
+    padding: 28px 28px 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    flex: 1 1 auto;
+  }
+  .report-card.is-featured .report-body {
+    padding: 40px 40px 36px;
+    gap: 18px;
+  }
+
+  .report-tag-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    font-family: var(--ff-mono);
+    font-size: 10.5px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--aps-mute);
+  }
+  .report-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--aps-accent);
+    color: var(--aps-accent-ink);
+    padding: 4px 8px 3px;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+  }
+  .report-badge::before {
+    content: "";
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    background: var(--aps-accent-ink);
+    border-radius: 50%;
+  }
+  .report-badge.is-soft {
+    background: transparent;
+    color: var(--aps-mute);
+    padding: 4px 0 3px;
+    border: 1px solid var(--aps-line);
+    padding: 4px 8px 3px;
+  }
+  .report-badge.is-soft::before { background: var(--aps-faint); }
+
+  .report-title {
+    font-family: var(--ff-display);
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 1.18;
+    letter-spacing: -0.015em;
+    color: var(--aps-ink);
+    margin: 0;
+  }
+  .report-card.is-featured .report-title {
+    font-size: 30px;
+    line-height: 1.12;
+    letter-spacing: -0.02em;
+  }
+  .report-desc {
+    font-size: 14.5px;
+    line-height: 1.55;
+    color: var(--aps-mute);
+    margin: 0;
+  }
+  .report-card.is-featured .report-desc {
+    font-size: 16px;
+    max-width: 52ch;
+  }
+
+  .report-meta {
+    margin-top: 8px;
+    padding-top: 14px;
+    border-top: 1px solid var(--aps-line-soft);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    font-family: var(--ff-mono);
+    font-size: 11px;
+    color: var(--aps-mute);
+    letter-spacing: 0.04em;
+  }
+  .report-meta strong {
+    color: var(--aps-ink);
+    font-weight: 500;
+  }
+
+  .report-cta {
+    margin-top: 6px;
+    align-self: flex-start;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--ff-mono);
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--aps-ink);
+    border-bottom: 1px solid var(--aps-ink);
+    padding-bottom: 4px;
+  }
+  .report-cta .arrow {
+    transition: transform 0.25s ease;
+    display: inline-block;
+  }
+  .report-card[href]:hover .report-cta .arrow {
+    transform: translateX(4px);
+  }
+
+  /* --- Contact CTA --- */
+  .contact-cta {
+    max-width: 1200px;
+    margin: 24px auto 0;
+    padding: 0 32px;
+  }
+  .contact-inner {
+    background: var(--aps-paper);
+    border: 1px solid var(--aps-line);
+    box-shadow: var(--shadow-card);
+    padding: 64px 64px 56px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 56px;
+    align-items: end;
+    position: relative;
+    overflow: hidden;
+  }
+  .contact-inner::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 64px;
+    height: 4px;
+    background: var(--aps-accent);
+  }
+  .contact-text { max-width: 52ch; }
+  .contact-heading {
+    font-family: var(--ff-display);
+    font-weight: 700;
+    font-size: clamp(28px, 4vw, 44px);
+    line-height: 1.08;
+    letter-spacing: -0.02em;
+    color: var(--aps-ink);
+    margin: 14px 0 18px;
+    max-width: 18ch;
+  }
+  .contact-lede {
+    font-size: 16px;
+    line-height: 1.55;
+    color: var(--aps-text);
+    margin: 0;
+  }
+  .contact-btn {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    background: var(--aps-accent);
+    color: #fff;
+    padding: 22px 56px 22px 26px;
+    text-decoration: none;
+    border: 1px solid var(--aps-accent);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+    position: relative;
+    min-width: 280px;
+  }
+  .contact-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 32px rgba(128,0,0,0.22);
+    background: #6b0000;
+  }
+  .contact-btn-label {
+    font-family: var(--ff-mono);
+    font-size: 10.5px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    opacity: 0.85;
+  }
+  .contact-btn-email {
+    font-family: var(--ff-body);
+    font-size: 17px;
+    font-weight: 600;
+    letter-spacing: -0.005em;
+  }
+  .contact-btn-arrow {
+    position: absolute;
+    top: 50%;
+    right: 24px;
+    transform: translateY(-50%);
+    font-size: 20px;
+    line-height: 1;
+    transition: transform 0.25s ease;
+  }
+  .contact-btn:hover .contact-btn-arrow {
+    transform: translateY(-50%) translateX(4px);
+  }
+
+  /* --- Footer --- */
+  footer.site-footer {
+    border-top: 1px solid var(--aps-line);
+    background: var(--aps-bg-warm);
+    margin-top: 40px;
+  }
+  .footer-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+    font-family: var(--ff-mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--aps-mute);
+  }
+  .footer-inner a { color: var(--aps-ink); text-decoration: none; border-bottom: 1px solid var(--aps-line); padding-bottom: 2px; }
+  .footer-inner a:hover { border-color: var(--aps-ink); }
+
+  /* --- Responsive --- */
+  @media (max-width: 960px) {
+    .report-card,
+    .report-card.is-featured { grid-column: span 12; flex-direction: column; }
+    .report-card.is-featured .report-thumb { flex: 0 0 auto; height: 240px; border-right: none; border-bottom: 1px solid var(--aps-line); }
+    .report-card.is-featured .report-body { padding: 28px; }
+    .report-card.is-featured .report-title { font-size: 24px; }
+    .hero { padding: 56px 24px 40px; }
+    .topbar-inner, .section-rule, .reports, .footer-inner { padding-left: 24px; padding-right: 24px; }
+    .reports { gap: 20px; }
+    .contact-cta { padding-left: 24px; padding-right: 24px; }
+    .contact-inner {
+      padding: 40px 28px 36px;
+      grid-template-columns: 1fr;
+      gap: 28px;
+      align-items: start;
+    }
+    .contact-btn { width: 100%; min-width: 0; padding-right: 56px; }
+    .footer-inner { flex-direction: column; align-items: flex-start; gap: 12px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="#">
+      <img class="brand-logo" src="./aps-logo.svg" alt="Access Property Services">
+      Access Property Services
+      <span class="brand-sub">Sample Reports</span>
+    </a>
+    <span class="topbar-meta">v1 · May 2026</span>
+  </div>
+</div>
+
+<section class="hero">
+  <p class="eyebrow">Access Property Services · Sample Report Library</p>
+  <h1>See exactly <em>what you get.</em></h1>
+  <p class="hero-lede">A library of real, anonymised inspection and assessment reports prepared by Access Property Services — so you can see precisely what a finished document looks like before you commission one. Open any sample to read it end-to-end.</p>
+</section>
+
+<div class="section-rule">
+  <div class="section-rule-inner">
+    <span class="section-rule-label">Available Samples</span>
+    <span class="section-rule-count">01 Live · 03 In Preparation</span>
+  </div>
+</div>
+
+<section class="reports">
+
+  <!-- Featured: Final Defects Inspection Report -->
+  <a class="report-card is-featured" href="Final_Defects_Inspection_Report_Report___152_Moverly_Road__South_Coogee.html">
+    <div class="report-thumb">
+      <div class="thumb-paper">
+        <div class="thumb-paper-bar"></div>
+        <div class="thumb-paper-line med dark"></div>
+        <div class="thumb-paper-line short"></div>
+        <div class="thumb-paper-line med"></div>
+        <div class="thumb-paper-line short"></div>
+        <div class="thumb-paper-block"></div>
+        <div class="thumb-paper-line med"></div>
+        <div class="thumb-paper-line short"></div>
+        <div class="thumb-paper-foot"><span></span><span></span><span></span></div>
+      </div>
+    </div>
+    <div class="report-body">
+      <div class="report-tag-row">
+        <span>Sample 01 · Building Defects</span>
+        <span class="report-badge">Live Example</span>
+      </div>
+      <h2 class="report-title">Final Building Defects Inspection Report</h2>
+      <p class="report-desc">A full master register of 51 findings across basement, ground floor, upper level and roof / external — grouped by level, with severity, photo references, observation, applicable standards and a recommendation against each. Also includes a separate Cosmetic Defect Register (42 items) and a worked NCC HP H4D5 / AS 1668.2:2012 ventilation compliance appendix.</p>
+      <div class="report-meta">
+        <span><strong>Property</strong> &nbsp;152 Moverly Road, South Coogee</span>
+        <span><strong>Findings</strong> &nbsp;51 + 42 cosmetic</span>
+        <span><strong>Pages</strong> &nbsp;5 sections</span>
+      </div>
+      <span class="report-cta">Open the report <span class="arrow">→</span></span>
+    </div>
+  </a>
+
+  <!-- Coming soon: Strata Report Summary -->
+  <div class="report-card is-coming">
+    <div class="report-thumb">
+      <div class="thumb-paper" style="transform: rotate(0.8deg);">
+        <div class="thumb-paper-bar"></div>
+        <div class="thumb-paper-line med dark"></div>
+        <div class="thumb-paper-line short"></div>
+        <div class="thumb-paper-line med"></div>
+        <div class="thumb-paper-block"></div>
+        <div class="thumb-paper-line short"></div>
+        <div class="thumb-paper-foot"><span></span><span></span><span></span></div>
+      </div>
+    </div>
+    <div class="report-body">
+      <div class="report-tag-row">
+        <span>Sample 02 · Strata</span>
+        <span class="report-badge is-soft">In Preparation</span>
+      </div>
+      <h2 class="report-title">Strata Report Summary</h2>
+      <p class="report-desc">Client-facing summary of a NSW strata report — 19 standardised questions answered, with an implications register and legislative citations.</p>
+    </div>
+  </div>
+
+  <!-- Coming soon: Pre-Purchase Inspection -->
+  <div class="report-card is-coming">
+    <div class="report-thumb">
+      <div class="thumb-paper" style="transform: rotate(-0.5deg);">
+        <div class="thumb-paper-bar"></div>
+        <div class="thumb-paper-line med dark"></div>
+        <div class="thumb-paper-line short"></div>
+        <div class="thumb-paper-line med"></div>
+        <div class="thumb-paper-line short"></div>
+        <div class="thumb-paper-block"></div>
+        <div class="thumb-paper-foot"><span></span><span></span><span></span></div>
+      </div>
+    </div>
+    <div class="report-body">
+      <div class="report-tag-row">
+        <span>Sample 03 · Pre-Purchase</span>
+        <span class="report-badge is-soft">In Preparation</span>
+      </div>
+      <h2 class="report-title">Pre-Purchase Inspection</h2>
+      <p class="report-desc">Standalone pre-purchase visual building inspection — major, minor and safety items, with photographs and recommended next steps.</p>
+    </div>
+  </div>
+
+  <!-- Coming soon: Compliance Audit -->
+  <div class="report-card is-coming">
+    <div class="report-thumb">
+      <div class="thumb-paper" style="transform: rotate(1.4deg);">
+        <div class="thumb-paper-bar"></div>
+        <div class="thumb-paper-line med dark"></div>
+        <div class="thumb-paper-line short"></div>
+        <div class="thumb-paper-line med"></div>
+        <div class="thumb-paper-line short"></div>
+        <div class="thumb-paper-line med"></div>
+        <div class="thumb-paper-foot"><span></span><span></span><span></span></div>
+      </div>
+    </div>
+    <div class="report-body">
+      <div class="report-tag-row">
+        <span>Sample 04 · Practical Completion</span>
+        <span class="report-badge is-soft">In Preparation</span>
+      </div>
+      <h2 class="report-title">Practical Completion Inspection</h2>
+      <p class="report-desc">A pre-handover inspection of a completed project — verifying contract compliance, finishes, services and outstanding items against the building contract and drawings.</p>
+    </div>
+  </div>
+
+</section>
+
+<section class="contact-cta">
+  <div class="contact-inner">
+    <div class="contact-text">
+      <p class="eyebrow">Get in Touch</p>
+      <h2 class="contact-heading">Have a property to assess?</h2>
+      <p class="contact-lede">Discuss building defects, strata, pre-purchase or practical completion inspections directly with Dominic Ogburn — NSW-licensed, based in Sydney.</p>
+    </div>
+    <a class="contact-btn" href="mailto:dominic@accesspropertyservices.com.au">
+      <span class="contact-btn-label">Email Dominic</span>
+      <span class="contact-btn-email">dominic@accesspropertyservices.com.au</span>
+      <span class="contact-btn-arrow" aria-hidden="true">→</span>
+    </a>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <span>© Access Property Services Pty Ltd · Sydney NSW · <a href="https://accesspropertyservices.com.au/">accesspropertyservices.com.au</a></span>
+    <span>Sample report library · v1</span>
+  </div>
+</footer>
+
+</body>
+</html>
