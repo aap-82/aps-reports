@@ -472,6 +472,8 @@
     font-size: 17px;
     font-weight: 600;
     letter-spacing: -0.005em;
+    overflow-wrap: anywhere;
+    max-width: 100%;
   }
   .contact-btn-arrow {
     position: absolute;
@@ -525,8 +527,15 @@
       grid-template-columns: 1fr;
       gap: 28px;
       align-items: start;
+      min-width: 0;
     }
-    .contact-btn { width: 100%; min-width: 0; padding-right: 56px; }
+    .contact-text { min-width: 0; }
+    .contact-btn { width: 100%; min-width: 0; padding: 20px 22px; }
+    .contact-btn-email { font-size: 14.5px; line-height: 1.35; }
+    .contact-btn-arrow { display: none; }
+    .brand-sub { display: none; }
+    .topbar-meta { display: none; }
+    .section-rule-inner { flex-wrap: wrap; gap: 6px 16px; }
     .footer-inner { flex-direction: column; align-items: flex-start; gap: 12px; }
   }
 </style>
@@ -553,7 +562,7 @@
 <div class="section-rule">
   <div class="section-rule-inner">
     <span class="section-rule-label">Available Samples</span>
-    <span class="section-rule-count">01 Live · 03 In Preparation</span>
+    <span class="section-rule-count">02 Live · 02 In Preparation</span>
   </div>
 </div>
 
@@ -590,8 +599,8 @@
     </div>
   </a>
 
-  <!-- Coming soon: Strata Report Summary -->
-  <div class="report-card is-coming">
+  <!-- Live: Strata Report — SP 391 Lot 21, Ashfield -->
+  <a class="report-card" href="./strata-report-21-ormond-ashfield.html">
     <div class="report-thumb">
       <div class="thumb-paper" style="transform: rotate(0.8deg);">
         <div class="thumb-paper-bar"></div>
@@ -606,12 +615,13 @@
     <div class="report-body">
       <div class="report-tag-row">
         <span>Sample 02 · Strata</span>
-        <span class="report-badge is-soft">In Preparation</span>
+        <span class="report-badge">Live Example</span>
       </div>
-      <h2 class="report-title">Strata Report Summary</h2>
-      <p class="report-desc">Client-facing summary of a NSW strata report — 19 standardised questions answered, with an implications register and legislative citations.</p>
+      <h2 class="report-title">Strata Report — Ashfield Unit</h2>
+      <p class="report-desc">A full strata report on a NSW unit in a 1963 24-lot scheme — property overview, financial position (admin &amp; capital works funds, special levies, arrears, insurance), defect history, 10-year CWF plan, fire / cladding / asbestos compliance, strata management, legal &amp; planning, and a 10-item implications register pending physical verification.</p>
+      <span class="report-cta">Open the report <span class="arrow">→</span></span>
     </div>
-  </div>
+  </a>
 
   <!-- Coming soon: Pre-Purchase Inspection -->
   <div class="report-card is-coming">
