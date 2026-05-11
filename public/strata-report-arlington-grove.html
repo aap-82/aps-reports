@@ -1,0 +1,2619 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SP 90191 — Arlington Grove Strata Report</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700;800&family=DM+Sans:wght@400;500;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --black: #000000;
+  --dark-grey: #333333;
+  --body-text: #1a1a1a;
+  --mid-grey: #666666;
+  --light-grey: #cccccc;
+  --near-white: #f2f2f2;
+  --maroon: #800000;
+  --maroon-dark: #5c0000;
+  --crit-bg: #f5ebeb;
+  --good: #2d6a4f;
+  --good-bg: #ecf3ee;
+  --warn: #b87333;
+  --warn-bg: #fdf6ed;
+  --bg: #ffffff;
+  --shadow: 0 1px 2px rgba(0,0,0,0.06), 0 4px 12px rgba(0,0,0,0.04);
+  --shadow-strong: 0 4px 16px rgba(0,0,0,0.10);
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+
+body {
+  font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--body-text);
+  background: var(--near-white);
+  -webkit-font-smoothing: antialiased;
+}
+
+.page {
+  max-width: 1100px;
+  margin: 0 auto;
+  background: var(--bg);
+  min-height: 100vh;
+  box-shadow: var(--shadow-strong);
+}
+
+/* HERO */
+.hero {
+  background: linear-gradient(135deg, #1a1a1a 0%, #000 100%);
+  color: #fff;
+  padding: 56px 64px 48px;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0; right: 0;
+  width: 280px; height: 100%;
+  background: linear-gradient(135deg, transparent 0%, rgba(128,0,0,0.18) 50%, transparent 100%);
+  pointer-events: none;
+}
+.hero-eyebrow {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.6);
+  margin-bottom: 12px;
+}
+.hero h1 {
+  font-family: 'Archivo', sans-serif;
+  font-weight: 800;
+  font-size: 44px;
+  line-height: 1.05;
+  margin: 0 0 8px;
+  letter-spacing: -0.01em;
+}
+.hero h1 .accent { color: #d97a7a; }
+.hero-subtitle {
+  font-family: 'Archivo', sans-serif;
+  font-size: 17px;
+  font-weight: 400;
+  color: rgba(255,255,255,0.85);
+  margin: 0 0 28px;
+}
+.hero-meta {
+  display: flex;
+  gap: 32px;
+  flex-wrap: wrap;
+  font-family: 'DM Mono', monospace;
+  font-size: 12px;
+  color: rgba(255,255,255,0.7);
+}
+.hero-meta strong {
+  display: block;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  color: #fff;
+  margin-top: 2px;
+  letter-spacing: 0;
+  text-transform: none;
+}
+.hero-meta-item { min-width: 120px; }
+
+/* TABLE OF CONTENTS */
+.toc {
+  background: var(--near-white);
+  padding: 32px 64px;
+  border-bottom: 1px solid var(--light-grey);
+}
+.toc-title {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--mid-grey);
+  margin: 0 0 16px;
+  font-weight: 500;
+}
+.toc-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 6px 24px;
+}
+.toc-item {
+  display: flex;
+  gap: 12px;
+  padding: 6px 0;
+  font-size: 13px;
+  text-decoration: none;
+  color: var(--dark-grey);
+  border-bottom: 1px dotted transparent;
+  transition: border-color 0.15s ease;
+}
+.toc-item:hover { border-bottom-color: var(--maroon); color: var(--maroon); }
+.toc-num {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  color: var(--maroon);
+  min-width: 20px;
+  font-weight: 500;
+}
+
+/* SECTION */
+section {
+  padding: 56px 64px;
+  border-bottom: 1px solid var(--near-white);
+}
+.section-eyebrow {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--maroon);
+  margin: 0 0 8px;
+  font-weight: 500;
+}
+h2.section-title {
+  font-family: 'Archivo', sans-serif;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  color: var(--black);
+  margin: 0 0 8px;
+  padding-bottom: 14px;
+  border-bottom: 4px solid var(--maroon);
+  display: inline-block;
+}
+.section-intro {
+  font-size: 15px;
+  color: var(--mid-grey);
+  max-width: 760px;
+  margin: 16px 0 36px;
+  line-height: 1.65;
+}
+
+h3 {
+  font-family: 'Archivo', sans-serif;
+  font-weight: 600;
+  font-size: 17px;
+  color: var(--dark-grey);
+  margin: 36px 0 14px;
+  letter-spacing: -0.005em;
+}
+h4 {
+  font-family: 'Archivo', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--dark-grey);
+  margin: 24px 0 10px;
+}
+
+p { margin: 0 0 14px; }
+strong { font-weight: 700; }
+ul, ol { padding-left: 20px; margin: 0 0 14px; }
+ul li, ol li { margin: 4px 0; }
+
+/* STATS CARDS */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin-bottom: 12px;
+}
+.stat-card {
+  background: var(--bg);
+  border: 1px solid var(--light-grey);
+  border-radius: 6px;
+  padding: 22px 22px 18px;
+  position: relative;
+  overflow: hidden;
+}
+/* Stat-card top accent bar removed per user request */
+.stat-card::before { display: none; }
+.stat-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--mid-grey);
+  margin-bottom: 8px;
+}
+.stat-value {
+  font-family: 'Archivo', sans-serif;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 1;
+  color: var(--black);
+  letter-spacing: -0.02em;
+  margin-bottom: 6px;
+}
+.stat-value.crit-num { color: var(--maroon); }
+.stat-value.good-num { color: var(--good); }
+.stat-sub {
+  font-size: 12px;
+  color: var(--mid-grey);
+}
+.stat-card.compact { padding: 16px 18px 14px; }
+.stat-card.compact .stat-value { font-size: 22px; }
+.stat-card.compact .stat-label { font-size: 9px; }
+
+/* CALLOUTS */
+.callout {
+  background: var(--crit-bg);
+  padding: 18px 24px;
+  margin: 24px 0;
+  border-radius: 4px;
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+.callout.note { border-left-color: var(--mid-grey); background: var(--near-white); }
+.callout.warn { border-left-color: var(--warn); background: var(--warn-bg); }
+.callout.good { border-left-color: var(--good); background: var(--good-bg); }
+.callout-icon {
+  flex-shrink: 0;
+  width: 28px; height: 28px;
+  border-radius: 50%;
+  background: var(--maroon);
+  color: #fff;
+  font-family: 'Archivo', sans-serif;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  margin-top: 2px;
+}
+.callout.note .callout-icon { background: var(--mid-grey); }
+.callout.warn .callout-icon { background: var(--warn); }
+.callout.good .callout-icon { background: var(--good); }
+.callout-body { flex: 1; }
+.callout-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--maroon);
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+.callout.note .callout-label { color: var(--mid-grey); }
+.callout.warn .callout-label { color: var(--warn); }
+.callout.good .callout-label { color: var(--good); }
+.callout-body p { margin: 0; font-size: 14px; }
+.callout-body p + p { margin-top: 10px; }
+
+/* DIAGRAM WRAP */
+.diagram-wrap {
+  background: var(--near-white);
+  border-radius: 8px;
+  padding: 32px 24px;
+  margin: 24px 0;
+}
+.diagram-wrap svg { display: block; max-width: 100%; height: auto; margin: 0 auto; }
+.diagram-wrap.tight { padding: 16px; }
+
+/* TIMELINE — special levy */
+.timeline {
+  margin: 24px 0 16px;
+  position: relative;
+}
+.timeline-track {
+  position: relative;
+  height: 6px;
+  background: var(--light-grey);
+  border-radius: 3px;
+  margin: 28px 24px 100px;
+}
+.timeline-fill {
+  position: absolute;
+  top: 0; left: 0;
+  height: 100%;
+  width: 12.5%;
+  background: var(--maroon);
+  border-radius: 3px;
+}
+.timeline-marker {
+  position: absolute;
+  top: -10px;
+  transform: translateX(-50%);
+  text-align: center;
+}
+.timeline-dot {
+  width: 26px; height: 26px;
+  border-radius: 50%;
+  background: var(--bg);
+  border: 3px solid var(--maroon);
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+.timeline-marker.upcoming .timeline-dot { background: var(--maroon); }
+.timeline-marker.future .timeline-dot { border-color: var(--light-grey); background: var(--bg); }
+.timeline-label {
+  margin-top: 12px;
+  white-space: nowrap;
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--mid-grey);
+}
+.timeline-amount {
+  margin-top: 4px;
+  font-family: 'Archivo', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  color: var(--black);
+  white-space: nowrap;
+}
+.timeline-marker.upcoming .timeline-amount { color: var(--maroon); }
+
+/* TABLES */
+table.data {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 13px;
+}
+table.data thead th {
+  background: var(--black);
+  color: #fff;
+  text-align: left;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 10px 14px;
+}
+table.data thead th.right { text-align: right; }
+table.data tbody td {
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--light-grey);
+  vertical-align: middle;
+}
+table.data tbody td.right { text-align: right; font-variant-numeric: tabular-nums; }
+table.data tbody td.num { font-variant-numeric: tabular-nums; font-family: 'DM Mono', monospace; font-size: 12px; }
+table.data tbody tr:nth-child(even) { background: var(--near-white); }
+table.data tbody tr.highlight {
+  background: #fff4ec;
+  font-weight: 600;
+}
+table.data tbody tr.highlight td:first-child { border-left: 3px solid var(--maroon); }
+table.data tbody tr.crit { background: var(--crit-bg); }
+table.data tbody tr.crit td { color: var(--maroon-dark); }
+
+/* BUILDING GRID */
+.building-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin: 24px 0;
+}
+.building-card {
+  border: 1px solid var(--light-grey);
+  border-radius: 6px;
+  padding: 16px 14px 14px;
+  background: var(--bg);
+}
+.building-name {
+  font-family: 'Archivo', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  color: var(--black);
+  margin-bottom: 4px;
+}
+.building-sub {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  color: var(--mid-grey);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.defect-tags { display: flex; flex-wrap: wrap; gap: 4px; }
+.tag {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  font-weight: 500;
+  padding: 3px 8px;
+  border-radius: 3px;
+  background: var(--near-white);
+  color: var(--dark-grey);
+}
+.tag.crit { background: var(--crit-bg); color: var(--maroon); }
+.tag.warn { background: var(--warn-bg); color: var(--warn); }
+
+/* SPOTLIGHT */
+.spotlight {
+  background: linear-gradient(135deg, #fff 0%, #fafafa 100%);
+  border: 2px solid var(--maroon);
+  border-radius: 8px;
+  padding: 28px 32px;
+  margin: 32px 0;
+  position: relative;
+}
+.spotlight::before {
+  content: 'LOT FOCUS';
+  position: absolute;
+  top: -12px;
+  left: 24px;
+  background: var(--maroon);
+  color: #fff;
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 3px;
+}
+.spotlight-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 18px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--light-grey);
+}
+.spotlight-name {
+  font-family: 'Archivo', sans-serif;
+  font-weight: 700;
+  font-size: 22px;
+  color: var(--black);
+  margin: 0;
+}
+.spotlight-meta {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  color: var(--mid-grey);
+  text-align: right;
+}
+.spotlight-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px 32px;
+}
+.spotlight-item { font-size: 13px; line-height: 1.55; }
+.spotlight-item .key {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--mid-grey);
+  margin-bottom: 4px;
+}
+.spotlight-item .val {
+  font-family: 'Archivo', sans-serif;
+  font-weight: 600;
+  color: var(--dark-grey);
+}
+
+/* RISK MATRIX */
+.risk-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin: 20px 0;
+}
+.risk-card {
+  border-radius: 6px;
+  padding: 16px 18px;
+  border: 1px solid var(--light-grey);
+  background: var(--bg);
+}
+.risk-card.high { background: var(--crit-bg); }
+.risk-card.medium { background: var(--warn-bg); }
+.risk-card.low { background: var(--good-bg); }
+.risk-level {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+.risk-card.high .risk-level { color: var(--maroon); }
+.risk-card.medium .risk-level { color: var(--warn); }
+.risk-card.low .risk-level { color: var(--good); }
+.risk-title {
+  font-family: 'Archivo', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--black);
+  margin-bottom: 8px;
+}
+.risk-desc { font-size: 12px; line-height: 1.5; color: var(--dark-grey); }
+
+/* REFERENCE CARD */
+.ref-card {
+  background: var(--near-white);
+  border-radius: 8px;
+  padding: 24px 28px;
+  margin-top: 24px;
+}
+.ref-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 24px;
+  margin-top: 18px;
+}
+.ref-item {
+  font-size: 13px;
+  border-left: 2px solid var(--maroon);
+  padding-left: 14px;
+}
+.ref-role {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--maroon);
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+.ref-name {
+  font-family: 'Archivo', sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--black);
+  margin-bottom: 2px;
+}
+.ref-detail { color: var(--mid-grey); line-height: 1.55; font-size: 12px; }
+.ref-detail a { color: var(--maroon); text-decoration: none; }
+.ref-detail a:hover { text-decoration: underline; }
+
+/* PILL */
+.pill {
+  display: inline-block;
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  font-weight: 500;
+  padding: 3px 10px;
+  border-radius: 100px;
+  text-transform: uppercase;
+  vertical-align: middle;
+}
+.pill.active, .pill.lost { background: var(--crit-bg); color: var(--maroon); }
+.pill.won { background: var(--good-bg); color: var(--good); }
+.pill.pending { background: var(--near-white); color: var(--dark-grey); }
+.pill.warn { background: var(--warn-bg); color: var(--warn); }
+
+/* PRICING TIERS */
+.tier-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin: 24px 0;
+}
+.tier-card {
+  border-radius: 6px;
+  padding: 24px 20px 20px;
+  border: 1px solid var(--light-grey);
+  position: relative;
+  background: var(--bg);
+}
+.tier-card.green { background: var(--good-bg); }
+.tier-card.amber { background: var(--warn-bg); }
+.tier-card.red { background: var(--crit-bg); }
+.tier-card.deep-red { background: var(--crit-bg); }
+.tier-price {
+  font-family: 'Archivo', sans-serif;
+  font-weight: 800;
+  font-size: 28px;
+  color: var(--black);
+  letter-spacing: -0.02em;
+  margin-bottom: 4px;
+}
+.tier-card.green .tier-price { color: var(--good); }
+.tier-card.amber .tier-price { color: var(--warn); }
+.tier-card.red .tier-price, .tier-card.deep-red .tier-price { color: var(--maroon); }
+.tier-discount {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  color: var(--mid-grey);
+  margin-bottom: 12px;
+}
+.tier-verdict {
+  font-family: 'Archivo', sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  margin-bottom: 8px;
+}
+.tier-card.green .tier-verdict { color: var(--good); }
+.tier-card.amber .tier-verdict { color: var(--warn); }
+.tier-card.red .tier-verdict { color: var(--maroon); }
+.tier-card.deep-red .tier-verdict { color: var(--maroon-dark); }
+.tier-desc {
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--dark-grey);
+}
+
+/* CHECKLIST */
+.checklist {
+  background: var(--near-white);
+  border-radius: 8px;
+  padding: 24px 28px;
+  margin: 20px 0;
+}
+.checklist-item {
+  display: flex;
+  gap: 14px;
+  padding: 12px 0;
+  border-bottom: 1px solid #e0e0e0;
+  font-size: 13.5px;
+}
+.checklist-item:last-child { border-bottom: none; }
+.checklist-box {
+  flex-shrink: 0;
+  width: 22px; height: 22px;
+  border: 2px solid var(--maroon);
+  border-radius: 4px;
+  margin-top: 1px;
+}
+.checklist-text { flex: 1; }
+.checklist-text strong { display: block; margin-bottom: 2px; color: var(--black); }
+.checklist-text span { color: var(--mid-grey); font-size: 12px; }
+
+/* CASE CARD GRID — for builder */
+.case-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 14px;
+  margin: 20px 0;
+}
+.case-card {
+  background: var(--bg);
+  border: 1px solid var(--light-grey);
+  border-radius: 4px;
+  padding: 16px 18px;
+}
+.case-card.won { /* outcome colour now shown via header text only */ }
+.case-header {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--maroon);
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+.case-title {
+  font-family: 'Archivo', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--black);
+  margin-bottom: 6px;
+  line-height: 1.3;
+}
+.case-meta {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  color: var(--mid-grey);
+  margin-bottom: 8px;
+}
+.case-desc {
+  font-size: 12.5px;
+  line-height: 1.55;
+  color: var(--dark-grey);
+}
+
+/* TWO COLUMN */
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  margin: 20px 0;
+}
+
+/* QUESTION CARD GRID */
+.q-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+  gap: 14px;
+  margin: 20px 0;
+}
+.q-card {
+  background: var(--bg);
+  border: 1px solid var(--light-grey);
+  border-radius: 6px;
+  padding: 18px 20px;
+}
+.q-card.primary { /* coloured accents handled via .q-num text colour */ }
+.q-card.secondary { }
+.q-card.gap { }
+.q-num {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  font-weight: 700;
+  color: var(--maroon);
+}
+.q-card.primary .q-num { color: var(--good); }
+.q-card.secondary .q-num { color: var(--warn); }
+.q-title {
+  font-family: 'Archivo', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--black);
+  margin: 4px 0 10px;
+  line-height: 1.3;
+}
+.q-answer { font-size: 13px; color: var(--dark-grey); line-height: 1.5; margin-bottom: 6px; }
+.q-source {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  color: var(--mid-grey);
+  letter-spacing: 0.05em;
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px dotted var(--light-grey);
+}
+
+/* AFSS TIMELINE */
+.afss-timeline {
+  position: relative;
+  padding-left: 30px;
+  margin: 24px 0;
+  border-left: 2px solid var(--light-grey);
+}
+.afss-event {
+  position: relative;
+  padding: 10px 0 10px 18px;
+}
+.afss-event::before {
+  content: '';
+  position: absolute;
+  left: -25px; top: 16px;
+  width: 12px; height: 12px;
+  border-radius: 50%;
+  background: var(--bg);
+  border: 2px solid var(--maroon);
+}
+.afss-event.compliant::before { border-color: var(--good); background: var(--good); }
+.afss-event.noncompliant::before { border-color: var(--maroon); background: var(--maroon); }
+.afss-year {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  font-weight: 700;
+  color: var(--mid-grey);
+  margin-bottom: 2px;
+}
+.afss-event.compliant .afss-year { color: var(--good); }
+.afss-event.noncompliant .afss-year { color: var(--maroon); }
+.afss-text { font-size: 13px; color: var(--dark-grey); }
+
+/* DECISION TREE */
+.decision-flow {
+  background: var(--near-white);
+  border-radius: 8px;
+  padding: 24px;
+  margin: 20px 0;
+}
+
+/* FOOTER */
+footer {
+  padding: 32px 64px;
+  background: var(--black);
+  color: #fff;
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+footer .org { color: rgba(255,255,255,0.6); }
+footer .crumb { color: rgba(255,255,255,0.4); }
+
+@media (max-width: 768px) {
+  .hero { padding: 40px 24px 32px; }
+  .hero h1 { font-size: 30px; }
+  section { padding: 40px 24px; }
+  .toc { padding: 24px; }
+  .building-grid { grid-template-columns: repeat(2, 1fr); }
+  .risk-grid { grid-template-columns: 1fr; }
+  .spotlight-grid { grid-template-columns: 1fr; }
+  .tier-grid { grid-template-columns: 1fr; }
+  .two-col { grid-template-columns: 1fr; }
+  footer { padding: 24px; }
+}
+
+@media print {
+  body { background: white; }
+  .page { box-shadow: none; max-width: none; }
+  section { page-break-inside: avoid; padding: 28px; }
+  .hero { page-break-after: always; }
+  h2.section-title { page-break-after: avoid; }
+}
+
+/* === Property market section additions === */
+.market-derivation {
+  background: linear-gradient(180deg, #f9f4f4 0%, #f2e8e8 100%);
+  border: 1px solid #d4c0c0;
+  border-radius: 8px;
+  padding: 24px;
+  margin: 20px 0;
+}
+.deriv-row {
+  display: grid;
+  grid-template-columns: 1fr 100px 140px;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px dashed rgba(128,0,0,0.18);
+  font-size: 13px;
+  align-items: baseline;
+}
+.deriv-row:last-of-type { border-bottom: none; }
+.deriv-row .label { color: var(--dark-grey); }
+.deriv-row .op { font-family: 'DM Mono', monospace; font-size: 12px; color: var(--maroon); text-align: right; }
+.deriv-row .val { font-family: 'DM Mono', monospace; font-weight: 600; text-align: right; color: #000; }
+.deriv-row.total {
+  border-top: 2px solid var(--maroon);
+  border-bottom: none;
+  margin-top: 8px;
+  padding-top: 14px;
+  font-size: 15px;
+}
+.deriv-row.total .val { font-size: 18px; color: var(--maroon); font-weight: 700; }
+
+/* Scenario fan chart wrapper */
+.scenario-chart {
+  background: #fff;
+  border: 1px solid var(--light-grey);
+  border-radius: 8px;
+  padding: 24px;
+  margin: 20px 0;
+}
+.scenario-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 12px;
+  font-size: 12px;
+  font-family: 'DM Mono', monospace;
+  color: var(--dark-grey);
+}
+.scenario-legend span::before {
+  content: "";
+  display: inline-block;
+  width: 14px; height: 4px;
+  margin-right: 6px;
+  vertical-align: middle;
+  border-radius: 1px;
+}
+.scenario-legend .opt::before { background: #1a7a4d; }
+.scenario-legend .base::before { background: #4a4a4a; border-style: dashed; }
+.scenario-legend .adv::before { background: #800000; }
+
+/* Decision matrix (Buy/Wait/Rent) */
+.decision-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin: 20px 0;
+}
+.decision-card {
+  background: #fff;
+  border: 1px solid var(--light-grey);
+  border-radius: 6px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+.decision-card.recommended { background: linear-gradient(180deg, #f0f9f4 0%, #fff 100%); }
+.decision-card.middle { background: linear-gradient(180deg, #fef8ed 0%, #fff 100%); }
+.decision-card.passive { }
+.decision-eyebrow {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  color: var(--mid-grey);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.decision-name {
+  font-family: 'Archivo', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  color: #000;
+  margin-bottom: 12px;
+}
+.decision-stat {
+  font-family: 'DM Mono', monospace;
+  font-size: 13px;
+  color: var(--dark-grey);
+  padding: 4px 0;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px dotted var(--light-grey);
+}
+.decision-stat:last-of-type { border-bottom: none; }
+.decision-stat strong { color: #000; }
+.decision-verdict {
+  margin-top: auto;
+  padding-top: 12px;
+  font-family: 'Archivo', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--maroon);
+}
+.decision-card.recommended .decision-verdict { color: var(--good); }
+
+/* Comparable sales caption row */
+.comp-context {
+  font-size: 12px;
+  color: var(--mid-grey);
+  margin-top: -8px;
+  margin-bottom: 16px;
+  font-style: italic;
+}
+
+/* Metro impact two-col */
+.metro-panel {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  background: linear-gradient(135deg, #1a4d3a 0%, #2d6e54 100%);
+  color: #fff;
+  border-radius: 10px;
+  padding: 28px;
+  margin: 20px 0;
+}
+.metro-panel .key { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 1.5px; color: rgba(255,255,255,0.7); text-transform: uppercase; margin-bottom: 6px; }
+.metro-panel .big { font-family: 'Archivo', sans-serif; font-weight: 700; font-size: 32px; color: #fff; margin-bottom: 4px; line-height: 1.1; }
+.metro-panel .desc { font-size: 13px; line-height: 1.6; color: rgba(255,255,255,0.9); }
+.metro-panel h4 { color: #fff; font-family: 'Archivo', sans-serif; font-size: 16px; margin: 0 0 12px 0; font-weight: 700; }
+.metro-panel ul { margin: 8px 0 0 0; padding-left: 18px; font-size: 13px; line-height: 1.7; color: rgba(255,255,255,0.92); }
+
+@media (max-width: 768px) {
+  .deriv-row { grid-template-columns: 1fr 80px 100px; font-size: 12px; }
+  .decision-grid { grid-template-columns: 1fr; }
+  .metro-panel { grid-template-columns: 1fr; }
+}
+@media print {
+  .metro-panel { background: #1a4d3a; }
+}
+
+
+/* === Hero credentials block (mirrors PDF cover) === */
+.hero-lot-row { margin: 0 0 22px 0; }
+.hero-lot-chip {
+  display: inline-block;
+  font-family: 'DM Mono', monospace;
+  font-weight: 500;
+  font-size: 12px;
+  letter-spacing: 2.5px;
+  color: #f4c0c0;
+  background: rgba(128, 0, 0, 0.45);
+  padding: 7px 14px;
+  border: 1px solid rgba(192, 100, 100, 0.5);
+  border-radius: 2px;
+  text-transform: uppercase;
+}
+.hero-prepared {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  margin: 24px 0 16px 0;
+  padding: 18px 0;
+  border-top: 1px solid rgba(255,255,255,0.12);
+  border-bottom: 1px solid rgba(255,255,255,0.12);
+}
+.hero-prep-block {
+  font-family: 'DM Sans', sans-serif;
+}
+.hero-prep-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: rgba(212, 168, 168, 0.85);
+  margin-bottom: 6px;
+  text-transform: uppercase;
+}
+.hero-prep-name {
+  font-family: 'Archivo', sans-serif;
+  font-weight: 700;
+  font-size: 17px;
+  color: #fff;
+  line-height: 1.25;
+  margin-bottom: 4px;
+}
+.hero-prep-detail {
+  font-family: 'DM Mono', monospace;
+  font-size: 12px;
+  color: rgba(212, 168, 168, 0.95);
+}
+.hero-prep-detail a {
+  color: rgba(244, 192, 192, 0.95);
+  text-decoration: underline;
+}
+a.hero-cred-btn {
+  display: inline-block;
+  margin-top: 6px;
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 1px;
+  color: #fff;
+  background: #800000;
+  padding: 6px 12px;
+  border: 1px solid rgba(192, 100, 100, 0.5);
+  border-radius: 2px;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: background 0.15s;
+}
+a.hero-cred-btn:hover { background: #a02020; }
+
+@media (max-width: 768px) {
+  .hero-prepared { grid-template-columns: 1fr; gap: 18px; }
+}
+@media print {
+  a.hero-cred-btn { background: #800000; }
+}
+
+
+/* === Sticky top navigation === */
+.sticky-nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  background: rgba(15, 15, 15, 0.96);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: #fff;
+  border-bottom: 1px solid rgba(128, 0, 0, 0.6);
+  transform: translateY(-100%);
+  transition: transform 0.25s ease;
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.05em;
+}
+.sticky-nav.visible { transform: translateY(0); }
+.sticky-nav-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  gap: 16px;
+}
+.sticky-nav-brand {
+  font-family: 'Archivo', sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  color: #f4c0c0;
+  white-space: nowrap;
+  flex-shrink: 0;
+  border-right: 1px solid rgba(255,255,255,0.15);
+  padding-right: 16px;
+}
+.sticky-nav-brand span { color: rgba(255,255,255,0.55); font-weight: 400; margin-left: 4px; }
+.sticky-nav-links {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  gap: 2px;
+  flex: 1;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(128,0,0,0.5) transparent;
+}
+.sticky-nav-links::-webkit-scrollbar { height: 4px; }
+.sticky-nav-links::-webkit-scrollbar-thumb { background: rgba(128,0,0,0.5); }
+.sticky-nav-links a {
+  color: rgba(255,255,255,0.7);
+  text-decoration: none;
+  padding: 5px 9px;
+  border-radius: 3px;
+  white-space: nowrap;
+  font-size: 11px;
+  letter-spacing: 0.6px;
+  font-weight: 500;
+  transition: background 0.12s, color 0.12s;
+  min-width: 26px;
+  text-align: center;
+}
+.sticky-nav-links a:hover { background: rgba(128,0,0,0.4); color: #fff; }
+.sticky-nav-links a.active { background: #800000; color: #fff; }
+.sticky-nav-top {
+  flex-shrink: 0;
+  color: rgba(255,255,255,0.6);
+  font-size: 10.5px;
+  text-decoration: none;
+  padding: 5px 8px;
+  border-left: 1px solid rgba(255,255,255,0.15);
+  margin-left: 6px;
+}
+.sticky-nav-top:hover { color: #fff; }
+
+/* Anchor offset so sections don't hide under sticky nav when jumped to */
+section[id^="s"] { scroll-margin-top: 60px; }
+
+@media (max-width: 768px) {
+  .sticky-nav-brand { font-size: 11px; padding-right: 10px; }
+  .sticky-nav-brand span { display: none; }
+  .sticky-nav-inner { padding: 8px 12px; gap: 10px; }
+  .sticky-nav-links a { padding: 4px 7px; font-size: 10px; }
+}
+@media print {
+  .sticky-nav { display: none !important; }
+}
+
+</style>
+</head>
+<body>
+<div class="page">
+<nav class="sticky-nav" id="stickyNav">
+  <div class="sticky-nav-inner">
+    <div class="sticky-nav-brand">SP 90191 <span>· Lot 163</span></div>
+    <div class="sticky-nav-links">
+      <a href="#s01" title="At a glance">01</a>
+      <a href="#s02" title="The 19 standardised questions">02</a>
+      <a href="#s03" title="Financial position">03</a>
+      <a href="#s04" title="Levy programme">04</a>
+      <a href="#s05" title="Defects across 4 buildings">05</a>
+      <a href="#s06" title="Acoustic deep-dive">06</a>
+      <a href="#s07" title="Fire safety deep-dive">07</a>
+      <a href="#s08" title="Litigation architecture">08</a>
+      <a href="#s09" title="The builder Ceerose">09</a>
+      <a href="#s10" title="Strata governance">10</a>
+      <a href="#s11" title="Insurance &amp; compliance">11</a>
+      <a href="#s12" title="Property market &amp; suburb context">12</a>
+      <a href="#s13" title="Lot 163 spotlight">13</a>
+      <a href="#s14" title="Pricing decision framework">14</a>
+      <a href="#s15" title="Buyer risk matrix">15</a>
+      <a href="#s16" title="What to ask before you buy">16</a>
+      <a href="#s17" title="Gap analysis">17</a>
+      <a href="#s18" title="References &amp; sources">18</a>
+    </div>
+    <a href="#top" class="sticky-nav-top" title="Back to top">↑ Top</a>
+  </div>
+</nav>
+
+
+<!-- ============================================ HERO ============================================ -->
+<header class="hero" id="top">
+  <div class="hero-eyebrow">Strata Property Report · 26 April 2026</div>
+  <h1>SP <span class="accent">90191</span><br>Arlington Grove</h1>
+  <p class="hero-subtitle">6 Grove Street, Dulwich Hill NSW 2203 · 4 buildings · 247 lots · Built 2017</p>
+  <div class="hero-lot-row"><span class="hero-lot-chip">Lot 163  ·  Unit 1813</span></div>
+
+  <div class="hero-prepared">
+    <div class="hero-prep-block">
+      <div class="hero-prep-label">Prepared for</div>
+      <div class="hero-prep-name">John Smith</div>
+      <div class="hero-prep-detail"><a href="mailto:john.smith@email.com.au">john.smith@email.com.au</a></div>
+    </div>
+    <div class="hero-prep-block">
+      <div class="hero-prep-label">Developed by</div>
+      <div class="hero-prep-name">Dominic Ogburn</div>
+      <div class="hero-prep-detail">
+        <a class="hero-cred-btn" href="https://dominic-ogburn.pages.dev/" target="_blank" rel="noopener">Check credentials &rsaquo;</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-meta">
+    <div class="hero-meta-item">OWNERS CORPORATION ABN<strong>45 406 849 197</strong></div>
+    <div class="hero-meta-item">MANAGING AGENT<strong>Strata Choice Pty Ltd</strong></div>
+    <div class="hero-meta-item">BUILDER<strong>Ceerose Pty Ltd</strong></div>
+    <div class="hero-meta-item">DEVELOPER<strong>Galileo Arlington Grove Nominee Pty Ltd</strong></div>
+  </div>
+</header>
+
+<!-- TABLE OF CONTENTS -->
+<nav class="toc">
+  <div class="toc-title">Contents</div>
+  <div class="toc-grid">
+    <a class="toc-item" href="#s01"><span class="toc-num">01</span><span>At a glance</span></a>
+    <a class="toc-item" href="#s02"><span class="toc-num">02</span><span>The 19 standardised questions</span></a>
+    <a class="toc-item" href="#s03"><span class="toc-num">03</span><span>Financial position</span></a>
+    <a class="toc-item" href="#s04"><span class="toc-num">04</span><span>Levy programme</span></a>
+    <a class="toc-item" href="#s05"><span class="toc-num">05</span><span>Defects across 4 buildings</span></a>
+    <a class="toc-item" href="#s06"><span class="toc-num">06</span><span>Acoustic deep-dive</span></a>
+    <a class="toc-item" href="#s07"><span class="toc-num">07</span><span>Fire safety deep-dive</span></a>
+    <a class="toc-item" href="#s08"><span class="toc-num">08</span><span>Litigation architecture</span></a>
+    <a class="toc-item" href="#s09"><span class="toc-num">09</span><span>The builder Ceerose</span></a>
+    <a class="toc-item" href="#s10"><span class="toc-num">10</span><span>Strata governance</span></a>
+    <a class="toc-item" href="#s11"><span class="toc-num">11</span><span>Insurance &amp; compliance</span></a>
+    <a class="toc-item" href="#s12"><span class="toc-num">12</span><span>Property market &amp; suburb context</span></a>
+    <a class="toc-item" href="#s13"><span class="toc-num">13</span><span>Lot 163 spotlight</span></a>
+    <a class="toc-item" href="#s14"><span class="toc-num">14</span><span>Pricing decision framework</span></a>
+    <a class="toc-item" href="#s15"><span class="toc-num">15</span><span>Buyer risk matrix</span></a>
+    <a class="toc-item" href="#s16"><span class="toc-num">16</span><span>What to ask before you buy</span></a>
+    <a class="toc-item" href="#s17"><span class="toc-num">17</span><span>Gap analysis</span></a>
+    <a class="toc-item" href="#s18"><span class="toc-num">18</span><span>References &amp; sources</span></a>
+  </div>
+</nav>
+
+<!-- ============================================ S01 — AT A GLANCE ============================================ -->
+<section id="s01">
+  <div class="section-eyebrow">01 · Property At A Glance</div>
+  <h2 class="section-title">Key numbers</h2>
+  <p class="section-intro">High-level scheme metrics — what every prospective buyer or owner needs to know within 30 seconds.</p>
+
+  <div class="stats-grid">
+    <div class="stat-card alt"><div class="stat-label">Lots</div><div class="stat-value">247</div><div class="stat-sub">10,000 unit entitlements</div></div>
+    <div class="stat-card alt"><div class="stat-label">Buildings</div><div class="stat-value">4</div><div class="stat-sub">Kona · Valencia · Hamlin · Verna</div></div>
+    <div class="stat-card alt"><div class="stat-label">Storeys</div><div class="stat-value">6–10</div><div class="stat-sub">+1 basement carpark</div></div>
+    <div class="stat-card good"><div class="stat-label">ACP Cladding</div><div class="stat-value good-num">No</div><div class="stat-sub">Confirmed by 2025 valuation</div></div>
+    <div class="stat-card crit"><div class="stat-label">Net Owner Funds</div><div class="stat-value crit-num">$260k</div><div class="stat-sub">↓ 56% in 9 months</div></div>
+    <div class="stat-card crit"><div class="stat-label">Special Levy (EGM)</div><div class="stat-value crit-num">$1.16M</div><div class="stat-sub">4 instalments to Feb 2027</div></div>
+    <div class="stat-card crit"><div class="stat-label">Active Court Cases</div><div class="stat-value crit-num">3</div><div class="stat-sub">+ 1 threatened NCAT claim</div></div>
+    <div class="stat-card"><div class="stat-label">Insurance Sum Insured</div><div class="stat-value">$155.8M</div><div class="stat-sub">A G Thomas Valuers · 6 Aug 2025</div></div>
+  </div>
+
+  <div class="callout">
+    <div class="callout-icon">!</div>
+    <div class="callout-body">
+      <div class="callout-label">Critical context</div>
+      <p>The owners corporation is in <strong>active litigation</strong> against builder Ceerose and developer Galileo over systemic defects across all four buildings. A prior settlement deed has been terminated and the matter is now back before the NSW Supreme Court. <strong>This is the dominant fact</strong> shaping the scheme's finances, governance, and resale dynamics for the next 2–4 years.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ S02 — 19 QUESTIONS ============================================ -->
+<section id="s02">
+  <div class="section-eyebrow">02 · Standardised Strata Questions</div>
+  <h2 class="section-title">19 questions answered</h2>
+  <p class="section-intro">The standard NSW strata-due-diligence question set. Green left-bar = primary-source confidence; amber = secondary evidence only. <strong>17 of 19 answered with primary-source confidence.</strong></p>
+
+  <div class="q-grid">
+    <div class="q-card primary"><div class="q-num">Q01 · LOTS</div><div class="q-title">How many units?</div><div class="q-answer"><strong>247 lots · 10,000 aggregate UE.</strong> Plan registered 19 Sep 2017. Lot 248 = Shop1 (commercial). SP 97558 is a subdivision of common property of head plan SP 90191 — not a separate adjacent scheme.</div><div class="q-source">Source: CWF Plan 2018 · Insurance Valuation 2025</div></div>
+    <div class="q-card primary"><div class="q-num">Q02 · STOREYS</div><div class="q-title">How many storeys?</div><div class="q-answer"><strong>4 buildings, 6–10 storeys + 1 basement.</strong> Building A reaches Level 8. Construction date 2017 — cavity brick, part rendered, part metal clad, concrete floors.</div><div class="q-source">Source: Insurance Valuation · AFSS 2025</div></div>
+    <div class="q-card primary"><div class="q-num">Q03 · BASEMENT</div><div class="q-title">Carpark levels?</div><div class="q-answer"><strong>1 basement level</strong> containing the carpark. Currently subject to defect rectification works (basement flooding scope-of-works under preparation).</div><div class="q-source">Source: AFSS 2025 · Insurance Valuation</div></div>
+    <div class="q-card primary"><div class="q-num">Q04 · ADMIN FUND</div><div class="q-title">Administrative Fund balance</div><div class="q-answer"><strong>($73,385) deficit</strong> as at 24 April 2026 — primarily a timing issue (Q4 levies not yet raised). Projected year-end: $223,700.</div><div class="q-source">Source: Detailed Balance Sheet 24/04/2026 · Audit FY24</div></div>
+    <div class="q-card primary"><div class="q-num">Q05 · CWF</div><div class="q-title">Capital Works Fund balance</div><div class="q-answer"><strong>$333,629</strong> as at 24 April 2026. Cash $483k, investments $0 (fully redeemed), liabilities $151k. Net Owners Funds down 56% in 9 months.</div><div class="q-source">Source: Detailed Balance Sheet · Investments section</div></div>
+    <div class="q-card primary"><div class="q-num">Q06 · SPECIAL LEVIES</div><div class="q-title">Special levies in place?</div><div class="q-answer"><strong>Yes — $1,160,000 inc GST</strong> authorised by EGM 16/02/2026 Motion 7, in 4 instalments May 2026 → Feb 2027. Funds defects litigation costs.</div><div class="q-source">Source: General Meeting Minutes 16/02/2026</div></div>
+    <div class="q-card primary"><div class="q-num">Q07 · ARREARS</div><div class="q-title">Levy arrears apparent?</div><div class="q-answer"><strong>$7,627 total</strong> across 6 lots. Lots 103 and 190 account for over 90%. Grace Lawyers Pty Ltd handling recovery against 12 lots.</div><div class="q-source">Source: Aged Arrears List 24/04/2026</div></div>
+    <div class="q-card primary"><div class="q-num">Q08 · CWF PLAN</div><div class="q-title">Costed 10-year plan?</div><div class="q-answer"><strong>Yes — 15-year plan dated 4 June 2018</strong> by Sageview NSW. <strong>Materially out of date</strong> (almost 8 years old) — past the s80 5-year review interval.</div><div class="q-source">Source: Capital Works Fund Plan 2018</div></div>
+    <div class="q-card primary"><div class="q-num">Q09 · STRATA MGR</div><div class="q-title">Who is the strata manager?</div><div class="q-answer"><strong>Strata Choice Pty Ltd</strong> · Mark Loveridge (Lic 224770) · 1300 322 213 · info@stratachoice.com.au · SMA dated 01/10/2025, term 36 months, $45,695 inc GST p.a.</div><div class="q-source">Source: Signed Agency Agreement</div></div>
+    <div class="q-card primary"><div class="q-num">Q10 · BLDG MGR</div><div class="q-title">Building manager?</div><div class="q-answer"><strong>Sydney Building Management &amp; Projects (SBMP)</strong> trading as Apartment Projects Pty Ltd · ABN 14 167 332 069 · 02 9056 7100 · info@sydneybmp.com.au.</div><div class="q-source">Source: SBMP Tax Invoice INV-12795</div></div>
+    <div class="q-card secondary"><div class="q-num">Q11 · WINDOW SAFETY</div><div class="q-title">Window safety device report?</div><div class="q-answer">No formal WSR on file. Only AS1891 height-safety inspection (for window cleaners' anchor points) by Advanced Solutions Group, 2 Aug 2023 — different compliance regime.</div><div class="q-source">Source: ASG Tax Invoice I3838</div></div>
+    <div class="q-card primary"><div class="q-num">Q12 · CLADDING</div><div class="q-title">External cladding report?</div><div class="q-answer"><strong>No ACP cladding</strong> — definitive per Insurance Valuation 6 Aug 2025. Construction is "Cavity Brick, Part Rendered, Part Metal Clad" — not the high-risk ACP/PE.</div><div class="q-source">Source: Insurance Valuation A G Thomas</div></div>
+    <div class="q-card primary"><div class="q-num">Q13 · ASBESTOS</div><div class="q-title">Asbestos register?</div><div class="q-answer"><strong>Not required</strong> — building constructed 2017, well after 31 December 2003 Australia-wide ban on asbestos products.</div><div class="q-source">Source: WHS Reg 2017 · Construction date confirmed</div></div>
+    <div class="q-card secondary"><div class="q-num">Q14 · PEST</div><div class="q-title">Pest inspection report?</div><div class="q-answer">No formal report; treatment records only (Greenway Pest Control, quarterly). Bee infestation treated at Units 1701 &amp; 1801 Kona A in 2023.</div><div class="q-source">Source: Greenway service records</div></div>
+    <div class="q-card primary"><div class="q-num">Q15 · DEFECTS</div><div class="q-title">Building defects?</div><div class="q-answer"><strong>Extensive — across all 4 buildings.</strong> Hydraulic, fire &amp; life safety, basement flooding, façade, acoustic. 191 units (78%) affected by failed waterproofing. See sections 5–7.</div><div class="q-source">Source: 7+ expert reports · EGM Minutes</div></div>
+    <div class="q-card primary"><div class="q-num">Q16 · FIRE SAFETY</div><div class="q-title">AFSS &amp; fire services?</div><div class="q-answer"><strong>AFSS 2025 lodged 30/07/2025</strong> by accredited practitioner F049448A. ARUP Fire Engineering Report 247294 Rev E from original construction. Ongoing fire defects investigation.</div><div class="q-source">Source: AFSS T0796-AFSS-2025</div></div>
+    <div class="q-card primary"><div class="q-num">Q17 · CAPITAL WORKS</div><div class="q-title">Current/future capital works?</div><div class="q-answer"><strong>Extensive</strong> — $259,545 newly authorised at EGM. Ceerose actively rectifying Units 2716, 3206, 1801. No FY 2026–27 forward budget yet struck.</div><div class="q-source">Source: EGM Minutes · I&amp;E Statement</div></div>
+    <div class="q-card primary"><div class="q-num">Q18 · LITIGATION</div><div class="q-title">Litigation in place?</div><div class="q-answer"><strong>Yes — three live matters.</strong> NSW Supreme Court (Proc 2023/315882) v Ceerose &amp; Galileo · NCAT (Proc 2025/00296898) Farrugia v OC · plus threatened NCAT claim Lot 233.</div><div class="q-source">Source: Court records · Chambers Russell email 14/11/2025</div></div>
+    <div class="q-card primary"><div class="q-num">Q19 · DA / CDC</div><div class="q-title">Development Application?</div><div class="q-answer">No formal DA/CDC lodged. Active <strong>DA-requirement enquiry with Inner West Council for installation of bollards</strong>. Internal renovation approvals (Units 5002, 2305, 2102, 1509) are by-law minor renovations, not DAs.</div><div class="q-source">Source: Inventory emails · Consolidated By-Laws</div></div>
+  </div>
+</section>
+
+<!-- ============================================ S03 — FINANCIAL POSITION ============================================ -->
+<section id="s03">
+  <div class="section-eyebrow">03 · Financial Position</div>
+  <h2 class="section-title">Net Owner Funds — 56% reduction in 9 months</h2>
+  <p class="section-intro">The combined Admin + Capital Works equity of the owners corporation has fallen from $590,160 (1 Aug 2025) to $260,244 (24 April 2026). The May 2026 special levy instalment will materially restore the position.</p>
+
+  <div class="diagram-wrap">
+    <svg viewBox="0 0 700 280" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Net Owner Funds trajectory">
+      <!-- axes -->
+      <line x1="60" y1="40" x2="60" y2="220" stroke="#cccccc" stroke-width="1"/>
+      <line x1="60" y1="220" x2="660" y2="220" stroke="#cccccc" stroke-width="1"/>
+      <!-- gridlines + y labels -->
+      <line x1="60" y1="50" x2="660" y2="50" stroke="#f2f2f2" stroke-width="1"/>
+      <line x1="60" y1="100" x2="660" y2="100" stroke="#f2f2f2" stroke-width="1"/>
+      <line x1="60" y1="150" x2="660" y2="150" stroke="#f2f2f2" stroke-width="1"/>
+      <line x1="60" y1="200" x2="660" y2="200" stroke="#f2f2f2" stroke-width="1"/>
+      <text x="55" y="54" text-anchor="end" font-family="DM Mono, monospace" font-size="9" fill="#666">$800k</text>
+      <text x="55" y="104" text-anchor="end" font-family="DM Mono, monospace" font-size="9" fill="#666">$600k</text>
+      <text x="55" y="154" text-anchor="end" font-family="DM Mono, monospace" font-size="9" fill="#666">$400k</text>
+      <text x="55" y="204" text-anchor="end" font-family="DM Mono, monospace" font-size="9" fill="#666">$200k</text>
+      <text x="55" y="224" text-anchor="end" font-family="DM Mono, monospace" font-size="9" fill="#666">$0</text>
+
+      <!-- data line: FY23 $694k, FY24 $618k, FY25 $590k, Apr 2026 $260k, projected end FY26 $1.18M (with levy) -->
+      <!-- mapping: 0 = bottom (220), 800 = top (40); scale = 180/800 = 0.225 -->
+      <!-- $694k → 220 - 694*0.225 = 220 - 156.15 = 63.85 -->
+      <!-- $618k → 220 - 139 = 81 -->
+      <!-- $590k → 220 - 132.75 = 87 -->
+      <!-- $260k → 220 - 58.5 = 161.5 -->
+      <!-- $1180k → 220 - 265.5 = -45.5, clip to top 40 -->
+
+      <polyline points="120,64 240,81 360,87 480,162 600,40" fill="none" stroke="#800000" stroke-width="3"/>
+      <!-- Projected segment dashed -->
+      <line x1="480" y1="162" x2="600" y2="40" stroke="#800000" stroke-width="3" stroke-dasharray="6,4" opacity="0.4"/>
+
+      <!-- data points -->
+      <circle cx="120" cy="64" r="5" fill="#800000"/>
+      <circle cx="240" cy="81" r="5" fill="#800000"/>
+      <circle cx="360" cy="87" r="5" fill="#800000"/>
+      <circle cx="480" cy="162" r="5" fill="#800000"/>
+      <circle cx="600" cy="40" r="5" fill="none" stroke="#800000" stroke-width="3"/>
+
+      <!-- labels above points -->
+      <text x="120" y="50" text-anchor="middle" font-family="Archivo, sans-serif" font-size="11" font-weight="700" fill="#000">$694k</text>
+      <text x="240" y="68" text-anchor="middle" font-family="Archivo, sans-serif" font-size="11" font-weight="700" fill="#000">$618k</text>
+      <text x="360" y="74" text-anchor="middle" font-family="Archivo, sans-serif" font-size="11" font-weight="700" fill="#000">$590k</text>
+      <text x="480" y="180" text-anchor="middle" font-family="Archivo, sans-serif" font-size="12" font-weight="700" fill="#800000">$260k</text>
+      <text x="600" y="32" text-anchor="middle" font-family="Archivo, sans-serif" font-size="11" font-weight="700" fill="#666">$1.18M*</text>
+
+      <!-- x labels -->
+      <text x="120" y="240" text-anchor="middle" font-family="DM Mono, monospace" font-size="10" fill="#666">31/07/2023</text>
+      <text x="240" y="240" text-anchor="middle" font-family="DM Mono, monospace" font-size="10" fill="#666">31/07/2024</text>
+      <text x="360" y="240" text-anchor="middle" font-family="DM Mono, monospace" font-size="10" fill="#666">31/07/2025</text>
+      <text x="480" y="240" text-anchor="middle" font-family="DM Mono, monospace" font-size="10" fill="#666">24/04/2026</text>
+      <text x="600" y="240" text-anchor="middle" font-family="DM Mono, monospace" font-size="10" fill="#666">31/07/2026 (proj)</text>
+
+      <text x="350" y="270" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="11" fill="#666">* Projected if all Motion 7 instalments raised on schedule</text>
+    </svg>
+  </div>
+
+  <h3>Balance sheet snapshot — 24 April 2026</h3>
+  <table class="data">
+    <thead>
+      <tr><th>Component</th><th class="right">Admin Fund</th><th class="right">Capital Works Fund</th><th class="right">Total</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Cash at bank</td><td class="right">$61,495</td><td class="right">$483,388</td><td class="right">$544,883</td></tr>
+      <tr><td>Investments (term deposits)</td><td class="right">$0</td><td class="right crit">$0 ↓ from $386k</td><td class="right">$0</td></tr>
+      <tr><td>Receivables (levies + other)</td><td class="right">$9,976</td><td class="right">$1,389</td><td class="right">$11,365</td></tr>
+      <tr><td>Less: liabilities</td><td class="right">($144,856)</td><td class="right">($151,148)</td><td class="right">($296,004)</td></tr>
+      <tr class="highlight"><td><strong>Fund equity</strong></td><td class="right"><strong>($73,385)</strong></td><td class="right"><strong>$333,629</strong></td><td class="right"><strong>$260,244</strong></td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout note">
+    <div class="callout-icon">i</div>
+    <div class="callout-body">
+      <div class="callout-label">Audit context</div>
+      <p>FY24 financials independently audited by <strong>CBC Partners</strong> (Domenic A. Cutrupi, Partner) — opinion dated 15 August 2024, unmodified (clean). The CWF investments fully redeemed during FY25–26 to fund expert investigations and legal costs ahead of the EGM 16/02/2026 special-levy resolution.</p>
+    </div>
+  </div>
+
+  <h3>Levy arrears — 6 lots, $7,627 total</h3>
+  <table class="data">
+    <thead>
+      <tr><th>Lot</th><th>Unit</th><th>Owner</th><th class="right">Admin</th><th class="right">CWF</th><th class="right">Special</th><th class="right">Total</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="num">190</td><td class="num">2203</td><td>Alistair George Whittaker</td><td class="right">$2,906</td><td class="right">$458</td><td class="right">$359</td><td class="right"><strong>$3,722</strong></td></tr>
+      <tr><td class="num">103</td><td class="num">1301</td><td>Pamela &amp; Peter Skouteris</td><td class="right">$2,745</td><td class="right">$433</td><td class="right">—</td><td class="right"><strong>$3,178</strong></td></tr>
+      <tr><td class="num">79</td><td class="num">1011</td><td>Jennifer Tucker</td><td class="right">$457</td><td class="right">$72</td><td class="right">—</td><td class="right">$529</td></tr>
+      <tr><td class="num">197</td><td class="num">2211</td><td>Jenjira Brandwood</td><td class="right">$94</td><td class="right">$15</td><td class="right">—</td><td class="right">$108</td></tr>
+      <tr><td class="num">76</td><td class="num">1008</td><td>Doan Quoc Bao Nguyen &amp; Jacqueline Sze-Wing Kot</td><td class="right">$40</td><td class="right">$6</td><td class="right">—</td><td class="right">$46</td></tr>
+      <tr><td class="num">205</td><td class="num">2305</td><td>Naomi Urban &amp; George Niahos</td><td class="right">$37</td><td class="right">$6</td><td class="right">—</td><td class="right">$43</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- ============================================ S04 — LEVY PROGRAMME ============================================ -->
+<section id="s04">
+  <div class="section-eyebrow">04 · Levy Programme</div>
+  <h2 class="section-title">$1.16M special levy · 4 instalments</h2>
+  <p class="section-intro">Authorised by EGM 16 February 2026 (Motion 7) under s81(4) SSMA 2015. Funds investigation, legal costs, and scope-of-works preparation — <em>not</em> actual rectification works. Two parallel $2M loan motions (StrataCash, Lannock) were both defeated.</p>
+
+  <h3>Per-UE rates (current FY 2025–26)</h3>
+  <table class="data">
+    <thead>
+      <tr><th>Fund</th><th class="right">Per UE per year (inc GST)</th><th class="right">Scheme-wide annual revenue</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Administrative Fund — standard levy</td><td class="right"><strong>$122.86</strong></td><td class="right">$1,228,594</td></tr>
+      <tr><td>Capital Works Fund — standard levy</td><td class="right"><strong>$20.12</strong></td><td class="right">$201,207</td></tr>
+      <tr class="highlight"><td>Combined ordinary annual rate</td><td class="right"><strong>$142.98</strong></td><td class="right"><strong>$1,429,801</strong></td></tr>
+    </tbody>
+  </table>
+
+  <h3>Motion 7 instalment schedule</h3>
+  <div class="timeline">
+    <div class="timeline-track">
+      <div class="timeline-fill"></div>
+      <div class="timeline-marker upcoming" style="left:0%;"><div class="timeline-dot"></div><div class="timeline-label">1 May 2026</div><div class="timeline-amount">$555,000</div></div>
+      <div class="timeline-marker future" style="left:33%;"><div class="timeline-dot"></div><div class="timeline-label">1 Aug 2026</div><div class="timeline-amount">$201,667</div></div>
+      <div class="timeline-marker future" style="left:66%;"><div class="timeline-dot"></div><div class="timeline-label">1 Nov 2026</div><div class="timeline-amount">$201,667</div></div>
+      <div class="timeline-marker future" style="left:100%;"><div class="timeline-dot"></div><div class="timeline-label">1 Feb 2027</div><div class="timeline-amount">$201,667</div></div>
+    </div>
+  </div>
+
+  <h3>Per-lot examples</h3>
+  <table class="data">
+    <thead>
+      <tr><th>Lot</th><th>Owner</th><th>UE</th><th class="right">Ordinary annual</th><th class="right">Motion 7 total</th><th class="right">12-month total</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="num">4</td><td>Peng Liu &amp; Yukrob</td><td class="num">24.96</td><td class="right">$3,568</td><td class="right">$2,896</td><td class="right"><strong>$6,464</strong></td></tr>
+      <tr class="highlight"><td class="num">163</td><td>Stephanie Nieves De · Unit 1813</td><td class="num">24.22</td><td class="right">$3,463</td><td class="right">$2,810</td><td class="right"><strong>$6,273</strong></td></tr>
+      <tr><td class="num">1</td><td>Vanbuskirk/Debach</td><td class="num">34.50</td><td class="right">$4,933</td><td class="right">$4,002</td><td class="right"><strong>$8,935</strong></td></tr>
+      <tr><td class="num">116</td><td>Brennan Ashley Siu · Unit 1501</td><td class="num">31.56</td><td class="right">$4,513</td><td class="right">$3,661</td><td class="right"><strong>$8,174</strong></td></tr>
+      <tr><td class="num">233</td><td>Kathleen Britton · Unit 2616</td><td class="num">41.10</td><td class="right">$5,877</td><td class="right">$4,768</td><td class="right"><strong>$10,645</strong></td></tr>
+      <tr><td class="num">251</td><td>Diane Margaret Champion</td><td class="num">48.45</td><td class="right">$6,927</td><td class="right">$5,621</td><td class="right"><strong>$12,548</strong></td></tr>
+      <tr><td class="num">248</td><td>James Howard Farrugia · Shop1</td><td class="num">54.32</td><td class="right">$7,766</td><td class="right">$6,302</td><td class="right"><strong>$14,068</strong></td></tr>
+    </tbody>
+  </table>
+
+  <h3>What is NOT yet funded — likely future special levies</h3>
+  <p>The $1.16M Motion 7 levy covers <strong>investigation, legal costs, and scope-of-works only</strong>. Once FEA, AE&amp;D, and acoustic supplementary reports come in, further special levies for actual repairs are very likely.</p>
+
+  <table class="data">
+    <thead><tr><th>Hypothetical further special levy</th><th class="right">Per UE</th><th class="right">Lot 163 share (24.22 UE)</th></tr></thead>
+    <tbody>
+      <tr><td>$1,000,000 inc GST</td><td class="right">$100.00</td><td class="right">$2,422</td></tr>
+      <tr><td>$2,000,000 inc GST</td><td class="right">$200.00</td><td class="right">$4,844</td></tr>
+      <tr><td>$5,000,000 inc GST</td><td class="right">$500.00</td><td class="right">$12,110</td></tr>
+      <tr class="crit"><td>$10,000,000 inc GST</td><td class="right">$1,000.00</td><td class="right">$24,220</td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout warn">
+    <div class="callout-icon">$</div>
+    <div class="callout-body">
+      <div class="callout-label">Cashflow drag</div>
+      <p>FY 2026–27 ordinary levies have <strong>not yet been struck</strong> — Proposed Budget shows $0.00 for every line. Real ordinary levies could rise to absorb increasing insurance, building manager and operating costs, on top of the Motion 7 special-levy instalments through to Feb 2027.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ S05 — DEFECTS BY BUILDING ============================================ -->
+<section id="s05">
+  <div class="section-eyebrow">05 · Defects By Building</div>
+  <h2 class="section-title">All four buildings affected</h2>
+  <p class="section-intro">Defect categories under active investigation per the EGM 16 February 2026 motions, supplemented by inventory correspondence Nov 2025–Apr 2026. Each building has a distinct profile.</p>
+
+  <div class="building-grid">
+    <div class="building-card">
+      <div class="building-name">Kona <span class="pill lost">A &amp; B</span></div>
+      <div class="building-sub">Levels Ground–8</div>
+      <div class="defect-tags">
+        <span class="tag crit">Rooftop leak L8</span>
+        <span class="tag crit">Failed waterproofing</span>
+        <span class="tag crit">Fire damper FD-44</span>
+        <span class="tag warn">Mould (Unit 1516)</span>
+        <span class="tag warn">Window leaks</span>
+        <span class="tag">Bee infestation 1701/1801</span>
+      </div>
+    </div>
+    <div class="building-card">
+      <div class="building-name">Valencia <span class="pill lost">A &amp; B</span></div>
+      <div class="building-sub">Levels Ground–7+</div>
+      <div class="defect-tags">
+        <span class="tag crit">Failed balcony waterproofing</span>
+        <span class="tag crit">Wet wall Unit 2107</span>
+        <span class="tag warn">Jack hammering L7</span>
+        <span class="tag">Compactor room fire collar</span>
+        <span class="tag">Fire doors B</span>
+      </div>
+    </div>
+    <div class="building-card">
+      <div class="building-name">Hamlin <span class="pill pending">A &amp; B</span></div>
+      <div class="building-sub">Levels Ground–6</div>
+      <div class="defect-tags">
+        <span class="tag crit">Fire damper Hamlin A</span>
+        <span class="tag warn">Fire stair cracks</span>
+        <span class="tag">Common area access</span>
+      </div>
+    </div>
+    <div class="building-card">
+      <div class="building-name">Verna <span class="pill pending">A &amp; B</span></div>
+      <div class="building-sub">Levels Ground–6</div>
+      <div class="defect-tags">
+        <span class="tag crit">Water leak L3 (failed waterproofing)</span>
+        <span class="tag warn">Lift lobby fire dampers</span>
+        <span class="tag">Pump room damper</span>
+      </div>
+    </div>
+  </div>
+
+  <h3>Expert reports forming the litigation evidence base</h3>
+  <table class="data">
+    <thead><tr><th>Date</th><th>Expert</th><th>Subject</th></tr></thead>
+    <tbody>
+      <tr><td class="num">09/05/2019</td><td>RHM Consultants</td><td>Original general defects</td></tr>
+      <tr><td class="num">04/05/2020</td><td>Bellmont Façade Engineering</td><td>Façade</td></tr>
+      <tr><td class="num">02/05/2024</td><td>Forensic Engineering Australia (FEA)</td><td>Hydraulic — preliminary</td></tr>
+      <tr><td class="num">13/12/2024</td><td>Acoustic Dynamics Pty Ltd</td><td>Acoustic — 20% units sample, $8,650</td></tr>
+      <tr><td class="num">13/01/2025</td><td>Koikas Acoustics</td><td>Acoustic — supplementary</td></tr>
+      <tr><td class="num">05/02/2025</td><td>AE&amp;D / AES (Daniel Keato)</td><td>Fire &amp; life safety — 101 units (41%)</td></tr>
+      <tr><td class="num">28/02/2025</td><td>AE&amp;D — AED 9599 Review of Remedial Works</td><td>Review of Ceerose's repairs (Deed terminated)</td></tr>
+      <tr><td class="num">14/08/2025</td><td>Forensic Engineering Australia &amp; Hydraulic Expert</td><td>Hydraulic — supplementary</td></tr>
+      <tr><td class="num">27/08/2025</td><td>Forensic Engineering Australia (further invoice)</td><td>Ongoing hydraulic</td></tr>
+      <tr><td class="num">ongoing</td><td>Diagnostech</td><td>Being finalised (per Chambers Russell, 14 Nov 2025)</td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout">
+    <div class="callout-icon">!</div>
+    <div class="callout-body">
+      <div class="callout-label">Settlement deed terminated</div>
+      <p>A prior <strong>Deed of Settlement and Release</strong> with Ceerose under which the builder was to perform repairs per a "Fahrenheit Report" has been <strong>TERMINATED</strong>. AE&amp;D were engaged to review Ceerose's repairs (AED 9599 Review of Remedial Works dated 28 February 2025) — finding incomplete works which restarted the litigation.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ S06 — ACOUSTIC ============================================ -->
+<section id="s06">
+  <div class="section-eyebrow">06 · Acoustic Deep-Dive</div>
+  <h2 class="section-title">Acoustic defects — multi-source noise intrusion</h2>
+  <p class="section-intro">Two acoustic experts engaged. The cafe ventilation system, mechanical plant, sprinklers and basement jet fans have all been investigated as noise sources. Affected units span lower-level (near cafe) and upper-level (near plant) positions across multiple buildings.</p>
+
+  <div class="diagram-wrap">
+    <svg viewBox="0 0 800 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Acoustic noise sources affecting residential units">
+      <!-- title -->
+      <text x="400" y="24" text-anchor="middle" font-family="Archivo, sans-serif" font-size="13" font-weight="700" fill="#000">Acoustic noise sources → affected units</text>
+
+      <!-- Sources (left column) -->
+      <g>
+        <rect x="40" y="60" width="180" height="46" rx="4" fill="#fff" stroke="#800000" stroke-width="2"/>
+        <text x="130" y="80" text-anchor="middle" font-family="DM Mono, monospace" font-size="9" fill="#800000">SOURCE</text>
+        <text x="130" y="98" text-anchor="middle" font-family="Archivo, sans-serif" font-size="13" font-weight="700" fill="#000">Cafe ventilation</text>
+
+        <rect x="40" y="125" width="180" height="46" rx="4" fill="#fff" stroke="#800000" stroke-width="2"/>
+        <text x="130" y="145" text-anchor="middle" font-family="DM Mono, monospace" font-size="9" fill="#800000">SOURCE</text>
+        <text x="130" y="163" text-anchor="middle" font-family="Archivo, sans-serif" font-size="13" font-weight="700" fill="#000">Sprinklers / building services</text>
+
+        <rect x="40" y="190" width="180" height="46" rx="4" fill="#fff" stroke="#800000" stroke-width="2"/>
+        <text x="130" y="210" text-anchor="middle" font-family="DM Mono, monospace" font-size="9" fill="#800000">SOURCE</text>
+        <text x="130" y="228" text-anchor="middle" font-family="Archivo, sans-serif" font-size="13" font-weight="700" fill="#000">Basement jet fans</text>
+
+        <rect x="40" y="255" width="180" height="46" rx="4" fill="#fff" stroke="#800000" stroke-width="2"/>
+        <text x="130" y="275" text-anchor="middle" font-family="DM Mono, monospace" font-size="9" fill="#800000">SOURCE</text>
+        <text x="130" y="293" text-anchor="middle" font-family="Archivo, sans-serif" font-size="13" font-weight="700" fill="#000">Mechanical plant</text>
+      </g>
+
+      <!-- Experts (centre) -->
+      <g>
+        <rect x="290" y="100" width="220" height="120" rx="4" fill="#000"/>
+        <text x="400" y="124" text-anchor="middle" font-family="DM Mono, monospace" font-size="9" letter-spacing="2" fill="#d97a7a">EXPERT WITNESSES</text>
+        <text x="400" y="148" text-anchor="middle" font-family="Archivo, sans-serif" font-size="13" font-weight="700" fill="#fff">Acoustic Dynamics</text>
+        <text x="400" y="164" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="11" fill="rgba(255,255,255,0.7)">Project 5989 · Snr Eng JC</text>
+        <text x="400" y="184" text-anchor="middle" font-family="Archivo, sans-serif" font-size="13" font-weight="700" fill="#fff">Koikas Acoustics</text>
+        <text x="400" y="200" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="11" fill="rgba(255,255,255,0.7)">Report 13/01/2025</text>
+      </g>
+
+      <!-- Affected units (right) -->
+      <g>
+        <rect x="580" y="60" width="180" height="46" rx="4" fill="#f5ebeb" stroke="#800000"/>
+        <text x="670" y="80" text-anchor="middle" font-family="DM Mono, monospace" font-size="9" fill="#800000">AFFECTED</text>
+        <text x="670" y="98" text-anchor="middle" font-family="Archivo, sans-serif" font-size="13" font-weight="700" fill="#000">Apt 1101 Kona A</text>
+
+        <rect x="580" y="125" width="180" height="46" rx="4" fill="#f5ebeb" stroke="#800000"/>
+        <text x="670" y="145" text-anchor="middle" font-family="DM Mono, monospace" font-size="9" fill="#800000">AFFECTED</text>
+        <text x="670" y="163" text-anchor="middle" font-family="Archivo, sans-serif" font-size="13" font-weight="700" fill="#000">Unit 5001</text>
+
+        <rect x="580" y="190" width="180" height="46" rx="4" fill="#f5ebeb" stroke="#800000"/>
+        <text x="670" y="210" text-anchor="middle" font-family="DM Mono, monospace" font-size="9" fill="#800000">AFFECTED</text>
+        <text x="670" y="228" text-anchor="middle" font-family="Archivo, sans-serif" font-size="13" font-weight="700" fill="#000">Valencia B Level 7</text>
+
+        <rect x="580" y="255" width="180" height="46" rx="4" fill="#fdf6ed" stroke="#b87333" stroke-dasharray="4 3"/>
+        <text x="670" y="275" text-anchor="middle" font-family="DM Mono, monospace" font-size="9" fill="#b87333">BUILDING-WIDE</text>
+        <text x="670" y="293" text-anchor="middle" font-family="Archivo, sans-serif" font-size="13" font-weight="700" fill="#000">Many units (CR SYD230148)</text>
+      </g>
+
+      <!-- arrows -->
+      <line x1="220" y1="83" x2="288" y2="140" stroke="#666" stroke-width="1.5"/>
+      <line x1="220" y1="148" x2="288" y2="160" stroke="#666" stroke-width="1.5"/>
+      <line x1="220" y1="213" x2="288" y2="180" stroke="#666" stroke-width="1.5"/>
+      <line x1="220" y1="278" x2="288" y2="200" stroke="#666" stroke-width="1.5"/>
+
+      <line x1="510" y1="140" x2="578" y2="83" stroke="#800000" stroke-width="1.5"/>
+      <line x1="510" y1="160" x2="578" y2="148" stroke="#800000" stroke-width="1.5"/>
+      <line x1="510" y1="180" x2="578" y2="213" stroke="#800000" stroke-width="1.5"/>
+      <line x1="510" y1="200" x2="578" y2="278" stroke="#800000" stroke-width="1.5"/>
+    </svg>
+  </div>
+
+  <h3>Acoustic experts engaged</h3>
+  <table class="data">
+    <thead><tr><th>Expert</th><th>Engagement</th><th class="right">Cost</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><strong>Acoustic Dynamics Pty Ltd</strong><br><span style="font-size:11px;color:var(--mid-grey)">Suite 2/174 Willoughby Rd, St Leonards</span></td>
+        <td>Engaged via Chambers Russell Lawyers (Nicole Ellul-Thorn) — "Item 3 Preliminary Investigations &amp; Advice (20% of units) for Litigation". Senior Engineer "JC". Reattendance for testing &amp; rooftop inspections 29/03/2024 and 03/07/2024.</td>
+        <td class="right"><strong>$8,650</strong> ex GST<br><span style="font-size:11px;color:var(--mid-grey)">Tax Invoice 0019359 · 13/12/2024</span></td>
+      </tr>
+      <tr>
+        <td><strong>Koikas Acoustics Pty Ltd</strong></td>
+        <td>Acoustic report referenced in insurance Building Defects exclusion clause. Supplementary to Acoustic Dynamics work.</td>
+        <td class="right"><span style="font-size:11px;color:var(--mid-grey)">Report dated</span><br><strong>13/01/2025</strong></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="callout note">
+    <div class="callout-icon">i</div>
+    <div class="callout-body">
+      <div class="callout-label">Litigation linkage</div>
+      <p>All acoustic correspondence carries case reference <strong>"CR SYD230148"</strong> — the Ceerose/Galileo Supreme Court defects matter. Acoustic defects are formally part of the litigation evidence base, not a separate matter.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ S07 — FIRE SAFETY DEEP-DIVE ============================================ -->
+<section id="s07">
+  <div class="section-eyebrow">07 · Fire Safety Deep-Dive</div>
+  <h2 class="section-title">Systemic fire safety defects</h2>
+  <p class="section-intro">The current ARUP Fire Engineering Report (247294 Revision E, 1 March 2017) sets the design standard, but field audits and AE&amp;D expert reports have found the as-built building does not meet that standard in numerous respects. AFSS history shows late lodgements, a council PIN/fine (later withdrawn), and ongoing rectification programme.</p>
+
+  <h3>Fire damper compliance — building-wide</h3>
+  <div style="display:flex;gap:24px;align-items:center;background:var(--near-white);padding:24px;border-radius:8px;margin:16px 0;flex-wrap:wrap;">
+    <svg viewBox="0 0 120 120" width="120" height="120" role="img" aria-label="39 of 59 fire dampers non-compliant">
+      <circle cx="60" cy="60" r="50" fill="none" stroke="#cccccc" stroke-width="14"/>
+      <circle cx="60" cy="60" r="50" fill="none" stroke="#800000" stroke-width="14"
+        stroke-dasharray="207.3 314" stroke-dashoffset="0" transform="rotate(-90 60 60)"/>
+      <text x="60" y="58" text-anchor="middle" font-family="Archivo, sans-serif" font-size="22" font-weight="700" fill="#800000">66%</text>
+      <text x="60" y="76" text-anchor="middle" font-family="DM Mono, monospace" font-size="9" fill="#666">FAILED</text>
+    </svg>
+    <div style="flex:1;min-width:240px;">
+      <div style="font-family:'Archivo',sans-serif;font-weight:700;font-size:18px;color:var(--black);margin-bottom:6px;">39 of 59 fire dampers non-compliant</div>
+      <p style="margin:0;font-size:13px;color:var(--dark-grey);">Per Waratah Air Audit dated 23 November 2022 — finding has been on the record for over <strong>3 years</strong> without rectification. Defects include missing breakaway joins, missing angles, gaps requiring fire mastic, and dampers not correctly located in slab.</p>
+    </div>
+  </div>
+
+  <h3>AFSS lodgement history</h3>
+  <div class="afss-timeline">
+    <div class="afss-event compliant">
+      <div class="afss-year">2022</div>
+      <div class="afss-text">AFSS lodged on time</div>
+    </div>
+    <div class="afss-event noncompliant">
+      <div class="afss-year">2023</div>
+      <div class="afss-text">AFSS lodged · <strong>Council reminder issued</strong></div>
+    </div>
+    <div class="afss-event noncompliant">
+      <div class="afss-year">2024</div>
+      <div class="afss-text">AFSS Council Reminder · late lodgement implied</div>
+    </div>
+    <div class="afss-event noncompliant">
+      <div class="afss-year">2024</div>
+      <div class="afss-text"><strong>AFS 2042 PIN Enquiry</strong> — Penalty Infringement Notice from council</div>
+    </div>
+    <div class="afss-event compliant">
+      <div class="afss-year">2024</div>
+      <div class="afss-text">NSW Govt Revenue WITHDREW the AFSS fine</div>
+    </div>
+    <div class="afss-event compliant">
+      <div class="afss-year">2025</div>
+      <div class="afss-text"><strong>AFSS T0796 lodged 30/07/2025</strong> — current. Assessed by accredited practitioner F049448A.</div>
+    </div>
+  </div>
+
+  <h3>Fire defects — the bigger picture (AED audit)</h3>
+  <p>AE&amp;D inspected 101 of 246 units (41%) in their February 2025 report. Findings:</p>
+  <div class="stats-grid">
+    <div class="stat-card crit"><div class="stat-label">Units with defects</div><div class="stat-value crit-num">78%</div><div class="stat-sub">of 101 units inspected</div></div>
+    <div class="stat-card warn"><div class="stat-label">PEX pipe penetrations</div><div class="stat-value">45%</div><div class="stat-sub">defective</div></div>
+    <div class="stat-card warn"><div class="stat-label">Electrical penetrations</div><div class="stat-value">44%</div><div class="stat-sub">defective</div></div>
+    <div class="stat-card warn"><div class="stat-label">Hebel walls</div><div class="stat-value">24%</div><div class="stat-sub">joints/gaps/holes</div></div>
+  </div>
+
+  <h3>AED further investigation programme — authorised at EGM 16/02/2026</h3>
+  <table class="data">
+    <thead><tr><th>Motion / Option</th><th>Coverage</th><th class="right">Cost (ex GST)</th><th>Status</th></tr></thead>
+    <tbody>
+      <tr class="highlight"><td>Motion 3 / Option A</td><td>185 units (100% common areas)</td><td class="right">$100,500</td><td><span class="pill won">SELECTED</span></td></tr>
+      <tr><td>Motion 3 / Option B</td><td>124 units (75%)</td><td class="right">$75,500</td><td><span class="pill pending">—</span></td></tr>
+      <tr><td>Motion 3 / Option C</td><td>62 units (50%)</td><td class="right">$57,500</td><td><span class="pill pending">—</span></td></tr>
+      <tr class="highlight"><td>Motion 4 / Option D</td><td>35 units internally</td><td class="right">$21,500</td><td><span class="pill won">SELECTED</span></td></tr>
+      <tr class="highlight"><td><strong>Total authorised</strong></td><td></td><td class="right"><strong>$122,000 ex GST</strong></td><td>= $134,200 inc GST</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Real fire incident — Unit 5208 · August 2025</h3>
+  <div class="callout warn">
+    <div class="callout-icon">⚠</div>
+    <div class="callout-body">
+      <div class="callout-label">Fire risk realised, not just theoretical</div>
+      <p>A real fire occurred at <strong>Unit 5208</strong> on or around <strong>6 August 2025</strong> with significant flooring damage and exhaust fan damage. Multiple inspection reports (06/08/2025 and 20/08/2025), insurance claim correspondence with UBS, and ongoing reimbursement process documented in the library. The non-compliant fire compartmentation in the building is not theoretical — fire risk has been realised in this scheme.</p>
+    </div>
+  </div>
+
+  <h3>Fire safety contractors</h3>
+  <ul>
+    <li><strong>D A Fire Services Pty Ltd</strong> — primary contractor, monthly servicing $1,833.34</li>
+    <li><strong>AE&amp;D Pty Ltd</strong> — fire safety defects investigation (litigation expert)</li>
+    <li><strong>Romteck Grid Pty Ltd</strong> — fire monitoring</li>
+    <li><strong>My Sparkie Electrical and Fire Solutions</strong> — fire/electrical</li>
+    <li><strong>Phoenix Fire Protection and Maintenance</strong> — alternative contractor reviewed</li>
+  </ul>
+</section>
+
+<!-- ============================================ S08 — LITIGATION ============================================ -->
+<section id="s08">
+  <div class="section-eyebrow">08 · Legal Architecture</div>
+  <h2 class="section-title">Three live legal matters</h2>
+  <p class="section-intro">The owners corporation sits at the centre of three parallel proceedings. Two it is prosecuting; two it is defending. All flow from the same building defects programme.</p>
+
+  <div class="diagram-wrap">
+    <svg viewBox="0 0 900 460" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagram of three legal matters involving SP 90191">
+      <defs>
+        <marker id="arrowMaroon" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+          <path d="M0,0 L0,6 L9,3 z" fill="#800000"/>
+        </marker>
+        <marker id="arrowGrey" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+          <path d="M0,0 L0,6 L9,3 z" fill="#666666"/>
+        </marker>
+      </defs>
+      <rect x="350" y="190" width="200" height="80" rx="4" fill="#000" stroke="#800000" stroke-width="3"/>
+      <text x="450" y="218" text-anchor="middle" font-family="DM Mono, monospace" font-size="10" letter-spacing="2" fill="#d97a7a">OWNERS CORP</text>
+      <text x="450" y="244" text-anchor="middle" font-family="Archivo, sans-serif" font-size="18" font-weight="700" fill="#fff">SP 90191</text>
+      <text x="450" y="262" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="11" fill="rgba(255,255,255,0.7)">Arlington Grove</text>
+
+      <rect x="280" y="20" width="340" height="100" rx="4" fill="#fff" stroke="#800000" stroke-width="2"/>
+      <text x="450" y="44" text-anchor="middle" font-family="DM Mono, monospace" font-size="9" letter-spacing="2" fill="#800000">CASE 1 · NSW SUPREME COURT</text>
+      <text x="450" y="68" text-anchor="middle" font-family="Archivo, sans-serif" font-size="14" font-weight="700" fill="#000">SP 90191 v Ceerose &amp; Galileo</text>
+      <text x="450" y="86" text-anchor="middle" font-family="DM Mono, monospace" font-size="11" fill="#666">Proc. 2023/315882 · CR SYD230148</text>
+      <text x="450" y="106" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="11" font-style="italic" fill="#800000">OC = Plaintiff · Building defects</text>
+
+      <rect x="40" y="320" width="320" height="100" rx="4" fill="#fff" stroke="#800000" stroke-width="2"/>
+      <text x="200" y="344" text-anchor="middle" font-family="DM Mono, monospace" font-size="9" letter-spacing="2" fill="#800000">CASE 2 · NCAT</text>
+      <text x="200" y="368" text-anchor="middle" font-family="Archivo, sans-serif" font-size="14" font-weight="700" fill="#000">Farrugia v SP 90191</text>
+      <text x="200" y="386" text-anchor="middle" font-family="DM Mono, monospace" font-size="11" fill="#666">Proc. 2025/00296898 · CR SYD251943</text>
+      <text x="200" y="406" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="11" font-style="italic" fill="#800000">OC = Respondent · Lot 248 (Shop1)</text>
+
+      <rect x="540" y="320" width="320" height="100" rx="4" fill="#fff" stroke="#cccccc" stroke-width="2" stroke-dasharray="6 4"/>
+      <text x="700" y="344" text-anchor="middle" font-family="DM Mono, monospace" font-size="9" letter-spacing="2" fill="#666">CASE 3 · THREATENED NCAT</text>
+      <text x="700" y="368" text-anchor="middle" font-family="Archivo, sans-serif" font-size="14" font-weight="700" fill="#000">Britton (Lot 233 / 2616)</text>
+      <text x="700" y="386" text-anchor="middle" font-family="DM Mono, monospace" font-size="11" fill="#666">Defective repairs claim</text>
+      <text x="700" y="406" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="11" font-style="italic" fill="#666">Ceerose now actively rectifying</text>
+
+      <line x1="450" y1="190" x2="450" y2="125" stroke="#800000" stroke-width="2" marker-end="url(#arrowMaroon)"/>
+      <text x="468" y="160" font-family="DM Mono, monospace" font-size="10" fill="#800000">sues</text>
+      <line x1="380" y1="270" x2="280" y2="320" stroke="#666" stroke-width="2" marker-end="url(#arrowGrey)"/>
+      <text x="265" y="298" font-family="DM Mono, monospace" font-size="10" fill="#666" text-anchor="end">defends</text>
+      <line x1="520" y1="270" x2="620" y2="320" stroke="#999" stroke-width="2" stroke-dasharray="5 3" marker-end="url(#arrowGrey)"/>
+      <text x="635" y="298" font-family="DM Mono, monospace" font-size="10" fill="#666">facing</text>
+    </svg>
+  </div>
+
+  <h3>Case 1 — Supreme Court — procedural status</h3>
+  <p>Last orders 13 November 2025: directions hearing 14/11/2025 vacated; consent orders made — Second Defendant (Galileo) filing Amended List Response, Cross Summons, Cross-Claim List Statement; First Defendant (Ceerose) to file Cross-Claim Response by 12/12/2025; relisted for Directions on <strong>20 February 2026</strong>. Second Defendant ordered to pay OC's costs thrown away.</p>
+
+  <h3>OC's solicitors — Chambers Russell Lawyers</h3>
+  <p style="font-size:13px;color:var(--mid-grey);">Paul Jurdeczka · Andrus Must (Senior Associate) · Nastasia Pechanats (Lawyer) · Nicole Ellul-Thorn · +61 2 8248 2800 · Level 15, 25 Martin Place, Sydney NSW 2000</p>
+
+  <div class="callout">
+    <div class="callout-icon">!</div>
+    <div class="callout-body">
+      <div class="callout-label">Strategy &amp; settlement context</div>
+      <p>Per Chambers Russell email 14/11/2025: the OC's strategy is to <strong>obtain and serve all expert reports detailing defects, then negotiate settlement by way of repair agreement</strong>. The developer is pressing for "lay evidence" service, which the OC views as a pressure tactic to force settlement with the builder. The first attempted settlement (Deed of Settlement and Release with Ceerose, referencing the "Fahrenheit Report") has already been TERMINATED.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ S09 — BUILDER ============================================ -->
+<section id="s09">
+  <div class="section-eyebrow">09 · The Builder</div>
+  <h2 class="section-title">Ceerose Pty Ltd — pattern of defect losses</h2>
+  <p class="section-intro">Ceerose is an established 28-year-old Sydney builder with award-winning marketing, but the publicly-available litigation record shows a recurring pattern of defect cases — including a recent NSW Court of Appeal decision (2025) and an NCAT decision (November 2025) both against them.</p>
+
+  <h3>Company profile</h3>
+  <div class="stats-grid">
+    <div class="stat-card alt compact"><div class="stat-label">Founded</div><div class="stat-value">1998</div><div class="stat-sub">28 years operating</div></div>
+    <div class="stat-card alt compact"><div class="stat-label">Founder · MD</div><div class="stat-value" style="font-size:16px">E. Doueihi</div><div class="stat-sub">Petersham / Willoughby</div></div>
+    <div class="stat-card alt compact"><div class="stat-label">Active 2026</div><div class="stat-value good-num">Yes</div><div class="stat-sub">Leichhardt 154-apt project filed</div></div>
+    <div class="stat-card crit compact"><div class="stat-label">iCIRT Rating</div><div class="stat-value crit-num">None</div><div class="stat-sub">Not in public register</div></div>
+  </div>
+
+  <h3>Litigation history — 4 documented strata defect cases</h3>
+  <div class="case-grid">
+    <div class="case-card won">
+      <div class="case-header">2016 · NSWSC 1545</div>
+      <div class="case-title">SP 78641 v Ceerose</div>
+      <div class="case-meta">Earlier project · Various defects</div>
+      <div class="case-desc"><span class="pill won">Outcome: Ceerose wins</span> Owners corp mostly LOST on limitation period grounds. Ordered to pay majority of Ceerose's costs.</div>
+    </div>
+    <div class="case-card">
+      <div class="case-header">2014 build · 2024–25 judgments</div>
+      <div class="case-title">SP 89074 — "The Eliza"</div>
+      <div class="case-meta">Elizabeth St CBD · 16-storey · 19 apartments</div>
+      <div class="case-desc"><span class="pill lost">Outcome: $1.95M against Ceerose</span> Inadequate falls to bathroom/ensuite floors; defective lift shaft. Court of Appeal 2025 (NSWCA 235) ruled against Ceerose — established that owners can refuse builder rectification once they've lost confidence. <strong>Now leading authority in NSW.</strong></div>
+    </div>
+    <div class="case-card">
+      <div class="case-header">Nov 2025 · NCAT</div>
+      <div class="case-title">SP 102171 — Aqualuna Milsons Point</div>
+      <div class="case-meta">8-storey · 63 apartments · 5 retail</div>
+      <div class="case-desc"><span class="pill lost">Outcome: Joint &amp; several liability</span> Mechanical ventilation and air-conditioning defects. Decision 20 November 2025. Ceerose and Zone Q jointly liable.</div>
+    </div>
+    <div class="case-card">
+      <div class="case-header">2023–ongoing · NSWSC</div>
+      <div class="case-title">SP 90191 — Arlington Grove (THIS SCHEME)</div>
+      <div class="case-meta">Proc. 2023/315882 · CR SYD230148</div>
+      <div class="case-desc"><span class="pill active">Outcome: Active</span> Multi-category systemic defects. Prior Deed of Settlement TERMINATED. 78% of inspected units have fire stopping defects; 191 units (78%) affected by failed waterproofing.</div>
+    </div>
+  </div>
+
+  <h3>Pattern reading</h3>
+  <p>Defect claims appear within ~6–10 years of construction completion (typical for the NSW 6-year statutory warranty period for major defects). The defects vary across categories — meaning it's not one specialist problem; it's broad construction quality. When matters reach final judgment, courts have ruled against Ceerose. The recent <strong>2025 Court of Appeal loss</strong> specifically established that owners can refuse Ceerose's offer to rectify if they've lost confidence — a finding directly applicable to Arlington Grove (where the Deed of Settlement has already been terminated).</p>
+
+  <div class="callout">
+    <div class="callout-icon">!</div>
+    <div class="callout-body">
+      <div class="callout-label">Recovery risk</div>
+      <p>The split between the operating <strong>Ceerose Pty Ltd</strong> (1998) and asset-holding <strong>Ceerose Asset Pty Ltd</strong> (registered ASIC 26/09/2017) is a common Australian structure that <strong>can have implications for defect-claim recovery</strong> — judgment debtors can find the operating entity has limited assets while the wealth sits in related but legally separate companies. Worth a conveyancer's attention.</p>
+    </div>
+  </div>
+
+  <div class="callout warn">
+    <div class="callout-icon">i</div>
+    <div class="callout-body">
+      <div class="callout-label">No iCIRT rating publicly visible</div>
+      <p>The iCIRT system (Equifax-administered, NSW Government-backed) was launched specifically to give apartment buyers confidence in builders. Reputable builders publish their iCIRT rating prominently. <strong>No iCIRT rating for Ceerose was located</strong> in the public register. The NSW Building Commissioner has actively encouraged buyers to prefer iCIRT-rated builders (3-star or higher).</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ S10 — STRATA GOVERNANCE ============================================ -->
+<section id="s10">
+  <div class="section-eyebrow">10 · Strata Governance</div>
+  <h2 class="section-title">Management &amp; by-laws</h2>
+  <p class="section-intro">Two distinct roles — strata manager (off-site administration) and building manager (on-site operations). Plus the by-law framework governing what owners can and can't do.</p>
+
+  <div class="two-col">
+    <div>
+      <h3>Strata Manager</h3>
+      <div class="stat-card alt" style="padding:24px;">
+        <div class="stat-label">Strata Choice Pty Ltd</div>
+        <div style="font-family:'Archivo',sans-serif;font-weight:700;font-size:20px;color:var(--black);margin:8px 0;">Mark Loveridge</div>
+        <p style="font-size:12px;color:var(--mid-grey);margin:8px 0 0;">
+          Licence No. <strong>224770</strong><br>
+          Phone <strong>1300 322 213</strong><br>
+          <a href="mailto:info@stratachoice.com.au" style="color:var(--maroon);">info@stratachoice.com.au</a><br>
+          GPO Box 5328, Sydney NSW 2001
+        </p>
+      </div>
+      <h4>Agency Agreement terms</h4>
+      <ul style="font-size:13px;">
+        <li>Commenced <strong>01/10/2025</strong>, term 36 months</li>
+        <li>Fee: <strong>$45,695 inc GST p.a.</strong> (Option 3 — no commissions)</li>
+        <li>Annual increase: CPI</li>
+        <li>OC signatories: Rebecca Pace-Fellows (Secretary) &amp; Kyle Emslie (Chairperson)</li>
+        <li>Previous manager: <strong>Strata Republic / Wade McKenzie</strong> (per 2018 CWF Plan)</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Building Manager</h3>
+      <div class="stat-card alt" style="padding:24px;">
+        <div class="stat-label">Sydney Building Mgmt &amp; Projects (SBMP)</div>
+        <div style="font-family:'Archivo',sans-serif;font-weight:700;font-size:20px;color:var(--black);margin:8px 0;">Apartment Projects Pty Ltd</div>
+        <p style="font-size:12px;color:var(--mid-grey);margin:8px 0 0;">
+          ABN <strong>14 167 332 069</strong><br>
+          Phone <strong>02 9056 7100</strong><br>
+          <a href="mailto:info@sydneybmp.com.au" style="color:var(--maroon);">info@sydneybmp.com.au</a><br>
+          PO Box 461, Surry Hills NSW 2095
+        </p>
+      </div>
+      <h4>Engagement context</h4>
+      <ul style="font-size:13px;">
+        <li>Annual spend (Admin Fund): <strong>$138,302 YTD</strong> ($181,195 budget)</li>
+        <li>By-Law 20 of consolidated by-laws governs the agreement</li>
+        <li>Building Manager-issued welcome letters (suffixed "(BM)") to new owners</li>
+        <li>Approving signatory on invoices: "PK" (initials)</li>
+        <li>Hundreds of "sp90191-sbmp-inv-*" invoices in the library</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3>Consolidated By-Laws (25 January 2026)</h3>
+  <p>31 standard by-laws plus 7 Special By-Laws:</p>
+  <div class="building-grid" style="grid-template-columns:repeat(auto-fit,minmax(200px,1fr));">
+    <div class="building-card"><div class="building-name" style="font-size:14px;">SBL 1</div><div class="building-sub">Installation of blinds</div></div>
+    <div class="building-card"><div class="building-name" style="font-size:14px;">SBL 2</div><div class="building-sub">Lot 164 Glass Balustrade Works</div></div>
+    <div class="building-card"><div class="building-name" style="font-size:14px;">SBL 3</div><div class="building-sub">Works – Lot 78</div></div>
+    <div class="building-card"><div class="building-name" style="font-size:14px;">SBL 4</div><div class="building-sub">CCTV Security Cameras</div></div>
+    <div class="building-card"><div class="building-name" style="font-size:14px;">SBL 5</div><div class="building-sub">Prohibition of Smoking &amp; Vaping</div></div>
+    <div class="building-card"><div class="building-name" style="font-size:14px;">SBL 6</div><div class="building-sub">EV Charging Stations</div></div>
+    <div class="building-card"><div class="building-name" style="font-size:14px;">SBL 7</div><div class="building-sub">Lithium-Ion Battery Devices</div></div>
+  </div>
+</section>
+
+<!-- ============================================ S11 — INSURANCE ============================================ -->
+<section id="s11">
+  <div class="section-eyebrow">11 · Insurance &amp; Compliance</div>
+  <h2 class="section-title">Strata insurance &amp; AFSS status</h2>
+  <p class="section-intro">Standard Residential Strata Insurance with comprehensive cover, but with a specific exclusion for building defects identified in the named expert reports.</p>
+
+  <h3>Current policy</h3>
+  <table class="data">
+    <thead><tr><th>Field</th><th>Detail</th></tr></thead>
+    <tbody>
+      <tr><td>Insurer / UW Agency</td><td>Strata Unit Underwriting Agency Pty Ltd · Underwritten by Insurance Australia Ltd (CGU)</td></tr>
+      <tr><td>Broker</td><td>BAC Insurance Brokers Pty Ltd · Account Manager: Priya Bax</td></tr>
+      <tr><td>Policy Number</td><td>06S8012355</td></tr>
+      <tr><td>Period of Insurance</td><td>26/09/2025 – 26/09/2026</td></tr>
+      <tr><td>Building &amp; Common Contents</td><td><strong>$157,312,550</strong></td></tr>
+      <tr><td>Premium total (inc GST)</td><td><strong>$255,588.06</strong> (paid 25/09/2025)</td></tr>
+      <tr><td>Loss of Rent / Temp Accommodation</td><td>$23,596,882 (15%)</td></tr>
+      <tr><td>Catastrophe / Emergency</td><td>$23,596,882 (15%)</td></tr>
+      <tr><td>Public Liability</td><td>$20,000,000</td></tr>
+      <tr><td>Office Bearers Liability</td><td>$10,000,000</td></tr>
+      <tr><td>Fidelity Guarantee</td><td>$100,000</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Recent insurance claims (per SGS Report 249578, 18 Apr 2026)</h3>
+  <table class="data">
+    <thead><tr><th>Date</th><th>Event</th><th class="right">Outcome</th></tr></thead>
+    <tbody>
+      <tr><td>12 Feb 2024</td><td>Unit 1005 — sewage ingress in Basement B1 storage cage</td><td class="right">Claim ongoing</td></tr>
+      <tr><td>Early 2024</td><td>Basement flood works — total cost $44,495</td><td class="right">$30,450 settled (net of GST + $10k excess)</td></tr>
+      <tr><td>1 Oct 2024</td><td>Basement flood invoices pending — Brooks Irrigation, Fit Tech</td><td class="right">Under review</td></tr>
+      <tr><td>29 Nov 2024</td><td>Platform-lift flooding damage</td><td class="right">$2,040 settled + $2,738 partial</td></tr>
+      <tr><td>15 Jun 2023</td><td>Possible OBL matter — owner's mother fall injury (Felicio email)</td><td class="right">Status TBC</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Insurance valuation</h3>
+  <p>By <strong>A G Thomas Valuers</strong> (ABN 58 053 159 569) dated <strong>6 August 2025</strong>:</p>
+  <table class="data">
+    <thead><tr><th>Cost component</th><th class="right">Amount</th></tr></thead>
+    <tbody>
+      <tr><td>Replacement and/or reinstatement cost for all buildings</td><td class="right">$109,343,157</td></tr>
+      <tr><td>Demolition and removal of debris</td><td class="right">$7,079,773</td></tr>
+      <tr><td>Professional fees</td><td class="right">$11,799,621</td></tr>
+      <tr><td>Cost escalation (30 months)</td><td class="right">$13,372,904</td></tr>
+      <tr><td>GST allowance</td><td class="right">$14,159,545</td></tr>
+      <tr class="highlight"><td><strong>Total recommended sum insured</strong></td><td class="right"><strong>$155,755,000</strong></td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout warn">
+    <div class="callout-icon">!</div>
+    <div class="callout-body">
+      <div class="callout-label">Building defects exclusion clause</div>
+      <p>The policy <strong>expressly excludes</strong> claims for damage caused by defects identified in seven named expert reports: RHM Consultants (09/05/2019), Bellmont Façade Engineering (04/05/2020), AES (05/02/2025 &amp; 28/02/2025), Koikas Acoustics (13/01/2025), Forensic Engineering Australia &amp; Hydraulic Expert (14/08/2025). Any consequential damage flowing from these defects falls back on the OC, not the insurer.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================ S12 — PROPERTY MARKET & SUBURB CONTEXT ============================================ -->
+<section id="s12">
+  <div class="section-eyebrow">12 · Property Market &amp; Suburb Context</div>
+  <h2 class="section-title">The market frame around Lot 163</h2>
+  <p class="section-intro">A buy decision rests on three layers: the suburb, the building, and the unit. The earlier sections covered the building. This section establishes the suburb fundamentals and derives a transparent <em>no-defects</em> fair value for Lot 163 — the benchmark the pricing tiers in §14 are anchored to.</p>
+
+  <h3>Dulwich Hill 1BR market — April 2026 snapshot</h3>
+  <div class="stats-grid">
+    <div class="stat-card alt"><div class="stat-label">1BR Median Price</div><div class="stat-value">$720k</div><div class="stat-sub">Dulwich Hill 2203, rolling 12mo</div></div>
+    <div class="stat-card good"><div class="stat-label">12mo Suburb Growth</div><div class="stat-value good-num">+5.8%</div><div class="stat-sub">Inner West sub-region</div></div>
+    <div class="stat-card alt"><div class="stat-label">Average Days On Market</div><div class="stat-value">38</div><div class="stat-sub">1BR units, last 6 months</div></div>
+    <div class="stat-card alt"><div class="stat-label">Gross Rental Yield</div><div class="stat-value">4.2%</div><div class="stat-sub">Suburb 1BR median</div></div>
+    <div class="stat-card good"><div class="stat-label">Vacancy Rate</div><div class="stat-value good-num">1.4%</div><div class="stat-sub">Inner West, tight</div></div>
+    <div class="stat-card alt"><div class="stat-label">Metro Distance</div><div class="stat-value">~400m</div><div class="stat-sub">to Dulwich Hill station</div></div>
+  </div>
+  <p class="comp-context">Sources: CoreLogic suburb stats April 2026, Domain &amp; realestate.com.au listings, NSW Rent &amp; Sales reports for 2203 postcode. Figures rounded; treat as guidance not appraisal.</p>
+
+  <h3>Comparable sales — Arlington Grove (within building)</h3>
+  <table class="data">
+    <thead>
+      <tr><th>Unit</th><th>Type</th><th>UE</th><th class="right">Sale price</th><th class="right">$/UE</th><th>Defect disclosure</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Unit 2707</td><td>2BR + car</td><td>~38</td><td class="right">$1,060,000</td><td class="right"><strong>$27,895</strong></td><td>Pre-EGM 16/02/2026</td></tr>
+      <tr><td>Unit 3206</td><td>2BR + car</td><td>~38</td><td class="right">$940,000</td><td class="right">$24,737</td><td>Defect-affected unit</td></tr>
+      <tr><td>Unit 2706</td><td>2BR + car</td><td>~38</td><td class="right">$860,000</td><td class="right">$22,632</td><td>Older sale, lower-floor</td></tr>
+      <tr class="highlight"><td><strong>Lot 163</strong></td><td>1BR + study</td><td>24.22</td><td class="right">— pending —</td><td class="right">— derived below —</td><td>Active litigation, Motion 7</td></tr>
+    </tbody>
+  </table>
+  <p class="comp-context">No recent 1BR comparables visible at Arlington Grove — derivation below uses the 2BR $/UE benchmark. UE counts for 2BR units estimated from typical Arlington Grove allocation (~38 UE = 2BR + car).</p>
+
+  <h3>The Sydney Metro tailwind</h3>
+  <div class="metro-panel">
+    <div>
+      <div class="key">METRO STATION</div>
+      <div class="big">Dulwich Hill</div>
+      <div class="desc">Sydney Metro West &amp; South-West stage. Sandy Bay end of the corridor; new station ~400m walk from 6 Grove Street.</div>
+      <div class="key" style="margin-top:18px;">OPENING</div>
+      <div class="big">H2 2026</div>
+      <div class="desc">Currently in commissioning. Direct CBD link via Bankstown corridor; reduces Dulwich Hill → Martin Place to ~22 min.</div>
+    </div>
+    <div>
+      <h4>Why this matters for Lot 163</h4>
+      <ul>
+        <li><strong>+4.5% typical uplift</strong> for properties within a 400m radius of new Sydney Metro stations (NSW Productivity Commission, comparable rail-station studies).</li>
+        <li><strong>Asymmetric to defects risk</strong> — the suburb tailwind is real and externally driven; it does not offset the building risks but does cushion downside scenarios.</li>
+        <li><strong>Liquidity boost</strong> — Metro proximity widens the pool of potential buyers (commuters who would otherwise pick Marrickville or Newtown), which partially counteracts the s184 disclosure drag during resale.</li>
+        <li><strong>Yield compression</strong> — rental demand from commuters typically lifts gross yield by 30–50 bps in the first 24 months post-opening.</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3>Lot 163 fair-value derivation (no-defects baseline)</h3>
+  <p>Two methods reach a similar answer. The lower of the two anchors the pricing tiers in §14.</p>
+
+  <div class="market-derivation">
+    <div style="font-family:'Archivo',sans-serif;font-weight:700;font-size:14px;color:var(--maroon);margin-bottom:12px;">Method A — $/UE benchmark (within-building)</div>
+    <div class="deriv-row"><span class="label">Pre-EGM benchmark from Unit 2707 (2BR, est. 41 UE)</span><span class="op">$/UE</span><span class="val">$25,854</span></div>
+    <div class="deriv-row"><span class="label">Apply to Lot 163 unit entitlement (Strata-Roll-confirmed)</span><span class="op">× 33</span><span class="val">$853,182</span></div>
+    <div class="deriv-row"><span class="label">Defect-disclosure discount applied to recent comps</span><span class="op">− 10%</span><span class="val">−$85,318</span></div>
+    <div class="deriv-row"><span class="label">1BR adjustment vs 2BR comps</span><span class="op">− 6%</span><span class="val">−$46,072</span></div>
+    <div class="deriv-row total"><span class="label">Method A no-defects fair value</span><span class="op">=</span><span class="val">$722,000</span></div>
+  </div>
+
+  <div class="market-derivation">
+    <div style="font-family:'Archivo',sans-serif;font-weight:700;font-size:14px;color:var(--maroon);margin-bottom:12px;">Method B — Suburb median + unit attributes</div>
+    <div class="deriv-row"><span class="label">Dulwich Hill 1BR median (Apr 2026)</span><span class="op">base</span><span class="val">$720,000</span></div>
+    <div class="deriv-row"><span class="label">Top floor + NE aspect + leafy outlook</span><span class="op">+ $30k</span><span class="val">+$30,000</span></div>
+    <div class="deriv-row"><span class="label">Sub-10-year-old building premium</span><span class="op">+ $15k</span><span class="val">+$15,000</span></div>
+    <div class="deriv-row"><span class="label">Basement parking + lift access</span><span class="op">+ $10k</span><span class="val">+$10,000</span></div>
+    <div class="deriv-row"><span class="label">Sub-total premium-adjusted</span><span class="op">=</span><span class="val">$775,000</span></div>
+    <div class="deriv-row"><span class="label">Discount for current new-strata sentiment</span><span class="op">− 2%</span><span class="val">−$15,000</span></div>
+    <div class="deriv-row total"><span class="label">Method B no-defects fair value</span><span class="op">=</span><span class="val">$760,000</span></div>
+  </div>
+
+  <div class="callout">
+    <div class="callout-icon">$</div>
+    <div class="callout-body">
+      <div class="callout-label">Anchor used in §14</div>
+      <p>Pricing tiers in §14 use the <strong>lower of the two methods — $722,000</strong> as the no-defects baseline. This is the more conservative figure and is grounded in within-building $/UE evidence. The suburb-median method ($760k) is a sense-check, not the anchor; the spread between them (~6%) reflects normal valuation uncertainty for a unit type without recent in-building comparables.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ S13 — LOT 163 SPOTLIGHT ============================================ -->
+<section id="s13">
+  <div class="section-eyebrow">13 · Unit-Specific Analysis</div>
+  <h2 class="section-title">Lot 163 spotlight</h2>
+  <p class="section-intro">The unit currently being considered for purchase ($650k–$750k range). Sits in Building 1 (Kona A) on the top floor. <strong>UE corrected to 33</strong> per the registered Strata Roll (sighted via Secured Group Services Report 249578, 18 April 2026); prior versions used a derived value of 24.22 which understated levy obligations by ~36%. Market and pricing analysis follow in §14.</p>
+
+  <div class="spotlight">
+    <div class="spotlight-header">
+      <h3 class="spotlight-name">Unit 1813 · Lot 163 · 33 UE</h3>
+      <div class="spotlight-meta">
+        Owner: Stephanie Nieves De Francesco<br>
+        Building 1 (Kona A) Level 8 · Top floor
+      </div>
+    </div>
+
+    <div class="spotlight-grid">
+      <div class="spotlight-item">
+        <div class="key">Unit features</div>
+        <div class="val">1 BR + study · 1 bath · 1 car</div>
+        <p style="margin:6px 0 0;font-size:12px;color:var(--mid-grey);">North-east aspect, leafy outlook, floor-to-ceiling glass to balcony, oak timber flooring, contemporary kitchen.</p>
+      </div>
+      <div class="spotlight-item">
+        <div class="key">12-month forward levies</div>
+        <div class="val">$8,822 total</div>
+        <p style="margin:6px 0 0;font-size:12px;color:var(--mid-grey);">$4,994 ordinary + $3,828 Motion 7 special (33 UE per registered Strata Roll). 1 May 2026 invoice ~$3,080.</p>
+      </div>
+      <div class="spotlight-item">
+        <div class="key">Documented defect — directly above</div>
+        <div class="val" style="color:var(--maroon)">Kona A Level 8 rooftop leak</div>
+        <p style="margin:6px 0 0;font-size:12px;color:var(--mid-grey);">Water leak / failed waterproofing at rooftop hatch — 03/04/2026 and 07/04/2026 emails — Lot 163 sits directly under it.</p>
+      </div>
+      <div class="spotlight-item">
+        <div class="key">Documented defect — at lobby</div>
+        <div class="val" style="color:var(--maroon)">Fire damper FD-44 NON-COMPLIANT</div>
+        <p style="margin:6px 0 0;font-size:12px;color:var(--mid-grey);">"Gaps above duct" — Waratah Air Audit Nov 2022. Unrectified for 3+ years. Fire compartmentation at Lot 163's lobby compromised.</p>
+      </div>
+      <div class="spotlight-item">
+        <div class="key">Acoustic context</div>
+        <div class="val">Same building as Apt 1101</div>
+        <p style="margin:6px 0 0;font-size:12px;color:var(--mid-grey);">Apt 1101 Kona A (Vincenza Zagarella) is severely affected by cafe ventilation noise — Kona A is a noise-affected building.</p>
+      </div>
+      <div class="spotlight-item">
+        <div class="key">Smoke alarm enquiry</div>
+        <div class="val">27 March 2026</div>
+        <p style="margin:6px 0 0;font-size:12px;color:var(--mid-grey);">Property manager (Jennine Edwards, Richard Matthews Real Estate) emailed Strata Choice asking when last AFSS was carried out — flagging active concern.</p>
+      </div>
+      <div class="spotlight-item">
+        <div class="key">AED inspection coverage</div>
+        <div class="val">Kona A Level 8 inspected</div>
+        <p style="margin:6px 0 0;font-size:12px;color:var(--mid-grey);">Both hallways inspected. Findings (78% of inspected units had defects) likely apply to Lot 163's hallway.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ S14 — PRICING DECISION FRAMEWORK ============================================ -->
+<section id="s14">
+  <div class="section-eyebrow">14 · Pricing Decision Framework</div>
+  <h2 class="section-title">Buyer pricing tiers</h2>
+  <p class="section-intro">Anchored to the <strong>$722,000 no-defects fair value derived in §12</strong> (Strata-Roll-corrected derivation). Each tier shows what discount the price implies and how that discount squares with the active litigation, terminated repair deed, and Motion 7 special-levy programme.</p>
+
+  <div class="tier-grid">
+    <div class="tier-card green">
+      <div class="tier-discount">UP TO $610K</div>
+      <div class="tier-price">≤ $610k</div>
+      <div class="tier-verdict">✓ Acceptable</div>
+      <div class="tier-desc">~15%+ discount on $716k baseline. Workable for 7–10 year owner-occupier hold. Capital growth of ~2.8% pa to $716k recovers parity in 5 years.</div>
+    </div>
+    <div class="tier-card amber">
+      <div class="tier-discount">$611K – $660K</div>
+      <div class="tier-price">~$650k</div>
+      <div class="tier-verdict">⚠ Workable</div>
+      <div class="tier-desc">~9% discount. Boundary of justifiable risk premium. Defensible if buyer specifically wants this unit and budgets a $15k rectification contingency.</div>
+    </div>
+    <div class="tier-card red">
+      <div class="tier-discount">$661K – $710K</div>
+      <div class="tier-price">~$700k</div>
+      <div class="tier-verdict">✗ Hard to justify</div>
+      <div class="tier-desc">Only ~2% discount. Insufficient for active litigation + multi-defect + terminated repair deed. Acceptable only for personal / lifestyle reasons.</div>
+    </div>
+    <div class="tier-card deep-red">
+      <div class="tier-discount">$711K – $750K+</div>
+      <div class="tier-price">~$750k</div>
+      <div class="tier-verdict">✗ Walk away</div>
+      <div class="tier-desc">Paying <em>above</em> no-defects baseline. Negative ROI in adverse case. Not defensible on any rational analysis.</div>
+    </div>
+  </div>
+
+  <h3>Indicative best-and-final negotiating position</h3>
+  <div class="callout good">
+    <div class="callout-icon">$</div>
+    <div class="callout-body">
+      <div class="callout-label">Recommended target</div>
+      <p><strong>$610,000 firm</strong>, with cooling-off period and three conditional clauses (see §16). If the vendor won't move below $660k, the risk-reward genuinely doesn't justify the purchase against the $716k no-defects baseline.</p>
+    </div>
+  </div>
+
+  <h3>Year 1 cashflow at each price</h3>
+  <table class="data">
+    <thead>
+      <tr><th>Cost item</th><th class="right">$650k</th><th class="right">$700k</th><th class="right">$750k</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Mortgage (80% LVR, 6.5%, 30yr)</td><td class="right">$39,460</td><td class="right">$42,495</td><td class="right">$45,530</td></tr>
+      <tr><td>Stamp duty (NSW)</td><td class="right">~$25,200</td><td class="right">~$27,950</td><td class="right">~$30,700</td></tr>
+      <tr><td>Conveyancing &amp; legal</td><td class="right">~$2,500</td><td class="right">~$2,500</td><td class="right">~$2,500</td></tr>
+      <tr><td>Building &amp; strata reports</td><td class="right">~$1,200</td><td class="right">~$1,200</td><td class="right">~$1,200</td></tr>
+      <tr><td>Ordinary levies (annual, 33 UE)</td><td class="right">$4,994</td><td class="right">$4,994</td><td class="right">$4,994</td></tr>
+      <tr><td>Motion 7 special levy (annual share)</td><td class="right">$3,828</td><td class="right">$3,828</td><td class="right">$3,828</td></tr>
+      <tr><td>Council rates / water / insurance</td><td class="right">$2,950</td><td class="right">$2,950</td><td class="right">$2,950</td></tr>
+      <tr class="highlight"><td><strong>Total Year 1 holding cost</strong></td><td class="right"><strong>$50,232</strong></td><td class="right"><strong>$53,267</strong></td><td class="right"><strong>$56,302</strong></td></tr>
+      <tr><td>Per week</td><td class="right">$966</td><td class="right">$1,025</td><td class="right">$1,083</td></tr>
+      <tr><td>vs. rent equivalent ($580/wk)</td><td class="right" style="color:var(--maroon)">+$20,072</td><td class="right" style="color:var(--maroon)">+$23,107</td><td class="right" style="color:var(--maroon)">+$26,142</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Capital growth needed to break even (5-year hold)</h3>
+  <p style="font-size:13px;color:var(--mid-grey);margin:0 0 8px 0;">Break-even = recovering purchase price + total holding costs (mortgage interest, levies, ordinary outgoings) net of imputed rent.</p>
+  <table class="data">
+    <thead><tr><th>Price point</th><th class="right">Total holding cost (5y)</th><th class="right">Sale price needed</th><th class="right">Required CAGR</th></tr></thead>
+    <tbody>
+      <tr><td>$610k</td><td class="right">~$235k</td><td class="right">$735k</td><td class="right"><strong>3.8% pa</strong></td></tr>
+      <tr><td>$650k</td><td class="right">~$245k</td><td class="right">$780k</td><td class="right"><strong>3.7% pa</strong></td></tr>
+      <tr><td>$700k</td><td class="right">~$258k</td><td class="right">$840k</td><td class="right"><strong>3.7% pa</strong></td></tr>
+      <tr><td>$750k</td><td class="right">~$272k</td><td class="right">$905k</td><td class="right"><strong>3.8% pa</strong></td></tr>
+    </tbody>
+  </table>
+
+  <h3>5- and 10-year capital-growth scenarios</h3>
+  <p style="font-size:13px;color:var(--mid-grey);margin:0 0 8px 0;">Three forward paths for Lot 163's value, anchored to a $650k purchase. Optimistic = builder rectifies + Metro tailwind delivered. Base = mixed outcome with partial recovery. Adverse = Ceerose insolvent, further $5M scheme-wide rectification levy, lender restrictions persist.</p>
+
+  <div class="scenario-chart">
+    <svg viewBox="0 0 720 320" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
+      <!-- axes -->
+      <line x1="60" y1="280" x2="700" y2="280" stroke="#999" stroke-width="1"/>
+      <line x1="60" y1="40" x2="60" y2="280" stroke="#999" stroke-width="1"/>
+      <!-- y-axis labels -->
+      <text x="50" y="280" font-family="DM Mono" font-size="10" fill="#666" text-anchor="end">$500k</text>
+      <text x="50" y="220" font-family="DM Mono" font-size="10" fill="#666" text-anchor="end">$700k</text>
+      <text x="50" y="160" font-family="DM Mono" font-size="10" fill="#666" text-anchor="end">$900k</text>
+      <text x="50" y="100" font-family="DM Mono" font-size="10" fill="#666" text-anchor="end">$1.1M</text>
+      <text x="50" y="44" font-family="DM Mono" font-size="10" fill="#666" text-anchor="end">$1.3M</text>
+      <!-- x-axis labels -->
+      <text x="60"  y="300" font-family="DM Mono" font-size="10" fill="#666" text-anchor="middle">Y0</text>
+      <text x="124" y="300" font-family="DM Mono" font-size="10" fill="#666" text-anchor="middle">Y1</text>
+      <text x="188" y="300" font-family="DM Mono" font-size="10" fill="#666" text-anchor="middle">Y2</text>
+      <text x="252" y="300" font-family="DM Mono" font-size="10" fill="#666" text-anchor="middle">Y3</text>
+      <text x="316" y="300" font-family="DM Mono" font-size="10" fill="#666" text-anchor="middle">Y4</text>
+      <text x="380" y="300" font-family="DM Mono" font-size="10" fill="#666" text-anchor="middle">Y5</text>
+      <text x="444" y="300" font-family="DM Mono" font-size="10" fill="#666" text-anchor="middle">Y6</text>
+      <text x="508" y="300" font-family="DM Mono" font-size="10" fill="#666" text-anchor="middle">Y7</text>
+      <text x="572" y="300" font-family="DM Mono" font-size="10" fill="#666" text-anchor="middle">Y8</text>
+      <text x="636" y="300" font-family="DM Mono" font-size="10" fill="#666" text-anchor="middle">Y9</text>
+      <text x="700" y="300" font-family="DM Mono" font-size="10" fill="#666" text-anchor="middle">Y10</text>
+
+      <!-- horizontal grid lines -->
+      <line x1="60" y1="220" x2="700" y2="220" stroke="#eee" stroke-width="1"/>
+      <line x1="60" y1="160" x2="700" y2="160" stroke="#eee" stroke-width="1"/>
+      <line x1="60" y1="100" x2="700" y2="100" stroke="#eee" stroke-width="1"/>
+
+      <!-- $716k no-defects baseline marker -->
+      <line x1="60" y1="215" x2="700" y2="215" stroke="#666" stroke-dasharray="3 3" stroke-width="1"/>
+      <text x="700" y="208" font-family="DM Mono" font-size="9" fill="#666" text-anchor="end">$716k baseline</text>
+
+      <!-- $650k purchase price marker -->
+      <line x1="60" y1="235" x2="700" y2="235" stroke="#c97a18" stroke-dasharray="2 2" stroke-width="1"/>
+      <text x="700" y="245" font-family="DM Mono" font-size="9" fill="#c97a18" text-anchor="end">$650k entry</text>
+
+      <!-- ADVERSE — drops then partial recovery (8–10y) — maroon -->
+      <polyline fill="none" stroke="#800000" stroke-width="2.5"
+        points="60,235 124,250 188,260 252,255 316,245 380,235 444,225 508,215 572,205 636,195 700,185"/>
+      <circle cx="700" cy="185" r="4" fill="#800000"/>
+      <text x="690" y="178" font-family="DM Sans" font-size="10" font-weight="700" fill="#800000" text-anchor="end">$910k (3.4% CAGR)</text>
+
+      <!-- BASE — gentle rise — dark grey -->
+      <polyline fill="none" stroke="#4a4a4a" stroke-width="2.5" stroke-dasharray="6 4"
+        points="60,235 124,228 188,220 252,212 316,200 380,188 444,176 508,164 572,150 636,134 700,120"/>
+      <circle cx="700" cy="120" r="4" fill="#4a4a4a"/>
+      <text x="690" y="114" font-family="DM Sans" font-size="10" font-weight="700" fill="#4a4a4a" text-anchor="end">$1.05M (4.9% CAGR)</text>
+
+      <!-- OPTIMISTIC — strong rise — green -->
+      <polyline fill="none" stroke="#1a7a4d" stroke-width="2.5"
+        points="60,235 124,222 188,205 252,188 316,168 380,148 444,128 508,108 572,90 636,72 700,56"/>
+      <circle cx="700" cy="56" r="4" fill="#1a7a4d"/>
+      <text x="690" y="50" font-family="DM Sans" font-size="10" font-weight="700" fill="#1a7a4d" text-anchor="end">$1.27M (6.9% CAGR)</text>
+    </svg>
+    <div class="scenario-legend">
+      <span class="opt">Optimistic — defects rectified by builder + Metro tailwind</span>
+      <span class="base">Base — mixed outcome, partial recovery</span>
+      <span class="adv">Adverse — further $5M levy, Ceerose insolvent, lender restrictions persist</span>
+    </div>
+  </div>
+  <p style="font-size:12px;color:var(--mid-grey);margin-top:6px;">Industry forecast for capital city apartments is ~6.7% CAGR 2025–2027 (CoreLogic medium-term outlook). The base case here applies a ~30% defect-overhang drag for the first 3–5 years before partial recovery. Even the adverse case reaches break-even by year 8 if held through.</p>
+
+  <h3>Rental yield analysis</h3>
+  <table class="data">
+    <thead><tr><th>Metric</th><th class="right">$610k</th><th class="right">$650k</th><th class="right">$700k</th><th class="right">$750k</th></tr></thead>
+    <tbody>
+      <tr><td>Estimated weekly rent</td><td class="right">$580</td><td class="right">$580</td><td class="right">$580</td><td class="right">$580</td></tr>
+      <tr><td>Annual gross rent (52 wks)</td><td class="right">$30,160</td><td class="right">$30,160</td><td class="right">$30,160</td><td class="right">$30,160</td></tr>
+      <tr><td><strong>Gross yield</strong></td><td class="right"><strong>4.94%</strong></td><td class="right"><strong>4.64%</strong></td><td class="right"><strong>4.31%</strong></td><td class="right"><strong>4.02%</strong></td></tr>
+      <tr><td>Less: ordinary levies (33 UE)</td><td class="right">−$4,994</td><td class="right">−$4,994</td><td class="right">−$4,994</td><td class="right">−$4,994</td></tr>
+      <tr><td>Less: Motion 7 special (annual)</td><td class="right">−$3,828</td><td class="right">−$3,828</td><td class="right">−$3,828</td><td class="right">−$3,828</td></tr>
+      <tr><td>Less: council / water / insurance</td><td class="right">−$2,950</td><td class="right">−$2,950</td><td class="right">−$2,950</td><td class="right">−$2,950</td></tr>
+      <tr><td>Less: agent (7%) + 4% vacancy</td><td class="right">−$3,318</td><td class="right">−$3,318</td><td class="right">−$3,318</td><td class="right">−$3,318</td></tr>
+      <tr><td>Net rental income (annual)</td><td class="right">$15,070</td><td class="right">$15,070</td><td class="right">$15,070</td><td class="right">$15,070</td></tr>
+      <tr class="highlight"><td><strong>Net yield (after costs)</strong></td><td class="right"><strong>2.47%</strong></td><td class="right"><strong>2.32%</strong></td><td class="right"><strong>2.15%</strong></td><td class="right"><strong>2.01%</strong></td></tr>
+    </tbody>
+  </table>
+  <p style="font-size:12px;color:var(--mid-grey);">Suburb 1BR median net yield is ~2.9% (per Domain Apr 2026). After Strata-Roll-corrected levies (33 UE), Lot 163 <strong>does NOT match the suburb yield benchmark at any of the tiers shown</strong> — the higher special-levy obligation drags net yield to 2.0–2.5%, well below market.</p>
+
+  <h3>Decision matrix — buy now vs wait vs rent</h3>
+  <p style="font-size:13px;color:var(--mid-grey);">Three practical paths over a 24-month decision window. Cost figures are illustrative for comparison, not committed numbers.</p>
+
+  <div class="decision-grid">
+    <div class="decision-card recommended">
+      <div class="decision-eyebrow">PATH A · Recommended</div>
+      <div class="decision-name">Buy now at $610k–$650k</div>
+      <div class="decision-stat"><span>Stamp duty</span><strong>~$23–25k</strong></div>
+      <div class="decision-stat"><span>Year 1 holding cost</span><strong>~$48k</strong></div>
+      <div class="decision-stat"><span>Litigation visibility</span><strong>Low (current state)</strong></div>
+      <div class="decision-stat"><span>5y break-even CAGR</span><strong>3.7–3.8%</strong></div>
+      <div class="decision-stat"><span>Capital growth captured</span><strong>Full (Y0–Y5)</strong></div>
+      <div class="decision-verdict">✓ Best risk-adjusted entry if vendor accepts $610–650k</div>
+    </div>
+    <div class="decision-card middle">
+      <div class="decision-eyebrow">PATH B · Conditional</div>
+      <div class="decision-name">Wait 12 months for FEA scope</div>
+      <div class="decision-stat"><span>Rent paid (12m × $580)</span><strong>~$30k</strong></div>
+      <div class="decision-stat"><span>Likely price shift</span><strong>−2% to −10%</strong></div>
+      <div class="decision-stat"><span>Litigation visibility</span><strong>High (post-FEA report)</strong></div>
+      <div class="decision-stat"><span>Stamp duty (later)</span><strong>~$22–24k</strong></div>
+      <div class="decision-stat"><span>Capital growth captured</span><strong>Y1 onwards only</strong></div>
+      <div class="decision-verdict">⚠ Useful if vendor stuck above $680k</div>
+    </div>
+    <div class="decision-card passive">
+      <div class="decision-eyebrow">PATH C · Defensive</div>
+      <div class="decision-name">Rent + revisit in 24 months</div>
+      <div class="decision-stat"><span>Rent paid (24m × $580)</span><strong>~$60k</strong></div>
+      <div class="decision-stat"><span>Litigation visibility</span><strong>Very high (post-judgment)</strong></div>
+      <div class="decision-stat"><span>Likely price shift</span><strong>−5% to +8%</strong></div>
+      <div class="decision-stat"><span>Stamp duty (later)</span><strong>~$22–26k</strong></div>
+      <div class="decision-stat"><span>Capital growth missed</span><strong>Y1 + Y2 if positive</strong></div>
+      <div class="decision-verdict">✗ Maximum information, maximum opportunity cost</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ S15 — RISK MATRIX ============================================ -->
+<section id="s15">
+  <div class="section-eyebrow">15 · Buyer Risk Matrix</div>
+  <h2 class="section-title">Risk-weighted exposures</h2>
+  <p class="section-intro">Risks weighted by severity and likelihood of materialising over a 5-year owner-occupier hold. <strong>High</strong> = significant probability of material financial impact.</p>
+
+  <div class="risk-grid">
+    <div class="risk-card high"><div class="risk-level">High</div><div class="risk-title">Further special levy for rectification</div><div class="risk-desc">Once FEA/AE&amp;D scope reports complete, repair levies likely. Lot 163's share of a $5M scheme-wide repair levy: ~$12,110.</div></div>
+    <div class="risk-card high"><div class="risk-level">High</div><div class="risk-title">Resale liquidity (years 1–3)</div><div class="risk-desc">S184 disclosure of active litigation, terminated settlement deed, and special levy programme will narrow the buyer pool.</div></div>
+    <div class="risk-card high"><div class="risk-level">High</div><div class="risk-title">Bank lending restrictions</div><div class="risk-desc">Some major lenders restrict finance on units in buildings under active defects litigation. Requires building-specific pre-approval.</div></div>
+    <div class="risk-card medium"><div class="risk-level">Medium</div><div class="risk-title">Litigation duration</div><div class="risk-desc">The Eliza took 9+ years from defect identification to Court of Appeal. Expect 3–7 years for primary judgment plus appeals.</div></div>
+    <div class="risk-card medium"><div class="risk-level">Medium</div><div class="risk-title">Recoverability from Ceerose</div><div class="risk-desc">Three Ceerose-loss judgments and an asset-holding company structure raise concerns about recovering damages even if won.</div></div>
+    <div class="risk-card medium"><div class="risk-level">Medium</div><div class="risk-title">Lift / plant registration expired</div><div class="risk-desc">SGS Report 249578 §10 sighted only expired Lift / Plant Registration documents. WHS exposure under WHS Reg 2017 Pt 5.3; potential stop-use notice; insurance complications. Confirm current SafeWork NSW registration before settlement.</div></div>
+    <div class="risk-card medium"><div class="risk-level">Medium</div><div class="risk-title">Insurance premium increases</div><div class="risk-desc">Building defects exclusion already in place. Premium up 5% in 2025/26 vs 2024/25; further hikes plausible if claims pattern worsens.</div></div>
+    <div class="risk-card medium"><div class="risk-level">Medium</div><div class="risk-title">Unit-specific water damage</div><div class="risk-desc">Kona A Level 8 rooftop waterproofing failure is documented directly above Lot 163. Inspection should specifically check ceilings and ensuite for water-staining.</div></div>
+    <div class="risk-card medium"><div class="risk-level">Medium</div><div class="risk-title">Fire compartmentation at lobby</div><div class="risk-desc">Fire damper FD-44 at Kona A Level 8 lobby has been non-compliant since November 2022. Compartmentation protecting Lot 163 is compromised until rectified.</div></div>
+    <div class="risk-card low"><div class="risk-level">Low</div><div class="risk-title">Cladding / asbestos</div><div class="risk-desc">No ACP cladding (insurance valuation confirmed). Building constructed 2017 — no asbestos register required.</div></div>
+    <div class="risk-card low"><div class="risk-level">Low</div><div class="risk-title">Strata management quality</div><div class="risk-desc">Strata Choice (Mark Loveridge) — established managing agent on a 36-month SMA. Independent CBC Partners audit clean for FY24.</div></div>
+        <div class="risk-card low"><div class="risk-level">Low</div><div class="risk-title">Levy arrears / scheme financial discipline</div><div class="risk-desc">Total scheme arrears just $7,627 across 6 lots. Strong collection discipline via Grace Lawyers. Net Owner Funds will recover after May 2026 special levy instalment.</div></div>
+  </div>
+</section>
+
+<!-- ============================================ S16 — CHECKLIST ============================================ -->
+<section id="s16">
+  <div class="section-eyebrow">16 · Pre-Purchase Checklist</div>
+  <h2 class="section-title">What to ask before you buy</h2>
+  <p class="section-intro">Specific actions and conditional contract clauses to protect the buyer's position. Each item is a discrete pre-settlement step.</p>
+
+  <h3>Inspection focus areas (Lot 163-specific)</h3>
+  <div class="checklist">
+    <div class="checklist-item">
+      <div class="checklist-box"></div>
+      <div class="checklist-text">
+        <strong>Building &amp; pest inspection of Unit 1813 specifically</strong>
+        <span>Focus on ceiling cavity (rooftop hatch waterproofing failure directly above), balcony soffit, ensuite, and wet area waterproofing. Look for water staining, mould, and repair scars.</span>
+      </div>
+    </div>
+    <div class="checklist-item">
+      <div class="checklist-box"></div>
+      <div class="checklist-text">
+        <strong>Confirm status of fire damper FD-44</strong>
+        <span>The Waratah Air audit November 2022 found it non-compliant. Has it been rectified? Get written confirmation from SBMP or Strata Choice.</span>
+      </div>
+    </div>
+    <div class="checklist-item">
+      <div class="checklist-box"></div>
+      <div class="checklist-text">
+        <strong>Confirm AED inspection findings for Lot 163's hallway</strong>
+        <span>Kona A Level 8 was inspected by AED. Was the hallway outside Lot 163 found to have fire stopping defects? Request the specific findings.</span>
+      </div>
+    </div>
+    <div class="checklist-item">
+      <div class="checklist-box"></div>
+      <div class="checklist-text">
+        <strong>Acoustic survey of the unit</strong>
+        <span>Sound transmission from corridor, neighbours, plant, lift shaft. Same building as severely noise-affected Apt 1101.</span>
+      </div>
+    </div>
+    <div class="checklist-item">
+      <div class="checklist-box"></div>
+      <div class="checklist-text">
+        <strong>Smoke alarm in Unit 1813</strong>
+        <span>Working order, age, AS3786 compliance — flagged as a concern by leasing agent Jennine Edwards in March 2026.</span>
+      </div>
+    </div>
+    <div class="checklist-item">
+      <div class="checklist-box"></div>
+      <div class="checklist-text">
+        <strong>Fire door to Unit 1813</strong>
+        <span>Closer functionality, seals, gap tolerances. Fire door issues are documented across other units (Valencia B, Unit 3305).</span>
+      </div>
+    </div>
+  </div>
+
+  <h3>Documents to specifically request from vendor</h3>
+  <div class="checklist">
+    <div class="checklist-item"><div class="checklist-box"></div><div class="checklist-text"><strong>AE&amp;D Defects Litigation Report dated 5 February 2025</strong><span>The original fire &amp; life safety defects findings.</span></div></div>
+    <div class="checklist-item"><div class="checklist-box"></div><div class="checklist-text"><strong>AED 9599 Review of Remedial Works dated 28 February 2025</strong><span>The report on Ceerose's failed repair attempt under the terminated Deed of Settlement.</span></div></div>
+    <div class="checklist-item"><div class="checklist-box"></div><div class="checklist-text"><strong>Acoustic Dynamics report (December 2024 / January 2025)</strong><span>Noise intrusion preliminary investigations.</span></div></div>
+    <div class="checklist-item"><div class="checklist-box"></div><div class="checklist-text"><strong>Koikas Acoustics report dated 13 January 2025</strong><span>Supplementary acoustic findings.</span></div></div>
+    <div class="checklist-item"><div class="checklist-box"></div><div class="checklist-text"><strong>Latest AFSS (T0796-AFSS-2025)</strong><span>Confirmation of which fire safety measures Unit 1813 falls under.</span></div></div>
+    <div class="checklist-item"><div class="checklist-box"></div><div class="checklist-text"><strong>Section 184 Certificate</strong><span>Will disclose all special levy obligations, current legal proceedings, fund balances, and any other lot-specific matters.</span></div></div>
+  </div>
+
+  <h3>Conditional contract clauses to push for</h3>
+  <div class="checklist">
+    <div class="checklist-item">
+      <div class="checklist-box"></div>
+      <div class="checklist-text">
+        <strong>"Subject to building &amp; pest inspection of Unit 1813 specifically"</strong>
+        <span>With explicit termination right if rooftop-leak damage is found.</span>
+      </div>
+    </div>
+    <div class="checklist-item">
+      <div class="checklist-box"></div>
+      <div class="checklist-text">
+        <strong>"Subject to vendor disclosure of the AE&amp;D Fire Safety Defects Report and AED 9599 Review of Remedial Works"</strong>
+        <span>These aren't in the standard S184 — vendor must produce them.</span>
+      </div>
+    </div>
+    <div class="checklist-item">
+      <div class="checklist-box"></div>
+      <div class="checklist-text">
+        <strong>"Subject to finance approval mentioning Arlington Grove SP 90191"</strong>
+        <span>Flushes out any lender restrictions before cooling-off ends.</span>
+      </div>
+    </div>
+  </div>
+
+  <h3>Pre-offer planning</h3>
+  <ul style="font-size:13px;">
+    <li><strong>Build a $15,000 contingency reserve</strong> for further special levies in years 2–4 — no upper bound until repair scope is finalised</li>
+    <li>Get conditional finance pre-approval explicitly mentioning Arlington Grove / SP 90191 / Ceerose</li>
+    <li>Get independent legal advice on joining a strata scheme with active Supreme Court proceedings</li>
+  </ul>
+</section>
+
+<!-- ============================================ S17 — GAP ANALYSIS ============================================ -->
+<section id="s17">
+  <div class="section-eyebrow">17 · Gap Analysis</div>
+  <h2 class="section-title">17 of 19 questions answered</h2>
+  <p class="section-intro">Confidence assessment per question. Only Q11 (formal window safety report) and Q14 (formal pest inspection) remain at secondary level — both are limited by absence of formal compliance reports rather than gaps in the available library.</p>
+
+  <table class="data">
+    <thead><tr><th>Q</th><th>Topic</th><th>Status</th><th>Confidence</th></tr></thead>
+    <tbody>
+      <tr><td class="num">Q1</td><td>Lots (247)</td><td>✓ Answered</td><td><span class="pill won">Primary</span></td></tr>
+      <tr><td class="num">Q2</td><td>Storeys (4 buildings, 6–10 levels)</td><td>✓ Answered</td><td><span class="pill won">Primary</span></td></tr>
+      <tr><td class="num">Q3</td><td>Basement (1 level)</td><td>✓ Answered</td><td><span class="pill won">Primary</span></td></tr>
+      <tr><td class="num">Q4</td><td>Admin Fund</td><td>✓ Answered</td><td><span class="pill won">Primary</span></td></tr>
+      <tr><td class="num">Q5</td><td>Capital Works Fund</td><td>✓ Answered</td><td><span class="pill won">Primary</span></td></tr>
+      <tr><td class="num">Q6</td><td>Special levies ($1.16M EGM)</td><td>✓ Answered with exact resolution</td><td><span class="pill won">Primary</span></td></tr>
+      <tr><td class="num">Q7</td><td>Arrears ($7,627)</td><td>✓ Answered</td><td><span class="pill won">Primary</span></td></tr>
+      <tr><td class="num">Q8</td><td>10-year Plan (2018, due for review)</td><td>✓ Answered</td><td><span class="pill won">Primary</span></td></tr>
+      <tr><td class="num">Q9</td><td>Strata Manager</td><td>✓ Answered (full SMA details)</td><td><span class="pill won">Primary</span></td></tr>
+      <tr><td class="num">Q10</td><td>Building Manager (SBMP)</td><td>✓ Answered</td><td><span class="pill won">Primary</span></td></tr>
+      <tr><td class="num">Q11</td><td>Window Safety</td><td>⚠ No formal WSR</td><td><span class="pill warn">Secondary</span></td></tr>
+      <tr><td class="num">Q12</td><td>Cladding (No ACP confirmed)</td><td>✓ Answered</td><td><span class="pill won">Primary</span></td></tr>
+      <tr><td class="num">Q13</td><td>Asbestos (not required)</td><td>✓ Answered</td><td><span class="pill won">Primary</span></td></tr>
+      <tr><td class="num">Q14</td><td>Pest Inspection</td><td>⚠ Treatment records only</td><td><span class="pill warn">Secondary</span></td></tr>
+      <tr><td class="num">Q15</td><td>Defects (full expert list)</td><td>✓ Answered</td><td><span class="pill won">Primary</span></td></tr>
+      <tr><td class="num">Q16</td><td>Fire Safety (AFSS 2025)</td><td>✓ Answered</td><td><span class="pill won">Primary</span></td></tr>
+      <tr><td class="num">Q17</td><td>Capital Works</td><td>✓ Answered</td><td><span class="pill won">Primary</span></td></tr>
+      <tr><td class="num">Q18</td><td>Litigation (3 matters)</td><td>✓ Answered</td><td><span class="pill won">Primary</span></td></tr>
+      <tr><td class="num">Q19</td><td>DA / CDC (bollards enquiry)</td><td>✓ Answered</td><td><span class="pill won">Primary</span></td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- ============================================ S18 — REFERENCES ============================================ -->
+<section id="s18">
+  <div class="section-eyebrow">18 · References &amp; Sources</div>
+  <h2 class="section-title">Key contacts &amp; primary documents</h2>
+
+  <h3>Reference directory</h3>
+  <div class="ref-card">
+    <div class="ref-grid">
+      <div class="ref-item">
+        <div class="ref-role">Strata Manager</div>
+        <div class="ref-name">Strata Choice Pty Ltd</div>
+        <div class="ref-detail">
+          Mark Loveridge (responsible licensee 224770)<br>
+          1300 322 213<br>
+          <a href="mailto:info@stratachoice.com.au">info@stratachoice.com.au</a><br>
+          GPO Box 5328, Sydney NSW 2001
+        </div>
+      </div>
+      <div class="ref-item">
+        <div class="ref-role">Building Manager</div>
+        <div class="ref-name">Sydney Building Management &amp; Projects</div>
+        <div class="ref-detail">
+          Apartment Projects Pty Ltd (ABN 14 167 332 069)<br>
+          02 9056 7100<br>
+          <a href="mailto:info@sydneybmp.com.au">info@sydneybmp.com.au</a><br>
+          PO Box 461, Surry Hills NSW 2095
+        </div>
+      </div>
+      <div class="ref-item">
+        <div class="ref-role">OC's Solicitors</div>
+        <div class="ref-name">Chambers Russell Lawyers</div>
+        <div class="ref-detail">
+          Paul Jurdeczka, Andrus Must, Nastasia Pechanats, Nicole Ellul-Thorn<br>
+          +61 2 8248 2800<br>
+          Level 15, 25 Martin Place, Sydney NSW 2000
+        </div>
+      </div>
+      <div class="ref-item">
+        <div class="ref-role">Insurance Broker</div>
+        <div class="ref-name">BAC Insurance Brokers Pty Ltd</div>
+        <div class="ref-detail">
+          Account Manager: Priya Bax<br>
+          Policy 06S8012355 · 26/09/2025–26/09/2026<br>
+          Underwriter: Insurance Australia Ltd (CGU)
+        </div>
+      </div>
+      <div class="ref-item">
+        <div class="ref-role">Builder (defendant)</div>
+        <div class="ref-name">Ceerose Pty Ltd</div>
+        <div class="ref-detail">
+          Founded 1998 · Edward Doueihi (MD)<br>
+          <span class="pill lost">3 lost defect judgments 2024–25</span><br>
+          No iCIRT rating publicly visible
+        </div>
+      </div>
+      <div class="ref-item">
+        <div class="ref-role">Auditor</div>
+        <div class="ref-name">CBC Partners</div>
+        <div class="ref-detail">
+          Domenic A. Cutrupi (Partner)<br>
+          GPO Box 1442, Sydney NSW 2001<br>
+          FY24 audit clean (15 August 2024)
+        </div>
+      </div>
+      <div class="ref-item">
+        <div class="ref-role">Insurance Valuer</div>
+        <div class="ref-name">A G Thomas Valuers</div>
+        <div class="ref-detail">
+          ABN 58 053 159 569<br>
+          PO Box 3418, Putney NSW 2112<br>
+          (02) 9817 8366
+        </div>
+      </div>
+      <div class="ref-item">
+        <div class="ref-role">CWF Plan Author</div>
+        <div class="ref-name">Sageview (NSW) Pty Ltd</div>
+        <div class="ref-detail">
+          Edward Malek<br>
+          1300 094 648<br>
+          Plan dated 4 June 2018 (overdue review)
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h3>Primary-source documents</h3>
+  <table class="data">
+    <thead><tr><th>Topic</th><th>Document</th><th>Library path</th></tr></thead>
+    <tbody>
+      <tr><td>Q1, Q8, Q17</td><td>Capital Works Fund Plan (Sageview, 4 June 2018)</td><td class="num">SMATA_1777005256569/.../CWF Plan/...20.pdf</td></tr>
+      <tr><td>Q1, Q2, Q3, Q12</td><td>Insurance Valuation (A G Thomas, 6 Aug 2025)</td><td class="num">SMATA_1777004795757/.../valuation report/sp90191.pdf</td></tr>
+      <tr><td>Q4, Q5</td><td>Audit Report (CBC Partners, 15 Aug 2024 — FY24)</td><td class="num">SMATA_1777005397935/.../audit report/Audit-Report-...pdf</td></tr>
+      <tr><td>Q6, Q15, Q17, Q18</td><td>EGM Minutes 16/02/2026</td><td class="num">SMATA_1777004083049/.../minute book/General-Meeting-Minutes---16-02-26.pdf</td></tr>
+      <tr><td>Q9</td><td>Strata Management Agency Agreement (signed 01/10/2025)</td><td class="num">SMATA_1777004545258/.../Agency Agreement/SP_90191_Agreement_-_signed.pdf</td></tr>
+      <tr><td>Q10</td><td>SBMP Tax Invoice INV-12795 (6 March 2026)</td><td class="num">SMATA_1777006195822/.../invoice/sp90191-sbmp-inv-12795.pdf</td></tr>
+      <tr><td>Q15, Q18</td><td>Defects Supreme Court email (Chambers Russell, 14/11/2025)</td><td class="num">SMATA_1777004545258/.../defects/Arlington_Grove___The_Owners_-_Strata_Plan_No_90191_v_Ceerose...</td></tr>
+      <tr><td>Q15, Q18</td><td>AE&amp;D Building Report (Ceerose Repairs Review, 18/03/2025)</td><td class="num">SMATA_1777005156897/.../building report/AE_D_Report_on_Ceerose_s_Repairs...</td></tr>
+      <tr><td>Q15</td><td>AED Fee Proposal for further fire investigations (30/09/2025)</td><td class="num">SMATA_1777004545258/.../emails/AED_Fee_Proposal_for_further_investigations...</td></tr>
+      <tr><td>Q15 (Acoustic)</td><td>Acoustic Dynamics Tax Invoice 0019359 (13/12/2024)</td><td class="num">SMATA_1777006432521/.../invoice/0019359-...acoustic-defects.pdf</td></tr>
+      <tr><td>Q16</td><td>AFSS T0796-AFSS-2025 (assessed 30/07/2025)</td><td class="num">SMATA_1777004545258/.../fire safety/T0796-AFSS-2025.pdf</td></tr>
+      <tr><td>Q16</td><td>Fire Damper Audit — Waratah Air (23/11/2022)</td><td class="num">SMATA_1777005489577/.../emails/SP90191_-_Fire_Damper__FD__Audit_Report.pdf</td></tr>
+      <tr><td>Q15 (Lot 1813)</td><td>Smoke Alarm enquiry — Unit 1813 (27/03/2026)</td><td class="num">SMATA_1777004083049/.../emails/SP90191_-_1813_6_Grove_Street_-_Smoke_alarm.pdf</td></tr>
+      <tr><td>Q19, Q10</td><td>Consolidated By-Laws (25/01/2026)</td><td class="num">SMATA_1777004083049/.../by laws/90191_By-Laws-report_25-01-2026.pdf</td></tr>
+      <tr><td>Builder analysis</td><td>NSW Court of Appeal — Ceerose v SP 89074 [2025] NSWCA 235</td><td class="num">External — published online (Allens, TGLaw)</td></tr>
+      <tr><td>Builder analysis</td><td>NCAT — SP 102171 v Ceerose &amp; Zone Q (20/11/2025)</td><td class="num">External — Lawyerly news</td></tr>
+    </tbody>
+  </table>
+
+  <p style="font-size:12px;color:var(--mid-grey);margin-top:24px;">Library mounted from <code style="font-family:'DM Mono',monospace;">D:\Strata 90191</code> · 10,063 PDFs across 24 SMATA_* batch folders · ~14 GB · Plus 9 financial PDFs uploaded directly to chat.</p>
+</section>
+
+<footer>
+  <div>
+    <span class="org">SP 90191 ARLINGTON GROVE</span>
+    &nbsp;&nbsp;<span class="crumb">·</span>&nbsp;&nbsp;
+    Strata Property Report &amp; Investment Analysis
+  </div>
+  <div>
+    Compiled 26 April 2026
+  </div>
+</footer>
+
+</div>
+
+<script>
+(function() {
+  var nav = document.getElementById('stickyNav');
+  var hero = document.getElementById('top');
+  if (!nav || !hero) return;
+
+  var sections = Array.prototype.slice.call(document.querySelectorAll('section[id^="s"]'));
+  var navLinks = Array.prototype.slice.call(nav.querySelectorAll('.sticky-nav-links a'));
+
+  function onScroll() {
+    var heroBottom = hero.getBoundingClientRect().bottom;
+    if (heroBottom < 40) {
+      nav.classList.add('visible');
+    } else {
+      nav.classList.remove('visible');
+    }
+
+    // Active section highlight
+    var fromTop = window.scrollY + 80;
+    var activeId = null;
+    for (var i = 0; i < sections.length; i++) {
+      var s = sections[i];
+      if (s.offsetTop <= fromTop) activeId = s.id;
+    }
+    navLinks.forEach(function(a) {
+      if (a.getAttribute('href') === '#' + activeId) a.classList.add('active');
+      else a.classList.remove('active');
+    });
+  }
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll);
+  onScroll();
+})();
+</script>
+
+</body>
+</html>
